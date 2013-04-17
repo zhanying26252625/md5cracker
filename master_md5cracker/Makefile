@@ -6,20 +6,22 @@
 # dynamic libs>
 # gcc program.o -llib1 -Wl,-Bstatic -llib2 -Wl,-Bdynamic -llib3
 
-CC = g++
+CC = gcc
 
-CFLAGS = -Wall -o3 -g
+# sometimes -g would not work for showing symbols in gdb, we use -gstabs+ instead
+# maybe it's something related to debug info format
+CFLAGS = -Wall -o3 -g  
 
-headers = ../configure.h
+headers = ../configure.h masterMD5Cracker.h logManager.h 
 
-objects = main.o masterMD5Cracker.o 
+objects = main.o masterMD5Cracker.o logManager.o 
 
 xmlrpclibs = -L/usr/local/lib -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok 
 
 target: master_md5cracker
 
 master_md5cracker: $(objects) 
-	$(CC) $(CFLAGS) -o $@ $^ -Wl,-Bstatic $(xmlrpclibs) -Wl,-Bdynamic -lpthread 
+	$(CC) $(CFLAGS) -o $@ $^ -Wl,-Bstatic $(xmlrpclibs) -Wl,-Bdynamic -lpthread -lstdc++  
 
 %.o: %.c $(headers)
 	$(CC) -c -o $@ $< $(CFLAGS)

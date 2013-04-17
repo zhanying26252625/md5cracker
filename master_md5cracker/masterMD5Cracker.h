@@ -10,9 +10,15 @@ public:
 
     virtual ~MasterMD5Cracker();
 
-private:
-    //static void* 
+    void run();
 
+    bool createListeningThread();
+    
+private:
+    //Background thread accepting slave's connection
+    static void* listeningThread(void* arg);
+
+    bool isExisting;
 };
 
 #endif
