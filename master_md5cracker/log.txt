@@ -1,0 +1,6 @@
+MasterMD5Cracker is running......
+Server is listening for connections from slaves
+New slave connection [127.0.0.1] [37450] Key is [127.0.0.1:37450]
+New slave receiver thread is running......[127.0.0.1:37450]
+New slave connection [127.0.0.1] [37451] Key is [127.0.0.1:37451]
+New slave receiver thread is running......[127.0.0.1:37451]

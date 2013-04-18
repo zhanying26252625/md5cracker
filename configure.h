@@ -3,4 +3,6 @@
 
 static const int MASTER_PORT = 12625;
 
+static const int SLAVE_PORT = 12626;
+
 #endif

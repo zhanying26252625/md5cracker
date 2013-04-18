@@ -8,20 +8,23 @@
 
 CC = g++
 
-CFLAGS = -Wall -o3 -g
+# sometimes -g would not work for showing symbols in gdb, we use -gstabs+ instead
+# maybe it's something related to debug info format
+CFLAGS = -std=c++11 -Wall -g  
 
-headers = ../configure.h
+headers = ../configure.h slaveMD5Cracker.h masterProxy.h 
 
-objects = main.o 
+objects = main.o slaveMD5Cracker.o  masterProxy.o
 
-xmlrpclibs = -L/usr/local/lib -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok 
+xmlrpclibs = -L/usr/local/lib -lxmlrpc_server_pstream++ -lxmlrpc_server++ -lxmlrpc_server  -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_packetsocket 
 
 target: slave_md5cracker
 
 slave_md5cracker: $(objects) 
-	$(CC) $(CFLAGS) -o $@ $^ -Wl,-Bstatic $(xmlrpclibs) -Wl,-Bdynamic -lpthread 
+	$(CC) $(CFLAGS) -o $@ $^ -Wl,-Bstatic $(xmlrpclibs) -Wl,-Bdynamic -lpthread -lstdc++  
 
-%.o: %.c $(headers)
+#Be care of the suffix
+%.o: %.cpp $(headers)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:

@@ -31,9 +31,10 @@ private:
 
     int socket2Slave; //send cmd to slave
 
-    //Receiver thread for slave
+    //Receiver cmd thread for slave
     static void* slaveReceiverFunc(void* arg);
 
+    //Sender cmd thread to slave
     static void* slaveSenderFunc(void* arg);
 
     MasterMD5Cracker* master;
