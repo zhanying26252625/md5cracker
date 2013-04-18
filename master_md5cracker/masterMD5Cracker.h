@@ -1,8 +1,10 @@
 #ifndef _MASTER_H
 #define _MASTER_H
 
+#include "slaveProxy.h"
 #include <string>
 #include <map>
+//#include <unordered_map> //experimtal in c++11
 #include <pthread.h>
 
 using namespace std;
@@ -45,9 +47,12 @@ private:
     void cui();
 
 private:
-
+    //BST
     map<string,CmdHandler> cmdHandlers;
-
+    //HASHTABLE
+    //unordered_map<string key, SlaveProxy> slaveProxies;
+    map<string, SlaveProxy> slaveProxies;
+    
     bool isExisting;
 
     bool isCracking;

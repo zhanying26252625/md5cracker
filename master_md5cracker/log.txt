@@ -1,5 +1,4 @@
 MasterMD5Cracker is running......
 Server is listening for connections from slaves
-New slave connection [127.0.0.1] [58872] Key is [127.0.0.1:58872]
-[cmdList]
-[cmdStart]
+New slave connection [127.0.0.1] [54074] Key is [127.0.0.1:54074]
+Slave proxy is running......[127.0.0.1:54074]

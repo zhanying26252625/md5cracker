@@ -80,6 +80,8 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
     
     MasterMD5Cracker* master = (MasterMD5Cracker*)arg;
 
+    map<string, SlaveProxy>& slaveProxies = master->slaveProxies;
+
     logMgr <<"Server is listening for connections from slaves"<<endl;
 
     struct sockaddr_in  slave_addr;    
@@ -88,6 +90,7 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
 
         unsigned int sin_size = sizeof(struct sockaddr_in);
 
+        //accept new connection
         int newSlaveSocket = accept( master->listeningSocket, (struct sockaddr*)&slave_addr,&sin_size  );
 
         string slaveAddr = inet_ntoa(slave_addr.sin_addr);
@@ -102,8 +105,33 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
     
         logMgr << "New slave connection ["<<slaveAddr<<"] ["<<slavePort<<"]"<<" Key is ["<<key<<"]" <<endl;
     
-        //create two threads to server each slave in full duplex mode
-        //
+        if( slaveProxies.count(key) >0 ){
+
+            logMgr << "[WARN] Dupliate connection, remove previous one "<<endl;
+            
+            SlaveProxy& proxy = slaveProxies[key];
+
+            proxy.terminate();
+
+            slaveProxies.erase(key);
+        }
+
+        //create slave proxy
+        SlaveProxy slave;
+        slave.master = master;
+        slave.key = key;
+        slave.slaveAddr = slaveAddr;
+        slave.slavePort = slavePort;
+        slave.socket2Master = newSlaveSocket;
+
+        slaveProxies[key] = slave;
+        bool ret = slaveProxies[key].run();
+        
+        if( !ret ){
+            logMgr << "[ERROR] can't run proxy" <<endl;
+            slaveProxies.erase(key);
+        }
+
     }
 
     return NULL;
@@ -190,7 +218,7 @@ void MasterMD5Cracker::cmdHelp(){
     cout<<"3. status [Show the status of the cracking process]"<<endl;
     cout<<"4. list [List the cracking slaves connected]"<<endl;
     cout<<"5. quit [Terminate this distributed cracking system]"<<endl;
-    cout<<endl;
+    cout<<"> ";
 }
 
 void MasterMD5Cracker::cui(){
