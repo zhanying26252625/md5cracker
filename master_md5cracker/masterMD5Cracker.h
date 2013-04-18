@@ -4,7 +4,7 @@
 #include "slaveProxy.h"
 #include <string>
 #include <map>
-//#include <unordered_map> //experimtal in c++11
+#include <unordered_map> //experimtal in c++11
 #include <pthread.h>
 
 using namespace std;
@@ -50,8 +50,8 @@ private:
     //BST
     map<string,CmdHandler> cmdHandlers;
     //HASHTABLE
-    //unordered_map<string key, SlaveProxy> slaveProxies;
-    map<string, SlaveProxy> slaveProxies;
+    unordered_map<string, SlaveProxy> slaveProxies;
+    //map<string, SlaveProxy> slaveProxies;
     
     bool isExisting;
 

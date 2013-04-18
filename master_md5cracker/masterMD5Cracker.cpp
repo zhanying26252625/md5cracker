@@ -80,7 +80,7 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
     
     MasterMD5Cracker* master = (MasterMD5Cracker*)arg;
 
-    map<string, SlaveProxy>& slaveProxies = master->slaveProxies;
+    unordered_map<string, SlaveProxy>& slaveProxies = master->slaveProxies;
 
     logMgr <<"Server is listening for connections from slaves"<<endl;
 
@@ -157,6 +157,7 @@ void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
 
     cout << "MD5 hash for the password is ["<<pwMd5<<"]"<<endl;
 
+    return NULL;
 }
 
 void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
@@ -170,6 +171,7 @@ void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
         return NULL;
     }
 
+    return NULL;
 }
 
 void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){
@@ -178,7 +180,7 @@ void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){
 
     logMgr << "[cmdStatus]"<<endl;
     
-
+    return NULL;
 }
 
 void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){
@@ -187,7 +189,7 @@ void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){
 
     logMgr << "[cmdList]"<<endl;
     
-
+    return NULL;
 }
 
 void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){
@@ -196,7 +198,7 @@ void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){
 
     logMgr << "[cmdQuit]"<<endl;
     
-
+    return NULL;
 }
 
 void MasterMD5Cracker:: initUserCmd(){

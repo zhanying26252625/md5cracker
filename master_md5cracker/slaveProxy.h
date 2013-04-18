@@ -67,7 +67,7 @@ public:
         this->_help = "Slave fetch passwords to do md5hash";
     }
 
-    void execute(const xmlrpc_c::paramList& paramList, const xmlrpc_c::value* retValP );
+    void execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP );
 
 };
 
@@ -83,7 +83,7 @@ public:
         this->_help = "Handsake, master create another connection to slave for pseudo full duplex";
     }
 
-    void execute(const xmlrpc_c::paramList& paramList, const xmlrpc_c::value* retValP );
+    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );
 
 };
 

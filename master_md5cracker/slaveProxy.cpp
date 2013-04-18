@@ -36,7 +36,28 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
 
     logMgr << "New slave receiver thread is running......["<<slave->key<<"]" <<endl;
 
+    try{
+
+        xmlrpc_c::registry myReg;
+
+        const xmlrpc_c::methodPtr fetchMethodP(new Fetch(slave));
     
+        myReg.addMethod("fetch",fetchMethodP);
+
+        const xmlrpc_c::methodPtr handShakeMethodP(new HandShake(slave));
+
+        myReg.addMethod("handshake",handShakeMethodP);
+
+        xmlrpc_c::serverPstreamConn server(
+            xmlrpc_c::serverPstreamConn::constrOpt()
+            .socketFd( slave->socket2Master )
+            .registryP(&myReg));
+
+        server.run();
+    }
+    catch(const exception& e){
+        logMgr << "[Exception]"<<e.what()<<endl;
+    }
 
     return NULL;
 }
@@ -50,8 +71,6 @@ void* SlaveProxy::slaveSenderFunc(void* arg){
 
     logMgr << "New slave sencder thread is running......["<<slave->key<<"]" <<endl;
 
-    
-
     return NULL;
 }
 
@@ -60,7 +79,7 @@ void SlaveProxy::terminate(){
 }
 
 //Get new batch of password to hash md5 code
- void Fetch::execute(const xmlrpc_c::paramList& paramList, const xmlrpc_c::value* retValP ){
+void Fetch::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){
 
     LogManager& logMgr = LogManager::getInstance();
     
@@ -69,7 +88,7 @@ void SlaveProxy::terminate(){
 }
 
 //Invite master to create new connection to slave
- void HandShake::execute(const xmlrpc_c::paramList& paramList, const xmlrpc_c::value* retValP ){
+void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){
 
     LogManager& logMgr = LogManager::getInstance();
     

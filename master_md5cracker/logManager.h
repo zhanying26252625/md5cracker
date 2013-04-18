@@ -30,7 +30,7 @@ private:
 
     LogManager(const LogManager& logMgr){}
 
-    LogManager& operator=(const LogManager& logMgr){}
+    LogManager& operator=(const LogManager& logMgr){return *this ;}
 
 public:
     
