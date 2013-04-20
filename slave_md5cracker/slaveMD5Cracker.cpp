@@ -6,6 +6,8 @@
 #include <fstream>
 #include <string.h>
 #include <errno.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 #include <fcntl.h>
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -13,6 +15,7 @@
 #include <netdb.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <ifaddrs.h>
 
 using namespace std;
 
@@ -23,7 +26,9 @@ SlaveMD5Cracker::SlaveMD5Cracker(){
 
 void SlaveMD5Cracker::run(){
 
-    string masterIP = getMasterIP();
+    masterIP = getMasterIP();
+
+    myIP = getMyIP();
 
     if( !masterIP.compare("") ){
         cout<<"Can't get IP of master"<<endl;
@@ -32,8 +37,12 @@ void SlaveMD5Cracker::run(){
     else{
         cout<<"Master is at ["<<masterIP<<"]"<<endl;
     }
+    
+    //get a available port on this machine
+    int port = getAvailablePort();
 
-    cout <<"Slave is runing......"<<endl;
+    myListenPort = port;
+
     //try to connect to master
     int toMasterSocket = -1;
 
@@ -57,9 +66,9 @@ void SlaveMD5Cracker::run(){
         cout<<"Can't create sender thread"<<endl;
         return;
     }
-    
+
     //receiver cmd from master
-    masterReceiverFunc();
+    masterReceiverFunc(port);
 }
 
 bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){
@@ -105,6 +114,7 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
 
             case HANDSHAKE:
                 MasterProxy::handshake(slave);
+                slave->state = WAIT;
                 break;
 
             case FETCH:
@@ -115,6 +125,10 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
                 MasterProxy::stop(slave);
                 break;
                 
+            case WAIT:
+                usleep(500);
+                break;
+
             default:
                 break;
         }
@@ -123,11 +137,124 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
     return NULL;
 }
 
-void SlaveMD5Cracker::masterReceiverFunc(){
+bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
 
-    //Receiver the commands from master
+    //Receive the commands from master
     cout<<"Receiving commands from master......"<<endl;
+    
+    //create and listen the socket 
+    int listeningSocket = 0;  
+
+    struct sockaddr_in server_addr;    
+        
+    if((listeningSocket = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+        cout << "[ERROR]Can't create Socket" << endl;
+        return false;
+    }
+
+    int option = 1;
+    if(setsockopt(listeningSocket,SOL_SOCKET,SO_REUSEADDR,&option,sizeof(int)) == -1) {
+        cout << "[ERROR]Can't setsocket" << endl;
+        return false;
+    }
+        
+    server_addr.sin_family = AF_INET;         
+    server_addr.sin_port = htons( listenPort );     
+    server_addr.sin_addr.s_addr = INADDR_ANY; 
+    bzero(&(server_addr.sin_zero),8); 
+
+    if(bind(listeningSocket, (struct sockaddr *)&server_addr, sizeof(struct sockaddr))== -1) {
+        cout << "[ERROR]Unable to bind" <<endl;
+        return false;
+    }
+
+    if (listen(listeningSocket, 5) == -1) {
+        cout << "[ERROR]Listen error" << endl;
+        return false;
+    }
+
+    struct sockaddr_in  master_addr;    
+    
+    unsigned int sin_size = sizeof(struct sockaddr_in);
+
+    //accept connection from master
+    int master2MeSocket = accept(listeningSocket, (struct sockaddr*)&master_addr,&sin_size  );
+
+    string masterAddr = inet_ntoa(master_addr.sin_addr);
+
+    int masterPort = ntohs(master_addr.sin_port);
+
+    cout << "Command Receiver at slave : Master connected to me, it is at ["<<masterAddr<<"] ["<<masterPort<<"]"<<endl;
+    
+    //run server for master
+    try{
+
+        xmlrpc_c::registry myReg;
+
+        const xmlrpc_c::methodPtr startMethodP(new StartMethod(this));
+        const xmlrpc_c::methodPtr stopMethodP(new StopMethod(this));
+        const xmlrpc_c::methodPtr statusMethodP(new StatusMethod(this));
+        const xmlrpc_c::methodPtr quitMethodP(new QuitMethod(this));
+        
+        myReg.addMethod("start",startMethodP);
+        myReg.addMethod("stop",stopMethodP);
+        myReg.addMethod("status",statusMethodP);
+        myReg.addMethod("quit",quitMethodP);
+
+        xmlrpc_c::serverPstreamConn server(
+            xmlrpc_c::serverPstreamConn::constrOpt()
+            .socketFd( master2MeSocket )
+            .registryP(&myReg));
+
+        server.run();
+
+    }
+    catch(const exception& e){
+        cout << "[Exception]"<<e.what()<<endl;
+    }
+
+    return true;
 }
+
+
+void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
+
+    cout << "[Command] Start cracking" <<endl;
+
+    string md5 = paramList.getString(0);
+
+    cout <<"The md5 is ["<<md5<<"]"<<endl;
+
+    *retValP = xmlrpc_c::value_string(string("Accept"));
+
+    return;
+}
+
+void StopMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
+
+    cout << "[Command] Stop cracking" <<endl;
+    
+    *retValP = xmlrpc_c::value_string(string("Accept"));
+}
+
+void StatusMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
+
+    cout << "[Command] Status" <<endl;
+    
+    *retValP = xmlrpc_c::value_string(string("Accept"));
+}
+
+void QuitMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
+
+    cout << "[Command] Quit" <<endl;
+    
+    *retValP = xmlrpc_c::value_string(string("Accept"));
+
+    cout <<"Terminated by master"<<endl;
+    //end this program
+    exit(1);
+}
+
 
 string SlaveMD5Cracker::getMasterIP(string fileName){
 
@@ -142,3 +269,46 @@ string SlaveMD5Cracker::getMasterIP(string fileName){
 
     return ip;
 }
+
+string SlaveMD5Cracker::getMyIP(){
+
+    struct ifaddrs* ifAddrs = NULL;
+    
+    getifaddrs(&ifAddrs);
+
+    struct ifaddrs* ifIter = ifAddrs;
+
+    while(ifIter!=NULL){
+
+        //IPV4
+        if(ifIter->ifa_addr->sa_family == AF_INET){
+        
+            void* tmpAddrPtr=&((struct sockaddr_in *)ifIter->ifa_addr)->sin_addr;
+
+            char ip[INET_ADDRSTRLEN];
+
+            inet_ntop(AF_INET,tmpAddrPtr,ip, INET_ADDRSTRLEN);
+
+            string ipAddr = string(ip);
+
+            cout<< "My IP : "<<ipAddr<<endl;
+        }
+
+        ifIter = ifIter->ifa_next;
+    }
+
+    return "";
+}
+
+
+int SlaveMD5Cracker::getAvailablePort(string tmpFile){
+
+    return SLAVE_PORT;
+
+}
+
+
+
+
+
+

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <pthread.h>
+#include <queue>
 #include <xmlrpc-c/base.hpp>
 #include <xmlrpc-c/registry.hpp>
 #include <xmlrpc-c/server_pstream.hpp>
@@ -15,6 +16,13 @@ using namespace std;
 class MasterMD5Cracker;
 class Fetch;
 class HandShake;
+
+struct Cmd{
+    Cmd(){}
+    Cmd(string n,string p):name(n),param(p){}
+    string name;
+    string param;
+};
 
 class SlaveProxy{
 
@@ -37,17 +45,26 @@ private:
     //Sender cmd thread to slave
     static void* slaveSenderFunc(void* arg);
 
+    static bool sendViaXMLRPC(int socket, string name, string param);
+
     MasterMD5Cracker* master;
 
-    pthread_t thread2Slave;
+    pthread_t threadMasterSender;
 
-    pthread_t thread2Master;
+    pthread_t threadMasterReceiver;
+
+    //True is duplex connection is already there
+    bool isFullConnected;
+
+    queue<Cmd> cmdQueue;
 
 public:
 
     bool run();
 
     void terminate();
+
+    void issueCmd(Cmd& cmd);
 
     SlaveProxy();
 
@@ -87,6 +104,5 @@ public:
     void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );
 
 };
-
 
 #endif
