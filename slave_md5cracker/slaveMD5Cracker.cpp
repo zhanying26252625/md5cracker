@@ -37,11 +37,6 @@ void SlaveMD5Cracker::run(){
     else{
         cout<<"Master is at ["<<masterIP<<"]"<<endl;
     }
-    
-    //get a available port on this machine
-    int port = getAvailablePort();
-
-    myListenPort = port;
 
     //try to connect to master
     int toMasterSocket = -1;
@@ -57,6 +52,17 @@ void SlaveMD5Cracker::run(){
         cout<<"Connect to master server"<<endl;
     }
 
+    //get an available port on this machine, let system select one
+    int portNum = 0;
+
+    bool good = createAndBindSocket(portNum);
+
+    if( !good ){
+        cout<<"Can't create a socket"<<endl;
+        return;
+    }
+    this->myListenPort = portNum;
+
     //create the thread which initiate data transfer to master
     pthread_t thread;
 
@@ -68,7 +74,7 @@ void SlaveMD5Cracker::run(){
     }
 
     //receiver cmd from master
-    masterReceiverFunc(port);
+    masterReceiverFunc(myListenPort);
 }
 
 bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){
@@ -137,11 +143,8 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
     return NULL;
 }
 
-bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
+bool SlaveMD5Cracker::createAndBindSocket(int& socketPort){
 
-    //Receive the commands from master
-    cout<<"Receiving commands from master......"<<endl;
-    
     //create and listen the socket 
     int listeningSocket = 0;  
 
@@ -158,8 +161,9 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
         return false;
     }
         
-    server_addr.sin_family = AF_INET;         
-    server_addr.sin_port = htons( listenPort );     
+    server_addr.sin_family = AF_INET;
+    //0 means letting system to pickup an available port
+    server_addr.sin_port = htons( 0 );     
     server_addr.sin_addr.s_addr = INADDR_ANY; 
     bzero(&(server_addr.sin_zero),8); 
 
@@ -172,6 +176,23 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
         cout << "[ERROR]Listen error" << endl;
         return false;
     }
+
+    //find out the port number picked by system
+    struct sockaddr_in myAddr;    
+    unsigned int sin_len = sizeof(struct sockaddr_in);
+    getsockname(listeningSocket, (struct sockaddr *)&myAddr, &sin_len);
+
+    int port = ntohs(myAddr.sin_port);
+    cout <<"My port number is "<< port <<endl;
+
+    socketPort = port;
+
+    this->listeningSocket = listeningSocket;
+
+    return true;
+}
+
+bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
 
     struct sockaddr_in  master_addr;    
     
@@ -304,7 +325,6 @@ string SlaveMD5Cracker::getMyIP(){
 int SlaveMD5Cracker::getAvailablePort(string tmpFile){
 
     return SLAVE_PORT;
-
 }
 
 

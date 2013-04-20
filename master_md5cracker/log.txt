@@ -1,37 +1,46 @@
 MasterMD5Cracker is running......
 Server is listening for connections from slaves
-New slave connection [127.0.0.1] [42775] Key is [127.0.0.1:42775]
-New slave receiver thread is running......[127.0.0.1:42775]
-127.0.0.1:42775[Handshake]
-Slave is listening on port 12626
-New slave sencder thread is running......[127.0.0.1:42775]
 [cmdList]
+New slave connection [127.0.0.1] [43215] Key is [127.0.0.1:43215]
+New slave receiver thread is running......[127.0.0.1:43215]
+127.0.0.1:43215[Handshake]
+Slave is listening on port 48903
+New slave sencder thread is running......[127.0.0.1:43215]
+New slave connection [127.0.0.1] [43217] Key is [127.0.0.1:43217]
+New slave receiver thread is running......[127.0.0.1:43217]
+127.0.0.1:43217[Handshake]
+Slave is listening on port 58903
+New slave sencder thread is running......[127.0.0.1:43217]
+[cmdList]
+[cmdStop]
+[cmdStatus]
+
+Issue Command status to all slaves
+Slave Proxy send status command to 127.0.0.1
+Slave Proxy send status command to 127.0.0.1
+Accept
+Accept
 [cmdStart]
 
 Issue Command start to all slaves
 Slave Proxy send start command to 127.0.0.1
+Slave Proxy send start command to 127.0.0.1
+AcceptAccept
+
+[cmdStatus]
+
+Issue Command status to all slaves
+Slave Proxy send status command to 127.0.0.1
+Slave Proxy send status command to 127.0.0.1
 Accept
-[cmdList]
+Accept
 [cmdStop]
 
 Issue Command stop to all slaves
 Slave Proxy send stop command to 127.0.0.1
-Accept
-One slave left [127.0.0.1:42775]
-[cmdList]
-[cmdStatus]
 
-Issue Command status to all slaves
-[cmdStart]
-[cmdStop]
-New slave connection [127.0.0.1] [42777] Key is [127.0.0.1:42777]
-New slave receiver thread is running......[127.0.0.1:42777]
-127.0.0.1:42777[Handshake]
-Slave is listening on port 12626
-New slave sencder thread is running......[127.0.0.1:42777]
-[cmdList]
-[cmdStart]
+AcceptAccept
 
-Issue Command start to all slaves
-Slave Proxy send start command to 127.0.0.1
-Accept
+[cmdQuit]
+
+Issue Command quit to all slaves

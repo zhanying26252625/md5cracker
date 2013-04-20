@@ -204,6 +204,11 @@ void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
         return NULL;
     }
  
+    if( master->numOfSlaves()==0 ){
+        cout<<"There is no slave connected"<<endl;
+        return NULL;
+    }
+
     Cmd cmd("stop","");
 
     master->issueCmd(cmd);
@@ -220,6 +225,11 @@ void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){
     logMgr << "[cmdStatus]"<<endl;
     
     Cmd cmd("status","");
+
+    if( master->numOfSlaves()==0 ){
+        cout<<"There is no slave connected"<<endl;
+        return NULL;
+    }
 
     master->issueCmd(cmd);
  
@@ -245,6 +255,8 @@ void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){
         cout << "Slave=[No."<<count<<"] key=["<<slave.key<<"]" <<endl;
 
         iter++;
+
+        count++;
     }
 
     return NULL;
