@@ -19,8 +19,12 @@ public:
 
     virtual ~MasterMD5Cracker();
 
-    void run();
-    
+    void runLocal();
+
+    void runDistribute();
+   
+    double getTimeSpent(){return timeSpent;}
+
 private:
     //Background thread accepting slave's connection
     static void* listeningThreadFunc(void* arg);
@@ -42,6 +46,16 @@ private:
 
     static void* cmdQuit(MasterMD5Cracker* master, void* arg);
 
+    //used by runLocal
+    bool crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level);
+
+    //number of all passwords possible
+    int _generateAllPossiblePWs(int len, vector<char>& charArr, string& newPass, int level, int& count);
+
+    int generateAllPossiblePWs(int len);
+
+    bool startDistributedCracking(string md5);
+
     void cmdHelp();
 
     void cui();
@@ -52,14 +66,23 @@ private:
     //HASHTABLE
     unordered_map<string, SlaveProxy> slaveProxies;
     //map<string, SlaveProxy> slaveProxies;
-    
+
+    //Max len of password
+    static const int PASSLEN = 10;
+
+    //state
     bool isExisting;
 
     bool isCracking;
 
+    //listen socket
     int listeningSocket;
 
     pthread_t listeningThread;
+
+    //run time
+    double timeSpent;
+
 };
 
 

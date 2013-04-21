@@ -1,0 +1,3 @@
+MasterMD5Cracker is running in [Distributed Mode]......
+Server is listening for connections from slaves
+[cmdStart]

@@ -1,6 +1,7 @@
 #include "../configure.h"
 #include "masterMD5Cracker.h"
 #include "logManager.h"
+#include "md5.h"
 #include <signal.h>
 #include <unistd.h>
 #include <iostream>
@@ -16,9 +17,12 @@
 
 using namespace std;
 
+//int MasterMD5Cracker::PASSLEN = 10;
+
 MasterMD5Cracker::MasterMD5Cracker(){
     isCracking = false;
     isExisting = false;
+    timeSpent = 0.0;
 }
 
 MasterMD5Cracker::~MasterMD5Cracker(){
@@ -157,7 +161,27 @@ void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
 
     cout << "MD5 hash for the password is ["<<pwMd5<<"]"<<endl;
 
+    //generate all possible passwords and distribute them to slaves, in pull mode!
+
+    master->startDistributedCracking(pwMd5);
+
     return NULL;
+}
+
+// distributed cracking, pull mode
+// now trying to figure all possible passwords
+bool MasterMD5Cracker::startDistributedCracking(string md5){
+
+    int totalNum = 0;
+
+    for(int len = 1; len <= PASSLEN; len++){
+        int count = this->generateAllPossiblePWs(len);
+        totalNum += count;
+    }
+
+    cout <<endl<<"Total number of passwords are ["<<totalNum<<"]"<<endl;
+
+    return true;
 }
 
 void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
@@ -244,11 +268,177 @@ void MasterMD5Cracker::cui(){
     }
 }
 
-void MasterMD5Cracker::run(){
+//A single-threaded md5 cracker
+void MasterMD5Cracker::runLocal(){
 
     LogManager& logMgr = LogManager::getInstance();
 
-    logMgr << "MasterMD5Cracker is running......"<<endl;
+    logMgr << "MasterMD5Cracker is running in [Single Mode]......"<<endl;
+
+    cout << "Please input the MD5 code" <<endl;
+
+    string md5("");
+
+    getline(cin,md5);
+
+    cout << "We are trying to crack MD5 ["<<md5<<"]" << endl;
+
+/*
+ *Assume Password only contains
+ A-Z
+ a-z
+ 0-9
+ * */
+
+    //init character array
+    vector<char> charArr;
+
+    for(char c = 'A'; c <= 'Z'; c++)
+        charArr.push_back(c);
+
+    for(char c = 'a'; c <= 'z'; c++)
+        charArr.push_back(c);
+
+    for(char c = '0'; c <= '9'; c++)
+        charArr.push_back(c);
+
+    bool found = false;
+
+    struct timeval start, end;
+
+    gettimeofday(&start,NULL);
+
+    string pass("");
+
+    //Test password of every length
+    for(int len = 1; len <= PASSLEN; len++){
+        
+        string newPass;
+
+        newPass.reserve(len);
+        
+        if( (found = crackPasswordLen(md5,pass,len,charArr,newPass,0)) )
+                break;
+    }
+
+    gettimeofday(&end,NULL);
+
+    double span = end.tv_sec - start.tv_sec + (end.tv_usec - start.tv_usec)/1000000.0;
+
+    this->timeSpent = span;
+
+    if(found){
+        cout <<"Password Found! it's ["<<pass<<"]"<<endl;
+        return ;
+    }
+    else{
+        cout << "Can't find the password. Please Make sure password complies with rules" <<endl;
+        return;
+    }
+
+}
+
+
+bool MasterMD5Cracker::crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level){
+
+    if( level == len ){
+        //Do md5 hash of the new password
+        MD5 md5Engine;
+
+        string str = md5Engine.calMD5FromString(newPass);
+
+        //found
+        if( !str.compare(md5) ){
+            pass = newPass;
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+    else{
+
+        for(unsigned int i = 0; i< charArr.size(); i++){
+
+            newPass.push_back( charArr[i] );
+
+            bool found = crackPasswordLen(md5,pass,len,charArr,newPass,level+1);
+
+            newPass.erase(level,1);
+
+            if(found)
+                return true;
+        }
+    }
+
+    return false;
+}
+
+int MasterMD5Cracker::_generateAllPossiblePWs(int len, vector<char>& charArr,string& newPass, int level, int& count){
+        
+    if( level == len ){
+        count++;
+        //cout << newPass <<endl;
+    }
+    else{
+
+        for(unsigned int i = 0; i< charArr.size(); i++){
+
+            newPass.push_back( charArr[i] );
+
+            _generateAllPossiblePWs(len,charArr,newPass,level+1,count);
+
+            newPass.erase(level,1);
+        }
+    }
+
+    return 0;
+}
+
+
+int MasterMD5Cracker::generateAllPossiblePWs(int len){
+
+    int count = 0;
+
+    string newPass;
+
+    newPass.reserve(len);
+/*
+ *Assume Password only contains
+ A-Z
+ a-z
+ 0-9
+ * */
+
+    //init character array
+    vector<char> charArr;
+
+    for(char c = 'A'; c <= 'Z'; c++)
+        charArr.push_back(c);
+
+    for(char c = 'a'; c <= 'z'; c++)
+        charArr.push_back(c);
+
+    for(char c = '0'; c <= '9'; c++)
+        charArr.push_back(c);
+
+
+    _generateAllPossiblePWs(len,charArr,newPass,0,count);
+
+    cout <<"There are ["<<count <<"]"<<" passwords of length "<<len <<endl;
+
+    return count;
+}
+
+
+
+//A distributed md5 cracker
+void MasterMD5Cracker::runDistribute(){
+
+    LogManager& logMgr = LogManager::getInstance();
+
+    logMgr << "MasterMD5Cracker is running in [Distributed Mode]......"<<endl;
     
     //Ignore SIGPIPE signal, which would kill the process when pipe breaks
     signal(SIGPIPE,SIG_IGN);
