@@ -46,15 +46,17 @@ private:
 
     static void* cmdQuit(MasterMD5Cracker* master, void* arg);
 
-    //used by runLocal
+    //used by runLocal, based on recursion, it's based on recursion to generate all password combination  and it's proper for single-threaded processing
     bool crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level);
 
-    //number of all passwords possible
+    //number of all passwords possible, it seems recursion make it extremenly slow and not proper for the distribution to the slaves,we need some other algorithm to generate the combinations of password.
     int _generateAllPossiblePWs(int len, vector<char>& charArr, string& newPass, int level, int& count);
 
     int generateAllPossiblePWs(int len);
 
     bool startDistributedCracking(string md5);
+
+    bool endDistributedCracking();
 
     void cmdHelp();
 

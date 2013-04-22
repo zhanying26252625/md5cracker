@@ -168,6 +168,14 @@ void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
     return NULL;
 }
 
+bool MasterMD5Cracker::endDistributedCracking(){
+
+    if( !this->isCracking )
+        return false;
+
+    return true;
+}
+
 // distributed cracking, pull mode
 // now trying to figure all possible passwords
 bool MasterMD5Cracker::startDistributedCracking(string md5){
@@ -385,11 +393,11 @@ int MasterMD5Cracker::_generateAllPossiblePWs(int len, vector<char>& charArr,str
 
         for(unsigned int i = 0; i< charArr.size(); i++){
 
-            newPass.push_back( charArr[i] );
+            //newPass.push_back( charArr[i] );
 
             _generateAllPossiblePWs(len,charArr,newPass,level+1,count);
 
-            newPass.erase(level,1);
+            //newPass.erase(level,1);
         }
     }
 
