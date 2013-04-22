@@ -1,6 +1,7 @@
 #ifndef _MASTER_H
 #define _MASTER_H
 
+#include "../configure.h"
 #include "slaveProxy.h"
 #include <string>
 #include <map>
@@ -70,7 +71,7 @@ private:
     //map<string, SlaveProxy> slaveProxies;
 
     //Max len of password
-    static const int PASSLEN = 10;
+    static const int PASSLEN = PASS_LEN;
 
     //state
     bool isExisting;

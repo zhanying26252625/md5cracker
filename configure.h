@@ -3,4 +3,5 @@
 
 static const int MASTER_PORT = 12625;
 
+static const int PASS_LEN = 10;
 #endif
