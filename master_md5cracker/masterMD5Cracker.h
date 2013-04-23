@@ -10,6 +10,8 @@
 
 using namespace std;
 
+class SlaveProxy;
+
 class MasterMD5Cracker{
     
 private:
@@ -25,6 +27,8 @@ public:
     void runDistribute();
    
     double getTimeSpent(){return timeSpent;}
+    
+    friend class SlaveProxy;
 
 private:
     //Background thread accepting slave's connection
@@ -58,15 +62,25 @@ private:
     bool startDistributedCracking(string md5);
 
     bool endDistributedCracking();
+    
+    void issueCmd(Cmd& cmd);
 
     void cmdHelp();
 
     void cui();
 
+    bool isExistSlave(string& key);
+
+    void registerSlave(string& key,SlaveProxy& proxy);
+
+    void unregisterSlave(string& key);
+
+    int numOfSlaves(){return slaveProxies.size();}
+
 private:
-    //BST
+    //BST cmd handlers
     map<string,CmdHandler> cmdHandlers;
-    //HASHTABLE
+    //HASHTABLE slaves
     unordered_map<string, SlaveProxy> slaveProxies;
     //map<string, SlaveProxy> slaveProxies;
 

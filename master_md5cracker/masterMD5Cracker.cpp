@@ -109,15 +109,11 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
     
         logMgr << "New slave connection ["<<slaveAddr<<"] ["<<slavePort<<"]"<<" Key is ["<<key<<"]" <<endl;
     
-        if( slaveProxies.count(key) >0 ){
+        if( master->isExistSlave(key) ){
 
             logMgr << "[WARN] Dupliate connection, remove previous one "<<endl;
+            master->unregisterSlave(key); 
             
-            SlaveProxy& proxy = slaveProxies[key];
-
-            proxy.terminate();
-
-            slaveProxies.erase(key);
         }
 
         //create slave proxy
@@ -126,9 +122,11 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
         slave.key = key;
         slave.slaveAddr = slaveAddr;
         slave.slavePort = slavePort;
+        //socket that master receive cmd from slave
         slave.socket2Master = newSlaveSocket;
 
-        slaveProxies[key] = slave;
+        master->registerSlave(key,slave);
+        
         bool ret = slaveProxies[key].run();
         
         if( !ret ){
@@ -141,6 +139,30 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
     return NULL;
 }
 
+bool MasterMD5Cracker::isExistSlave(string& key){
+
+    if ( slaveProxies.count(key) >0 )
+        return true;
+
+    return false;
+}
+
+void MasterMD5Cracker::registerSlave(string& key,SlaveProxy& proxy){
+
+    slaveProxies[key] = proxy;
+}
+
+void MasterMD5Cracker::unregisterSlave(string& key){
+    
+    SlaveProxy& proxy = slaveProxies[key]; 
+    
+    proxy.terminate();
+    
+    slaveProxies.erase(key);
+}
+
+
+
 void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
     
     LogManager& logMgr = LogManager::getInstance();
@@ -152,6 +174,11 @@ void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
         cout<<"Please stop the previous cracking process"<<endl;
         return NULL;
     }
+
+    if( master->numOfSlaves()==0 ){
+        cout<<"There is no slave connected"<<endl;
+        return NULL;
+    }
     
     cout << "Please Input MD5-hashed password" <<endl;
 
@@ -160,6 +187,12 @@ void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
     cin >> pwMd5;
 
     cout << "MD5 hash for the password is ["<<pwMd5<<"]"<<endl;
+ 
+    Cmd cmd("start",pwMd5);
+
+    master->issueCmd(cmd);
+
+    master->isCracking = true;
 
     //generate all possible passwords and distribute them to slaves, in pull mode!
 
@@ -202,7 +235,18 @@ void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
         cout<<"There is no on-going cracking process"<<endl;
         return NULL;
     }
+ 
+    if( master->numOfSlaves()==0 ){
+        cout<<"There is no slave connected"<<endl;
+        return NULL;
+    }
 
+    Cmd cmd("stop","");
+
+    master->issueCmd(cmd);
+
+    master->isCracking = false;
+    
     return NULL;
 }
 
@@ -212,15 +256,41 @@ void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){
 
     logMgr << "[cmdStatus]"<<endl;
     
+    Cmd cmd("status","");
+
+    if( master->numOfSlaves()==0 ){
+        cout<<"There is no slave connected"<<endl;
+        return NULL;
+    }
+
+    master->issueCmd(cmd);
+ 
     return NULL;
 }
 
 void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){
     
     LogManager& logMgr = LogManager::getInstance();
-
-    logMgr << "[cmdList]"<<endl;
     
+    logMgr << "[cmdList]"<<endl;
+
+    //print all connected slaves
+
+    int count = 0;
+
+    unordered_map<string, SlaveProxy>::iterator iter = master->slaveProxies.begin();
+
+    while( iter != master->slaveProxies.end() ){
+
+        SlaveProxy& slave = (*iter).second;
+
+        cout << "Slave=[No."<<count<<"] key=["<<slave.key<<"]" <<endl;
+
+        iter++;
+
+        count++;
+    }
+
     return NULL;
 }
 
@@ -229,8 +299,30 @@ void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){
     LogManager& logMgr = LogManager::getInstance();
 
     logMgr << "[cmdQuit]"<<endl;
-    
+   
+    Cmd cmd("quit","");
+
+    master->issueCmd(cmd);
+
+    master->isExisting = true;
+
     return NULL;
+}
+
+void MasterMD5Cracker::issueCmd(Cmd& cmd){
+
+    LogManager& logMgr = LogManager::getInstance();
+
+    logMgr <<endl<< "Issue Command " << cmd.name <<" to all slaves" <<endl;
+
+    unordered_map<string, SlaveProxy>::iterator iter = this->slaveProxies.begin();
+
+    while( iter != this->slaveProxies.end() ){
+
+        (*iter).second.issueCmd(cmd);
+
+        iter++;
+    }
 }
 
 void MasterMD5Cracker:: initUserCmd(){
