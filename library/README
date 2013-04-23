@@ -9,3 +9,6 @@ gd is an internal vim command that you can search the keyword under cursor
 ctags is also a great tool to find definition
 
 cscope is even more powerful because it can also be used to find the calling functions
+
+Remove a remote branch
+git push origin :branchname
