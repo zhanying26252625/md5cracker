@@ -37,7 +37,7 @@ void MasterProxy::handshake(SlaveMD5Cracker* slave){
         string const methodName("handshake");
 
         //The only parameter is listenPort 
-        
+        //This port is selected by system         
         int listenPort = slave->myListenPort;
 
         //parameters

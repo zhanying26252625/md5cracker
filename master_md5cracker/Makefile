@@ -32,7 +32,7 @@ master_md5cracker: $(objects)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:
-	rm -f master_md5cracker *.o
+	rm -f master_md5cracker *.o log.txt
 
 #clean3:
 #	ls -l | grep -i "rwx" | awk '{print "rm " $9}' | bash

@@ -33,7 +33,7 @@ private:
     //Send cmd to master
     static void* masterSenderFunc(void* arg); 
     //creat and bind a listening socket
-    bool createAndBindSocket(int& socketPort);
+    bool createAndBindSocket(int& socketPort,int& sock);
     //Receive cmd from master
     bool masterReceiverFunc(int listenPort);
 

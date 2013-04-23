@@ -55,13 +55,18 @@ void SlaveMD5Cracker::run(){
     //get an available port on this machine, let system select one
     int portNum = 0;
 
-    bool good = createAndBindSocket(portNum);
+    int sock = 0;
+
+    bool good = createAndBindSocket(portNum,sock);
 
     if( !good ){
         cout<<"Can't create a socket"<<endl;
         return;
     }
+
     this->myListenPort = portNum;
+
+    this->listeningSocket = sock;
 
     //create the thread which initiate data transfer to master
     pthread_t thread;
@@ -74,7 +79,7 @@ void SlaveMD5Cracker::run(){
     }
 
     //receiver cmd from master
-    masterReceiverFunc(myListenPort);
+    masterReceiverFunc(this->myListenPort);
 }
 
 bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){
@@ -117,20 +122,21 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
     while(1){
 
         switch(slave->state){
-
+            //One time thing at startup, inviting master to connect me back
             case HANDSHAKE:
                 MasterProxy::handshake(slave);
                 slave->state = WAIT;
                 break;
-
+            //Fetch new chunk of passwords to do MD5 hashing
             case FETCH:
                 MasterProxy::fetch(slave);
                 break;
-
+            //Stop current hashing
             case STOP:
                 MasterProxy::stop(slave);
                 break;
                 
+            //Nothing special to do
             case WAIT:
                 usleep(500);
                 break;
@@ -143,7 +149,7 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
     return NULL;
 }
 
-bool SlaveMD5Cracker::createAndBindSocket(int& socketPort){
+bool SlaveMD5Cracker::createAndBindSocket(int& socketPort, int& sock){
 
     //create and listen the socket 
     int listeningSocket = 0;  
@@ -187,7 +193,7 @@ bool SlaveMD5Cracker::createAndBindSocket(int& socketPort){
 
     socketPort = port;
 
-    this->listeningSocket = listeningSocket;
+    sock = listeningSocket;
 
     return true;
 }
@@ -291,6 +297,7 @@ string SlaveMD5Cracker::getMasterIP(string fileName){
     return ip;
 }
 
+//List all ip address that I might have
 string SlaveMD5Cracker::getMyIP(){
 
     struct ifaddrs* ifAddrs = NULL;

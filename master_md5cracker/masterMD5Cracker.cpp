@@ -213,15 +213,6 @@ bool MasterMD5Cracker::endDistributedCracking(){
 // now trying to figure all possible passwords
 bool MasterMD5Cracker::startDistributedCracking(string md5){
 
-    int totalNum = 0;
-
-    for(int len = 1; len <= PASSLEN; len++){
-        int count = this->generateAllPossiblePWs(len);
-        totalNum += count;
-    }
-
-    cout <<endl<<"Total number of passwords are ["<<totalNum<<"]"<<endl;
-
     return true;
 }
 
