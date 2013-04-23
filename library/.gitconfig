@@ -21,7 +21,13 @@
     changed = blue bold
     untracked = red bold
 [merge]
-    tool = vimdiff
+    #tool = vimdiff
+    tool = extMerge
+[mergetool "extMerge"]
+    cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGE"
+    trustExitCode = false
+[diff]
+    external = extDiff
 [push]
     default = current
 [alias]
