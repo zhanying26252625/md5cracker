@@ -1,0 +1,49 @@
+[user]
+	name = greenpea
+	email = yingzhan1989@gmail.com
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = true
+[color "branch"]
+    current = blue bold
+    local = green bold
+    remote = cyan bold
+[color "diff"]
+    meta = blue bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green bold
+    changed = blue bold
+    untracked = red bold
+[merge]
+    tool = vimdiff
+[push]
+    default = current
+[alias]
+    st = status
+    d = diff
+    c = commit
+    a = add .
+    o = checkout
+    b = branch
+    f = fetchp
+    ps = push
+    pl = pull
+    r = remote
+    
+    l = log --oneline
+   
+    #lg = log --oneline --graph --decorate
+   
+    lgb1 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    
+    lgb2 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+    
+    lg = !"git lgb2"
+
+

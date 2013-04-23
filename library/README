@@ -4,11 +4,28 @@ xmlrpc-c-1.25.23.tgz
 
 Try to link againt them statically so you won't need to install them on new machines. However, it's easier sometimes linking dynamically because of tons of reasons, like lack of .a library or link dependency.
 
+-----------------------------------------------------------------------------
+
 gd is an internal vim command that you can search the keyword under cursor
 
 ctags is also a great tool to find definition
 
 cscope is even more powerful because it can also be used to find the calling functions
 
+-----------------------------------------------------------------------------
+
 Remove a remote branch
 git push origin :branchname
+
+-----------------------------------------------------------------------------
+
+git --log --graph
+gitg
+gitk
+Use them to visualize the branch history
+You can config /etc/gitconfig or ~/.gitconfig or $(REPO)/.git/config
+You can config ~/.gitignore or $(REPO)/.gitignore
+-----------------------------------------------------------------------------
+
+
+

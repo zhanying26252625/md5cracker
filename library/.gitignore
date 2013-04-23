@@ -1,0 +1,26 @@
+# Backup files
+*~
+ 
+# Version control
+ .svn*
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.py[co]
+*.egg-info
+nbproject/
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
