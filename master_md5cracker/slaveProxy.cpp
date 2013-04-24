@@ -19,11 +19,13 @@
 #include <ifaddrs.h>
 #include <cassert>
 #include <pthread.h>
+#include <signal.h>
 
 using namespace std;
 
 SlaveProxy::SlaveProxy(){
 
+    isExisting = false;
     isFullConnected = false;
 }
 
@@ -63,10 +65,10 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
 
         xmlrpc_c::registry myReg;
 
-        const xmlrpc_c::methodPtr fetchMethodP(new Fetch(slave));
+        const xmlrpc_c::methodPtr feedbackMethodP(new Feedback(slave));
         const xmlrpc_c::methodPtr handShakeMethodP(new HandShake(slave));
         
-        myReg.addMethod("fetch",fetchMethodP);
+        myReg.addMethod("feedback",feedbackMethodP);
         myReg.addMethod("handshake",handShakeMethodP);
 
         xmlrpc_c::serverPstreamConn server(
@@ -78,13 +80,23 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
         
         logMgr << "One slave left ["<< slave->key <<"]" <<endl;
 
+        logMgr << "Kill both associated sender and receiver thread" <<endl;
+       
+        //These two method would somehow lead to crach? We need a gentle one
         //canceling sender thread and close sockets
-        pthread_cancel(slave->threadMasterSender);
+        //pthread_cancel(slave->threadMasterSender);
+        //pthread_kill(slave->threadMasterSender,SIGKILL );
+
+        slave->isExisting = true;
+
+        //wait sender exit
+        void* retVal;
+        pthread_join(slave->threadMasterSender,&retVal);
 
         close(slave->socket2Slave);
         close(slave->socket2Master);
 
-        //unregister myself
+        //unregister myself, be care of race condition
         slave->master->unregisterSlave(slave->key);
 
     }
@@ -98,6 +110,9 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
 //Sender thread to slave
 void* SlaveProxy::slaveSenderFunc(void* arg){
 
+    //We should ignore SIGPIPE,it's already set
+    signal(SIGPIPE,SIG_IGN);
+
     SlaveProxy* slave = (SlaveProxy*)arg;
 
     LogManager& logMgr = LogManager::getInstance();
@@ -106,14 +121,18 @@ void* SlaveProxy::slaveSenderFunc(void* arg){
 
     while(1){
 
+        //Receiver thread would find out that the slave is gone then notify me
+        if(slave->isExisting)
+            break;
+
         if( slave->cmdQueue.size() > 0 ){
             
             Cmd cmd = slave->cmdQueue.front();
             slave->cmdQueue.pop();
            
-            logMgr <<"Slave Proxy send " << cmd.name << " command to "<< slave->slaveAddr <<endl;
+            //logMgr <<"[SlaveProxy] Master send " << cmd.name << " command to "<< slave->slaveAddr <<endl;
 
-            SlaveProxy::sendViaXMLRPC(slave->socket2Slave, cmd.name,cmd.param);      
+            SlaveProxy::sendViaXMLRPC(slave->socket2Slave, cmd.name,cmd.strVal,cmd.longVal,cmd.intVal);      
 
         }
         else{
@@ -124,7 +143,7 @@ void* SlaveProxy::slaveSenderFunc(void* arg){
     return NULL;
 }
 
-bool SlaveProxy::sendViaXMLRPC(int socket, string name,string param){
+bool SlaveProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){
 
     LogManager& logMgr = LogManager::getInstance();
     
@@ -140,10 +159,13 @@ bool SlaveProxy::sendViaXMLRPC(int socket, string name,string param){
         string const methodName(name);
 
         //parameters
-        xmlrpc_c::paramList handShakeParms;
-        handShakeParms.add(xmlrpc_c::value_string( param ));
+        xmlrpc_c::paramList Parms;
 
-        xmlrpc_c::rpcPtr myRpcP(methodName, handShakeParms);
+        Parms.add(xmlrpc_c::value_string( strVal ));
+        Parms.add(xmlrpc_c::value_i8( longVal ));
+        Parms.add(xmlrpc_c::value_int( intVal ));
+
+        xmlrpc_c::rpcPtr myRpcP(methodName, Parms);
 
         xmlrpc_c::carriageParm_pstream myCarriageParm;
         // Empty; transport doesn't need any information
@@ -155,12 +177,13 @@ bool SlaveProxy::sendViaXMLRPC(int socket, string name,string param){
         const string ans(xmlrpc_c::value_string(myRpcP->getResult()));
             // Assume the method returned an integer; throws error if not
 
-        logMgr << ans << endl;
+        //logMgr << ans << endl;
 
     } catch (exception const& e) {
         logMgr << "Client threw error: " << e.what() << endl;
         ok = false;
     } catch (...) {
+        //socket maybe broken, slave maybe lost
         logMgr << "Client threw unexpected error." << endl;
         ok = false;
     }
@@ -173,11 +196,11 @@ void SlaveProxy::terminate(){
 }
 
 //Get new batch of password to hash md5 code
-void Fetch::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){
+void Feedback::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){
 
     LogManager& logMgr = LogManager::getInstance();
     
-    logMgr << slave->key <<"[Fetch]" <<endl;
+    logMgr << slave->key <<"[Feedback]" <<endl;
 
 }
 
@@ -231,7 +254,7 @@ void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* r
         ok = false;
     }
 
-    //create a dedicated thread that initiat cmd and data transfer to slave
+    //create a dedicated thread that initiate cmd and data transfer to slave
 
     pthread_t thread;
 

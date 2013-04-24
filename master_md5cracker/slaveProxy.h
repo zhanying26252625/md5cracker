@@ -1,9 +1,12 @@
 #ifndef _SLAVE_PROXY_H
 #define _SLAVE_PROXY_H
 
+#include "passGenerator.h"
+
 #include <string>
 #include <pthread.h>
 #include <queue>
+
 #include <xmlrpc-c/base.hpp>
 #include <xmlrpc-c/registry.hpp>
 #include <xmlrpc-c/server_pstream.hpp>
@@ -18,10 +21,16 @@ class Fetch;
 class HandShake;
 
 struct Cmd{
-    Cmd(){}
-    Cmd(string n,string p):name(n),param(p){}
+    //stop,status,quit
+    Cmd(string n):name(n){longVal = intVal = 0; strVal=string("");}
+    //receiveChunk start chunkSize
+    Cmd(string n,len_t l, int i):name(n),longVal(l),intVal(i){strVal=string("");}
+    //start md5
+    Cmd(string n,string s):name(n),strVal(s){ longVal = intVal = 0;}
     string name;
-    string param;
+    string strVal;
+    len_t longVal;
+    int intVal;
 };
 
 class SlaveProxy{
@@ -45,7 +54,7 @@ private:
     //Sender cmd thread to slave
     static void* slaveSenderFunc(void* arg);
 
-    static bool sendViaXMLRPC(int socket, string name, string param);
+    static bool sendViaXMLRPC(int socket, string name, string strVal, len_t longVal, int intVal);
 
     MasterMD5Cracker* master;
 
@@ -58,6 +67,8 @@ private:
 
     queue<Cmd> cmdQueue;
 
+    bool isExisting;
+
 public:
 
     bool run();
@@ -69,18 +80,18 @@ public:
     SlaveProxy();
 
     friend class HandShake;
-    friend class Fetch;
+    friend class Feedback;
     friend class MasterMD5Cracker;
 };
 
-//Slave fetch passwords to do md5hash
-class Fetch : public xmlrpc_c::method{
+//Slave send feedback for previos passwords 
+class Feedback : public xmlrpc_c::method{
 
 private:
     SlaveProxy* slave;
 
 public:
-    Fetch(SlaveProxy* sp){
+    Feedback(SlaveProxy* sp){
         this->slave = sp;
         this->_help = "Slave fetch passwords to do md5hash";
     }
@@ -89,7 +100,7 @@ public:
 
 };
 
-//Slave fetch passwords to do md5hash
+//Slave invite master to connect back to itself 
 class HandShake : public xmlrpc_c::method{
 
 private:

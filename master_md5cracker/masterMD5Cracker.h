@@ -3,10 +3,14 @@
 
 #include "../configure.h"
 #include "slaveProxy.h"
+#include "passGenerator.h"
 #include <string>
 #include <map>
+#include <set>
+#include <deque>
 #include <unordered_map> //experimtal in c++11
 #include <pthread.h>
+#include <semaphore.h>
 
 using namespace std;
 
@@ -54,16 +58,17 @@ private:
     //used by runLocal, based on recursion, it's based on recursion to generate all password combination  and it's proper for single-threaded processing
     bool crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level);
 
-    //number of all passwords possible, it seems recursion make it extremenly slow and not proper for the distribution to the slaves,we need some other algorithm to generate the combinations of password.
-    int _generateAllPossiblePWs(int len, vector<char>& charArr, string& newPass, int level, int& count);
-
-    int generateAllPossiblePWs(int len);
+    
+    //The push mode thread that send passwords to slaves 
+    static void* generateThreadFunc(void* arg); 
 
     bool startDistributedCracking(string md5);
 
     bool endDistributedCracking();
     
-    void issueCmd(Cmd& cmd);
+    void issueCmdAll(Cmd& cmd);
+
+    void issueCmdRoundRobin(deque<Cmd>& cmds);
 
     void cmdHelp();
 
@@ -71,6 +76,7 @@ private:
 
     bool isExistSlave(string& key);
 
+    //be care of race condition in these 3 functions below
     void registerSlave(string& key,SlaveProxy& proxy);
 
     void unregisterSlave(string& key);
@@ -80,12 +86,16 @@ private:
 private:
     //BST cmd handlers
     map<string,CmdHandler> cmdHandlers;
+
     //HASHTABLE slaves
     unordered_map<string, SlaveProxy> slaveProxies;
+    //An associated advisory mutex-lock, anti race-condition
+    pthread_mutex_t slaves_mutex;
+
     //map<string, SlaveProxy> slaveProxies;
 
     //Max len of password
-    static const int PASSLEN = PASS_LEN;
+    static int PASSLEN ;
 
     //state
     bool isExisting;
@@ -95,8 +105,25 @@ private:
     //listen socket
     int listeningSocket;
 
+    //Listen to the connections from slaves
     pthread_t listeningThread;
 
+    //Generate passwords and push them to slaves
+    pthread_t generateThread;
+ 
+    //A batch of passwords to be sent to slave each time
+    int chunkSize;
+  
+    //on-going bad pass range found by slaves. no need to cal them again
+    set<len_t> badPassRanges;
+    //on-going md5
+    string md5;
+    //on-going pass
+    string pass;
+    
+    //record already found pairs
+    unordered_map<string, string> md5Records;
+    
     //run time
     double timeSpent;
 

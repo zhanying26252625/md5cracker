@@ -72,9 +72,9 @@ void MasterProxy::stop(SlaveMD5Cracker* slave){
 
 }
 
-void MasterProxy::fetch(SlaveMD5Cracker* slave){
+void MasterProxy::feedback(SlaveMD5Cracker* slave){
 
-    cout<<"Fetch new batch of passwords"<<endl;
+    cout<<"Send feedback of previous batch of passwords"<<endl;
 
 }
 

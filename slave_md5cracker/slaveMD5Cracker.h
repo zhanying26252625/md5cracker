@@ -13,12 +13,17 @@
 using namespace std;
 
 class MasterProxy;
-
+class StartMethod;
+class ReceiveChunkMethod;
+class StopMethod;
+class StatusMethod;
+class QuitMethod;
+ 
 class SlaveMD5Cracker{
 
 private:
 
-    enum State{HANDSHAKE,WAIT,FETCH,STOP};
+    enum State{HANDSHAKE,WAIT,FEEDBACK,STOP};
 
 private:
 
@@ -51,12 +56,21 @@ private:
 
     enum State state;
 
+    bool isCracking ;
+
+    string targetMd5;
+
 public:
 
     SlaveMD5Cracker();
 
     void run();
-    
+
+    friend class StartMethod;
+    friend class ReceiveChunkMethod;
+    friend class StopMethod;
+    friend class StatusMethod;
+    friend class QuitMethod;
     friend class MasterProxy;
 };
 
@@ -71,6 +85,16 @@ public:
     void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );
 };
 
+class ReceiveChunkMethod : public xmlrpc_c::method{
+private:
+    SlaveMD5Cracker* slaveCracker;
+public:
+    ReceiveChunkMethod( SlaveMD5Cracker* sc){
+        this->slaveCracker = sc;
+        this->_help = "receive a chunk of password";
+    }
+    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );
+};
 
 class StopMethod : public xmlrpc_c::method{
 private:

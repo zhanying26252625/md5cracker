@@ -17,16 +17,18 @@
 
 using namespace std;
 
-//int MasterMD5Cracker::PASSLEN = 10;
+int MasterMD5Cracker::PASSLEN = PASS_LEN;
 
 MasterMD5Cracker::MasterMD5Cracker(){
     isCracking = false;
     isExisting = false;
     timeSpent = 0.0;
+    //initialized to be unlocked
+    pthread_mutex_init(&slaves_mutex,NULL);
 }
 
 MasterMD5Cracker::~MasterMD5Cracker(){
-    
+    pthread_mutex_destroy(&slaves_mutex);
 }
 
 bool MasterMD5Cracker::createListeningThread(){
@@ -108,13 +110,13 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
         string key = slaveAddr + string(buf);
     
         logMgr << "New slave connection ["<<slaveAddr<<"] ["<<slavePort<<"]"<<" Key is ["<<key<<"]" <<endl;
-    
+   
+        /* unlikely exists duplicates since when a slave is gone, it's already unregistered
         if( master->isExistSlave(key) ){
-
             logMgr << "[WARN] Dupliate connection, remove previous one "<<endl;
             master->unregisterSlave(key); 
-            
         }
+        */
 
         //create slave proxy
         SlaveProxy slave;
@@ -149,16 +151,31 @@ bool MasterMD5Cracker::isExistSlave(string& key){
 
 void MasterMD5Cracker::registerSlave(string& key,SlaveProxy& proxy){
 
+    pthread_mutex_lock(&slaves_mutex);
     slaveProxies[key] = proxy;
+    pthread_mutex_unlock(&slaves_mutex);
 }
 
 void MasterMD5Cracker::unregisterSlave(string& key){
     
+    //LogManager& logMgr = LogManager::getInstance();
+    
+    pthread_mutex_lock(&slaves_mutex);
+    
+    //logMgr <<endl<< "unregisterSlave lock" <<endl;
+
     SlaveProxy& proxy = slaveProxies[key]; 
     
     proxy.terminate();
     
     slaveProxies.erase(key);
+
+    //Test mutex to avoid race condition
+    //sleep(5);
+
+    pthread_mutex_unlock(&slaves_mutex);
+
+    //logMgr <<endl<< "unregisterSlave unlock" <<endl;
 }
 
 
@@ -190,7 +207,7 @@ void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
  
     Cmd cmd("start",pwMd5);
 
-    master->issueCmd(cmd);
+    master->issueCmdAll(cmd);
 
     master->isCracking = true;
 
@@ -206,15 +223,19 @@ bool MasterMD5Cracker::endDistributedCracking(){
     if( !this->isCracking )
         return false;
 
+    //LogManager& logMgr = LogManager::getInstance();
+    
+    //end the generation thread
+    pthread_cancel(this->generateThread);
+
+    void* retVal;
+    pthread_join(this->generateThread,&retVal);
+
+    //logMgr << "Password generation thread is terminating......" << endl;
+    
     return true;
 }
 
-// distributed cracking, pull mode
-// now trying to figure all possible passwords
-bool MasterMD5Cracker::startDistributedCracking(string md5){
-
-    return true;
-}
 
 void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
 
@@ -226,20 +247,113 @@ void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
         cout<<"There is no on-going cracking process"<<endl;
         return NULL;
     }
- 
-    if( master->numOfSlaves()==0 ){
-        cout<<"There is no slave connected"<<endl;
-        return NULL;
-    }
 
     Cmd cmd("stop","");
 
-    master->issueCmd(cmd);
+    master->issueCmdAll(cmd);
+
+    master->endDistributedCracking();
 
     master->isCracking = false;
     
     return NULL;
 }
+
+// distributed cracking, push mode
+// now trying to figure all possible passwords
+bool MasterMD5Cracker::startDistributedCracking(string md5){
+
+    LogManager& logMgr = LogManager::getInstance();
+
+    //clear
+    this->md5 = md5;
+    this->pass = string("");
+    this->chunkSize = CHUNK_SIZE;
+    this->badPassRanges.clear();
+
+    //create listening thread
+    pthread_t thread;
+
+    int rc = pthread_create(&thread,NULL,MasterMD5Cracker::generateThreadFunc,(void*)this);
+
+    if(-1 == rc){
+        logMgr << "[ERROR] can't create pass generation thread" << endl;
+        return false;
+    }
+
+    this->generateThread = thread;
+
+    return true;
+}
+
+
+//The push mode thread that send passwords to slaves 
+void* MasterMD5Cracker::generateThreadFunc(void* arg){
+
+    LogManager& logMgr = LogManager::getInstance();
+    
+    logMgr << "Password generation thread is running......" << endl;
+    
+    MasterMD5Cracker* master = (MasterMD5Cracker*)arg;
+
+    int chunkSize = master->chunkSize;
+
+    PassGenerator pg;
+    
+    len_t max = pg.getMax(master->PASSLEN); 
+
+    //logMgr <<"Max is "<<max << " for length of "<< master->PASSLEN<<endl;
+
+    deque<Cmd> cmds;
+
+    unsigned int batchSize = 16;
+
+    while(master->isCracking && master->numOfSlaves() != 0){
+
+        len_t cur = 0;
+
+        while( master->isCracking && cur < max ){
+
+            //start
+            len_t start = cur;
+
+            //size of chunk actually
+            int size = chunkSize;
+
+            if(start+size > max){
+                size = max - start;
+            }
+
+            cur += chunkSize;
+
+            //It's not in bad password range
+            if( 0 == master->badPassRanges.count(start) ){
+            //send it to one slave for cracking
+            //cout << "["<<start<<","<<start+size<<"]"<<endl;      
+            //sleep(1);
+                
+                Cmd c("receiveChunk",start,chunkSize);
+
+                cmds.push_back(c);
+
+                if( cmds.size() == batchSize){
+
+                    master->issueCmdRoundRobin(cmds);
+                
+                    cmds.clear();
+                    //dont overwhelm the slaves
+                    sleep(4);
+                }
+            }
+        }
+
+    }
+
+    logMgr << "Password generation thread existing......" << endl;
+
+    return NULL;
+}
+
 
 void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){
     
@@ -254,7 +368,7 @@ void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){
         return NULL;
     }
 
-    master->issueCmd(cmd);
+    master->issueCmdAll(cmd);
  
     return NULL;
 }
@@ -293,18 +407,25 @@ void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){
    
     Cmd cmd("quit","");
 
-    master->issueCmd(cmd);
+    master->issueCmdAll(cmd);
 
     master->isExisting = true;
 
     return NULL;
 }
 
-void MasterMD5Cracker::issueCmd(Cmd& cmd){
+//Be care of race condition from slaveProxies
+
+void MasterMD5Cracker::issueCmdAll(Cmd& cmd){
 
     LogManager& logMgr = LogManager::getInstance();
 
     logMgr <<endl<< "Issue Command " << cmd.name <<" to all slaves" <<endl;
+
+    pthread_mutex_lock(&slaves_mutex);
+
+    if( numOfSlaves() == 0 )
+        return;
 
     unordered_map<string, SlaveProxy>::iterator iter = this->slaveProxies.begin();
 
@@ -314,6 +435,48 @@ void MasterMD5Cracker::issueCmd(Cmd& cmd){
 
         iter++;
     }
+
+    pthread_mutex_unlock(&slaves_mutex);
+}
+
+//it's useful to evenly distribute password for cracking
+void MasterMD5Cracker::issueCmdRoundRobin(deque<Cmd>& cmds){
+
+    //LogManager& logMgr = LogManager::getInstance();
+
+    //logMgr <<endl<< "Issue Command to all slaves in a Round-Robin fashion" <<endl;
+
+    //Be care of race condition here since slaveProxies is a shared resource for threads
+    
+    pthread_mutex_lock(&slaves_mutex);
+
+    //No slaves are there around
+    if(numOfSlaves() == 0){
+        pthread_mutex_unlock(&slaves_mutex);
+        return;
+    }
+
+    //logMgr <<endl<< "isseCmdRoundRobin lock" <<endl;
+    unordered_map<string, SlaveProxy>::iterator iter = this->slaveProxies.begin();
+    
+    while( cmds.size() != 0 && isCracking ){
+
+        Cmd cmd = cmds.front();
+
+        cmds.pop_front();
+
+        if(iter == this->slaveProxies.end()){
+                iter = this->slaveProxies.begin(); 
+        }
+
+        (*iter).second.issueCmd(cmd);
+
+        iter++;
+    }
+
+    pthread_mutex_unlock(&slaves_mutex);
+
+    //logMgr <<endl<< "isseCmdRoundRobin unlock" <<endl;
 }
 
 void MasterMD5Cracker:: initUserCmd(){
@@ -465,63 +628,6 @@ bool MasterMD5Cracker::crackPasswordLen(string& md5, string& pass, int len, vect
 
     return false;
 }
-
-int MasterMD5Cracker::_generateAllPossiblePWs(int len, vector<char>& charArr,string& newPass, int level, int& count){
-        
-    if( level == len ){
-        count++;
-        //cout << newPass <<endl;
-    }
-    else{
-
-        for(unsigned int i = 0; i< charArr.size(); i++){
-
-            //newPass.push_back( charArr[i] );
-
-            _generateAllPossiblePWs(len,charArr,newPass,level+1,count);
-
-            //newPass.erase(level,1);
-        }
-    }
-
-    return 0;
-}
-
-
-int MasterMD5Cracker::generateAllPossiblePWs(int len){
-
-    int count = 0;
-
-    string newPass;
-
-    newPass.reserve(len);
-/*
- *Assume Password only contains
- A-Z
- a-z
- 0-9
- * */
-
-    //init character array
-    vector<char> charArr;
-
-    for(char c = 'A'; c <= 'Z'; c++)
-        charArr.push_back(c);
-
-    for(char c = 'a'; c <= 'z'; c++)
-        charArr.push_back(c);
-
-    for(char c = '0'; c <= '9'; c++)
-        charArr.push_back(c);
-
-
-    _generateAllPossiblePWs(len,charArr,newPass,0,count);
-
-    cout <<"There are ["<<count <<"]"<<" passwords of length "<<len <<endl;
-
-    return count;
-}
-
 
 
 //A distributed md5 cracker

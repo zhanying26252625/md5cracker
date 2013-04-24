@@ -1,6 +1,6 @@
 #include "../configure.h"
 #include "slaveMD5Cracker.h"
-
+#include "passGenerator.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -21,6 +21,7 @@ using namespace std;
 
 SlaveMD5Cracker::SlaveMD5Cracker(){
 
+    isCracking = false;
     this->state = HANDSHAKE;
 }
 
@@ -114,7 +115,7 @@ bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){
 
 void* SlaveMD5Cracker::masterSenderFunc(void* arg){
     //senc commands to master
-    //Handshake,fetch,etc
+    //Handshake,etc
     SlaveMD5Cracker* slave = (SlaveMD5Cracker*)arg;
 
     cout<<"Send handshake command to master"<<endl;
@@ -127,15 +128,14 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
                 MasterProxy::handshake(slave);
                 slave->state = WAIT;
                 break;
-            //Fetch new chunk of passwords to do MD5 hashing
-            case FETCH:
-                MasterProxy::fetch(slave);
+            //feedback
+            case FEEDBACK:
+                MasterProxy::feedback(slave);
                 break;
             //Stop current hashing
             case STOP:
                 MasterProxy::stop(slave);
                 break;
-                
             //Nothing special to do
             case WAIT:
                 usleep(500);
@@ -220,11 +220,13 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
 
         const xmlrpc_c::methodPtr startMethodP(new StartMethod(this));
         const xmlrpc_c::methodPtr stopMethodP(new StopMethod(this));
+        const xmlrpc_c::methodPtr receiveChunkMethodP(new ReceiveChunkMethod(this));
         const xmlrpc_c::methodPtr statusMethodP(new StatusMethod(this));
         const xmlrpc_c::methodPtr quitMethodP(new QuitMethod(this));
         
         myReg.addMethod("start",startMethodP);
         myReg.addMethod("stop",stopMethodP);
+        myReg.addMethod("receiveChunk",receiveChunkMethodP);
         myReg.addMethod("status",statusMethodP);
         myReg.addMethod("quit",quitMethodP);
 
@@ -254,6 +256,10 @@ void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* 
 
     *retValP = xmlrpc_c::value_string(string("Accept"));
 
+    slaveCracker->targetMd5 = md5;
+
+    slaveCracker->isCracking = true;
+
     return;
 }
 
@@ -262,7 +268,39 @@ void StopMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* r
     cout << "[Command] Stop cracking" <<endl;
     
     *retValP = xmlrpc_c::value_string(string("Accept"));
+
+    slaveCracker->targetMd5 = string("");
+    
+    slaveCracker->isCracking = false;
+
+    //Stop cracking thread and clean resource
+
 }
+
+void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
+
+    if(slaveCracker->isCracking){
+        *retValP = xmlrpc_c::value_string(string("Accept"));
+    }
+    else{
+        *retValP = xmlrpc_c::value_string(string("Deny"));
+        return;
+    }
+    
+    //cout << "[Command] Receive Chunk of Passwords" <<endl;
+    
+    //value_i8 is long long, which is supported by xmlrpc
+    //start
+    string strVal = paramList.getString(0);
+
+    len_t start = paramList.getI8(1);
+    //chunkSize
+    int chunkSize = paramList.getInt(2);
+
+    cout << "[Command] Receive Password range ["<<start<<","<< start + chunkSize << ")" <<endl;
+
+}
+
 
 void StatusMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
 
@@ -278,6 +316,7 @@ void QuitMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* r
     *retValP = xmlrpc_c::value_string(string("Accept"));
 
     cout <<"Terminated by master"<<endl;
+    
     //end this program
     exit(1);
 }

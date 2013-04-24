@@ -5,111 +5,165 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 BUFFER_SIZE	master_md5cracker/md5.h	/^	static const size_t BUFFER_SIZE = 1024*16;$/;"	m	class:MD5
-CC	Makefile	/^CC = g++$/;"	m
+BUFFER_SIZE	slave_md5cracker/md5.h	/^	static const size_t BUFFER_SIZE = 1024*16;$/;"	m	class:MD5
 CC	master_md5cracker/Makefile	/^CC = g++$/;"	m
 CC	slave_md5cracker/Makefile	/^CC = g++$/;"	m
-CFLAGS	Makefile	/^CFLAGS = -Wall -o3 -g$/;"	m
 CFLAGS	master_md5cracker/Makefile	/^CFLAGS = -std=c++11 -Wall -g  $/;"	m
 CFLAGS	slave_md5cracker/Makefile	/^CFLAGS = -std=c++11 -Wall -g  $/;"	m
+CHUNK_SIZE	configure.h	/^static const int CHUNK_SIZE = 1024*1024*4;$/;"	v
 COUT	master_md5cracker/logManager.h	8;"	d
-Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(){}$/;"	f	struct:Cmd
-Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n,string p):name(n),param(p){}$/;"	f	struct:Cmd
+Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n):name(n){longVal = intVal = 0; strVal=string("");}$/;"	f	struct:Cmd
+Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n,len_t l, int i):name(n),longVal(l),intVal(i){strVal=string("");}$/;"	f	struct:Cmd
+Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n,string s):name(n),strVal(s){ longVal = intVal = 0;}$/;"	f	struct:Cmd
 Cmd	master_md5cracker/slaveProxy.h	/^struct Cmd{$/;"	s
 CmdHandler	master_md5cracker/masterMD5Cracker.h	/^    typedef void* (*CmdHandler)(MasterMD5Cracker* master, void* arg);$/;"	t	class:MasterMD5Cracker
 F	master_md5cracker/md5.cpp	54;"	d	file:
-FETCH	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FETCH,STOP};$/;"	e	enum:SlaveMD5Cracker::State
+F	slave_md5cracker/md5.cpp	54;"	d	file:
+FEEDBACK	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FEEDBACK,STOP};$/;"	e	enum:SlaveMD5Cracker::State
 FF	master_md5cracker/md5.cpp	66;"	d	file:
+FF	slave_md5cracker/md5.cpp	66;"	d	file:
 FILELOG	master_md5cracker/logManager.h	9;"	d
-Fetch	master_md5cracker/slaveProxy.h	/^    Fetch(SlaveProxy* sp){$/;"	f	class:Fetch
-Fetch	master_md5cracker/slaveProxy.h	/^class Fetch : public xmlrpc_c::method{$/;"	c
+Feedback	master_md5cracker/slaveProxy.h	/^    Feedback(SlaveProxy* sp){$/;"	f	class:Feedback
+Feedback	master_md5cracker/slaveProxy.h	/^class Feedback : public xmlrpc_c::method{$/;"	c
 G	master_md5cracker/md5.cpp	55;"	d	file:
+G	slave_md5cracker/md5.cpp	55;"	d	file:
 GG	master_md5cracker/md5.cpp	71;"	d	file:
+GG	slave_md5cracker/md5.cpp	71;"	d	file:
 H	master_md5cracker/md5.cpp	56;"	d	file:
-HANDSHAKE	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FETCH,STOP};$/;"	e	enum:SlaveMD5Cracker::State
+H	slave_md5cracker/md5.cpp	56;"	d	file:
+HANDSHAKE	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FEEDBACK,STOP};$/;"	e	enum:SlaveMD5Cracker::State
 HEX	master_md5cracker/md5.cpp	/^const char MD5::HEX[16] = {$/;"	m	class:MD5	file:
 HEX	master_md5cracker/md5.h	/^	static const char HEX[16];$/;"	m	class:MD5
+HEX	slave_md5cracker/md5.cpp	/^const char MD5::HEX[16] = {$/;"	m	class:MD5	file:
+HEX	slave_md5cracker/md5.h	/^	static const char HEX[16];$/;"	m	class:MD5
 HH	master_md5cracker/md5.cpp	76;"	d	file:
+HH	slave_md5cracker/md5.cpp	76;"	d	file:
 HandShake	master_md5cracker/slaveProxy.h	/^    HandShake(SlaveProxy* sp){$/;"	f	class:HandShake
 HandShake	master_md5cracker/slaveProxy.h	/^class HandShake : public xmlrpc_c::method{$/;"	c
 I	master_md5cracker/md5.cpp	57;"	d	file:
+I	slave_md5cracker/md5.cpp	57;"	d	file:
 II	master_md5cracker/md5.cpp	81;"	d	file:
+II	slave_md5cracker/md5.cpp	81;"	d	file:
 LIST	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
 LogManager	master_md5cracker/logManager.cpp	/^LogManager::LogManager(const string& logName){$/;"	f	class:LogManager
 LogManager	master_md5cracker/logManager.h	/^    LogManager(){}$/;"	f	class:LogManager
 LogManager	master_md5cracker/logManager.h	/^    LogManager(const LogManager& logMgr){}$/;"	f	class:LogManager
 LogManager	master_md5cracker/logManager.h	/^class LogManager{$/;"	c
+MASTER_DIR	Makefile	/^MASTER_DIR = .\/master_md5cracker$/;"	m
 MASTER_PORT	configure.h	/^static const int MASTER_PORT = 12625;$/;"	v
 MD5	master_md5cracker/md5.cpp	/^MD5::MD5() {$/;"	f	class:MD5
 MD5	master_md5cracker/md5.h	/^class MD5 {$/;"	c
+MD5	slave_md5cracker/md5.cpp	/^MD5::MD5() {$/;"	f	class:MD5
+MD5	slave_md5cracker/md5.h	/^class MD5 {$/;"	c
 MD5_H	master_md5cracker/md5.h	2;"	d
+MD5_H	slave_md5cracker/md5.h	2;"	d
 MasterMD5Cracker	master_md5cracker/masterMD5Cracker.cpp	/^MasterMD5Cracker::MasterMD5Cracker(){$/;"	f	class:MasterMD5Cracker
 MasterMD5Cracker	master_md5cracker/masterMD5Cracker.h	/^class MasterMD5Cracker{$/;"	c
 MasterProxy	slave_md5cracker/masterProxy.cpp	/^MasterProxy::MasterProxy(){$/;"	f	class:MasterProxy
 MasterProxy	slave_md5cracker/masterProxy.h	/^class MasterProxy{$/;"	c
 PADDING	master_md5cracker/md5.cpp	/^const byte MD5::PADDING[64] = { 0x80 };$/;"	m	class:MD5	file:
 PADDING	master_md5cracker/md5.h	/^	static const byte PADDING[64];	\/* padding for calculate *\/$/;"	m	class:MD5
-PASSLEN	master_md5cracker/masterMD5Cracker.h	/^    static const int PASSLEN = PASS_LEN;$/;"	m	class:MasterMD5Cracker
+PADDING	slave_md5cracker/md5.cpp	/^const byte MD5::PADDING[64] = { 0x80 };$/;"	m	class:MD5	file:
+PADDING	slave_md5cracker/md5.h	/^	static const byte PADDING[64];	\/* padding for calculate *\/$/;"	m	class:MD5
+PASSLEN	master_md5cracker/masterMD5Cracker.cpp	/^int MasterMD5Cracker::PASSLEN = PASS_LEN;$/;"	m	class:MasterMD5Cracker	file:
+PASSLEN	master_md5cracker/masterMD5Cracker.h	/^    static int PASSLEN ;$/;"	m	class:MasterMD5Cracker
 PASS_LEN	configure.h	/^static const int PASS_LEN = 10;$/;"	v
 PassGenerator	master_md5cracker/passGenerator.cpp	/^PassGenerator::PassGenerator(len_t startPosition, int chunkSize){$/;"	f	class:PassGenerator
 PassGenerator	master_md5cracker/passGenerator.h	/^class PassGenerator{$/;"	c
+PassGenerator	slave_md5cracker/passGenerator.cpp	/^PassGenerator::PassGenerator(len_t startPosition, int chunkSize){$/;"	f	class:PassGenerator
+PassGenerator	slave_md5cracker/passGenerator.h	/^class PassGenerator{$/;"	c
 QUIT	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
 QuitMethod	slave_md5cracker/slaveMD5Cracker.h	/^    QuitMethod( SlaveMD5Cracker* sc){$/;"	f	class:QuitMethod
 QuitMethod	slave_md5cracker/slaveMD5Cracker.h	/^class QuitMethod : public xmlrpc_c::method{$/;"	c
 ROTATE_LEFT	master_md5cracker/md5.cpp	61;"	d	file:
+ROTATE_LEFT	slave_md5cracker/md5.cpp	61;"	d	file:
+ReceiveChunkMethod	slave_md5cracker/slaveMD5Cracker.h	/^    ReceiveChunkMethod( SlaveMD5Cracker* sc){$/;"	f	class:ReceiveChunkMethod
+ReceiveChunkMethod	slave_md5cracker/slaveMD5Cracker.h	/^class ReceiveChunkMethod : public xmlrpc_c::method{$/;"	c
 S11	master_md5cracker/md5.cpp	34;"	d	file:
+S11	slave_md5cracker/md5.cpp	34;"	d	file:
 S12	master_md5cracker/md5.cpp	35;"	d	file:
+S12	slave_md5cracker/md5.cpp	35;"	d	file:
 S13	master_md5cracker/md5.cpp	36;"	d	file:
+S13	slave_md5cracker/md5.cpp	36;"	d	file:
 S14	master_md5cracker/md5.cpp	37;"	d	file:
+S14	slave_md5cracker/md5.cpp	37;"	d	file:
 S21	master_md5cracker/md5.cpp	38;"	d	file:
+S21	slave_md5cracker/md5.cpp	38;"	d	file:
 S22	master_md5cracker/md5.cpp	39;"	d	file:
+S22	slave_md5cracker/md5.cpp	39;"	d	file:
 S23	master_md5cracker/md5.cpp	40;"	d	file:
+S23	slave_md5cracker/md5.cpp	40;"	d	file:
 S24	master_md5cracker/md5.cpp	41;"	d	file:
+S24	slave_md5cracker/md5.cpp	41;"	d	file:
 S31	master_md5cracker/md5.cpp	42;"	d	file:
+S31	slave_md5cracker/md5.cpp	42;"	d	file:
 S32	master_md5cracker/md5.cpp	43;"	d	file:
+S32	slave_md5cracker/md5.cpp	43;"	d	file:
 S33	master_md5cracker/md5.cpp	44;"	d	file:
+S33	slave_md5cracker/md5.cpp	44;"	d	file:
 S34	master_md5cracker/md5.cpp	45;"	d	file:
+S34	slave_md5cracker/md5.cpp	45;"	d	file:
 S41	master_md5cracker/md5.cpp	46;"	d	file:
+S41	slave_md5cracker/md5.cpp	46;"	d	file:
 S42	master_md5cracker/md5.cpp	47;"	d	file:
+S42	slave_md5cracker/md5.cpp	47;"	d	file:
 S43	master_md5cracker/md5.cpp	48;"	d	file:
+S43	slave_md5cracker/md5.cpp	48;"	d	file:
 S44	master_md5cracker/md5.cpp	49;"	d	file:
+S44	slave_md5cracker/md5.cpp	49;"	d	file:
+SLAVE_DIR	Makefile	/^SLAVE_DIR = .\/slave_md5cracker$/;"	m
 SLAVE_PORT	configure.h	/^static const int SLAVE_PORT = 12626;$/;"	v
 START	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
 STATUS	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
 STOP	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
-STOP	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FETCH,STOP};$/;"	e	enum:SlaveMD5Cracker::State
+STOP	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FEEDBACK,STOP};$/;"	e	enum:SlaveMD5Cracker::State
 SlaveMD5Cracker	slave_md5cracker/slaveMD5Cracker.cpp	/^SlaveMD5Cracker::SlaveMD5Cracker(){$/;"	f	class:SlaveMD5Cracker
 SlaveMD5Cracker	slave_md5cracker/slaveMD5Cracker.h	/^class SlaveMD5Cracker{$/;"	c
 SlaveProxy	master_md5cracker/slaveProxy.cpp	/^SlaveProxy::SlaveProxy(){$/;"	f	class:SlaveProxy
 SlaveProxy	master_md5cracker/slaveProxy.h	/^class SlaveProxy{$/;"	c
 StartMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StartMethod( SlaveMD5Cracker* sc){$/;"	f	class:StartMethod
 StartMethod	slave_md5cracker/slaveMD5Cracker.h	/^class StartMethod : public xmlrpc_c::method{$/;"	c
-State	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FETCH,STOP};$/;"	g	class:SlaveMD5Cracker
+State	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FEEDBACK,STOP};$/;"	g	class:SlaveMD5Cracker
 StatusMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StatusMethod( SlaveMD5Cracker* sc){$/;"	f	class:StatusMethod
 StatusMethod	slave_md5cracker/slaveMD5Cracker.h	/^class StatusMethod : public xmlrpc_c::method{$/;"	c
 StopMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StopMethod( SlaveMD5Cracker* sc){$/;"	f	class:StopMethod
 StopMethod	slave_md5cracker/slaveMD5Cracker.h	/^class StopMethod : public xmlrpc_c::method{$/;"	c
 UserCmd	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	g	class:MasterMD5Cracker
-WAIT	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FETCH,STOP};$/;"	e	enum:SlaveMD5Cracker::State
+WAIT	slave_md5cracker/slaveMD5Cracker.h	/^    enum State{HANDSHAKE,WAIT,FEEDBACK,STOP};$/;"	e	enum:SlaveMD5Cracker::State
 _CONFIG_H	configure.h	2;"	d
 _LOG_MGR_H	master_md5cracker/logManager.h	2;"	d
 _MASTER_H	master_md5cracker/masterMD5Cracker.h	2;"	d
 _MASTER_PROXY_H	slave_md5cracker/masterProxy.h	2;"	d
 _PASS_GENERATOR_H	master_md5cracker/passGenerator.h	2;"	d
+_PASS_GENERATOR_H	slave_md5cracker/passGenerator.h	2;"	d
 _SLAVE_MD5CRACKER_	slave_md5cracker/slaveMD5Cracker.h	2;"	d
 _SLAVE_PROXY_H	master_md5cracker/slaveProxy.h	2;"	d
 _buffer	master_md5cracker/md5.h	/^	byte _buffer[64];	\/* input buffer *\/$/;"	m	class:MD5
+_buffer	slave_md5cracker/md5.h	/^	byte _buffer[64];	\/* input buffer *\/$/;"	m	class:MD5
 _count	master_md5cracker/md5.h	/^	ulong _count[2];	\/* number of bits, modulo 2^64 (low-order word first) *\/$/;"	m	class:MD5
+_count	slave_md5cracker/md5.h	/^	ulong _count[2];	\/* number of bits, modulo 2^64 (low-order word first) *\/$/;"	m	class:MD5
 _digest	master_md5cracker/md5.h	/^	byte _digest[16];	\/* message digest *\/$/;"	m	class:MD5
+_digest	slave_md5cracker/md5.h	/^	byte _digest[16];	\/* message digest *\/$/;"	m	class:MD5
 _finished	master_md5cracker/md5.h	/^	bool _finished;		\/* calculate finished ? *\/$/;"	m	class:MD5
-_generateAllPossiblePWs	master_md5cracker/masterMD5Cracker.cpp	/^int MasterMD5Cracker::_generateAllPossiblePWs(int len, vector<char>& charArr,string& newPass, int level, int& count){$/;"	f	class:MasterMD5Cracker
+_finished	slave_md5cracker/md5.h	/^	bool _finished;		\/* calculate finished ? *\/$/;"	m	class:MD5
 _state	master_md5cracker/md5.h	/^	ulong _state[4];	\/* state (ABCD) *\/$/;"	m	class:MD5
+_state	slave_md5cracker/md5.h	/^	ulong _state[4];	\/* state (ABCD) *\/$/;"	m	class:MD5
+badPassRanges	master_md5cracker/masterMD5Cracker.h	/^    set<len_t> badPassRanges;$/;"	m	class:MasterMD5Cracker
 base	master_md5cracker/passGenerator.h	/^    int base;$/;"	m	class:PassGenerator
+base	slave_md5cracker/passGenerator.h	/^    int base;$/;"	m	class:PassGenerator
 byte	master_md5cracker/md5.h	/^typedef unsigned char byte;$/;"	t
+byte	slave_md5cracker/md5.h	/^typedef unsigned char byte;$/;"	t
 bytesToHexString	master_md5cracker/md5.cpp	/^string MD5::bytesToHexString(const byte *input, size_t length) {$/;"	f	class:MD5
+bytesToHexString	slave_md5cracker/md5.cpp	/^string MD5::bytesToHexString(const byte *input, size_t length) {$/;"	f	class:MD5
 calMD5FromFile	master_md5cracker/md5.cpp	/^string MD5::calMD5FromFile(const string& fileName){$/;"	f	class:MD5
+calMD5FromFile	slave_md5cracker/md5.cpp	/^string MD5::calMD5FromFile(const string& fileName){$/;"	f	class:MD5
 calMD5FromString	master_md5cracker/md5.cpp	/^string MD5::calMD5FromString(const string& str) {$/;"	f	class:MD5
+calMD5FromString	slave_md5cracker/md5.cpp	/^string MD5::calMD5FromString(const string& str) {$/;"	f	class:MD5
 charArr	master_md5cracker/passGenerator.h	/^    vector<char> charArr;$/;"	m	class:PassGenerator
+charArr	slave_md5cracker/passGenerator.h	/^    vector<char> charArr;$/;"	m	class:PassGenerator
+chunkSize	master_md5cracker/masterMD5Cracker.h	/^    int chunkSize;$/;"	m	class:MasterMD5Cracker
 chunkSize	master_md5cracker/passGenerator.h	/^    int chunkSize;$/;"	m	class:PassGenerator
+chunkSize	slave_md5cracker/passGenerator.h	/^    int chunkSize;$/;"	m	class:PassGenerator
 cmdHandlers	master_md5cracker/masterMD5Cracker.h	/^    map<string,CmdHandler> cmdHandlers;$/;"	m	class:MasterMD5Cracker
 cmdHelp	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::cmdHelp(){$/;"	f	class:MasterMD5Cracker
 cmdList	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker
@@ -120,53 +174,73 @@ cmdStatus	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdSt
 cmdStop	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker
 connectToMaster	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){$/;"	f	class:SlaveMD5Cracker
 crackPasswordLen	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level){$/;"	f	class:MasterMD5Cracker
-createAndBindSocket	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::createAndBindSocket(int& socketPort){$/;"	f	class:SlaveMD5Cracker
+createAndBindSocket	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::createAndBindSocket(int& socketPort, int& sock){$/;"	f	class:SlaveMD5Cracker
 createListeningThread	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::createListeningThread(){$/;"	f	class:MasterMD5Cracker
 cui	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::cui(){$/;"	f	class:MasterMD5Cracker
 current	master_md5cracker/passGenerator.h	/^    len_t current;$/;"	m	class:PassGenerator
+current	slave_md5cracker/passGenerator.h	/^    len_t current;$/;"	m	class:PassGenerator
 decode	master_md5cracker/md5.cpp	/^void MD5::decode(const byte *input, ulong *output, size_t length) {$/;"	f	class:MD5
+decode	slave_md5cracker/md5.cpp	/^void MD5::decode(const byte *input, ulong *output, size_t length) {$/;"	f	class:MD5
 digest	master_md5cracker/md5.cpp	/^const byte* MD5::digest() {$/;"	f	class:MD5
+digest	slave_md5cracker/md5.cpp	/^const byte* MD5::digest() {$/;"	f	class:MD5
 encode	master_md5cracker/md5.cpp	/^void MD5::encode(const ulong *input, byte *output, size_t length) {$/;"	f	class:MD5
+encode	slave_md5cracker/md5.cpp	/^void MD5::encode(const ulong *input, byte *output, size_t length) {$/;"	f	class:MD5
 endDistributedCracking	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::endDistributedCracking(){$/;"	f	class:MasterMD5Cracker
-execute	master_md5cracker/slaveProxy.cpp	/^void Fetch::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:Fetch
+execute	master_md5cracker/slaveProxy.cpp	/^void Feedback::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:Feedback
 execute	master_md5cracker/slaveProxy.cpp	/^void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:HandShake
 execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void QuitMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:QuitMethod
+execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:ReceiveChunkMethod
 execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StartMethod
 execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StatusMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StatusMethod
 execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StopMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StopMethod
-fetch	slave_md5cracker/masterProxy.cpp	/^void MasterProxy::fetch(SlaveMD5Cracker* slave){$/;"	f	class:MasterProxy
+feedback	slave_md5cracker/masterProxy.cpp	/^void MasterProxy::feedback(SlaveMD5Cracker* slave){$/;"	f	class:MasterProxy
 final	master_md5cracker/md5.cpp	/^void MD5::final() {$/;"	f	class:MD5
+final	slave_md5cracker/md5.cpp	/^void MD5::final() {$/;"	f	class:MD5
 func	master_md5cracker/logManager.h	/^    LogManager& operator<<(std::ostream& (*func) (std::ostream&) ){$/;"	f	class:LogManager
 generateAll	master_md5cracker/passGenerator.cpp	/^vector<string> PassGenerator::generateAll(){$/;"	f	class:PassGenerator
-generateAllPossiblePWs	master_md5cracker/masterMD5Cracker.cpp	/^int MasterMD5Cracker::generateAllPossiblePWs(int len){$/;"	f	class:MasterMD5Cracker
+generateAll	slave_md5cracker/passGenerator.cpp	/^vector<string> PassGenerator::generateAll(){$/;"	f	class:PassGenerator
+generateThread	master_md5cracker/masterMD5Cracker.h	/^    pthread_t generateThread;$/;"	m	class:MasterMD5Cracker
+generateThreadFunc	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::generateThreadFunc(void* arg){$/;"	f	class:MasterMD5Cracker
 getAvailablePort	slave_md5cracker/slaveMD5Cracker.cpp	/^int SlaveMD5Cracker::getAvailablePort(string tmpFile){$/;"	f	class:SlaveMD5Cracker
 getChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::getChar(int digit){$/;"	f	class:PassGenerator
+getChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::getChar(int digit){$/;"	f	class:PassGenerator
 getCurPassword	master_md5cracker/passGenerator.cpp	/^string PassGenerator::getCurPassword(){$/;"	f	class:PassGenerator
+getCurPassword	slave_md5cracker/passGenerator.cpp	/^string PassGenerator::getCurPassword(){$/;"	f	class:PassGenerator
 getInstance	master_md5cracker/logManager.h	/^    static LogManager& getInstance(){$/;"	f	class:LogManager
 getMasterIP	slave_md5cracker/slaveMD5Cracker.cpp	/^string SlaveMD5Cracker::getMasterIP(string fileName){$/;"	f	class:SlaveMD5Cracker
+getMax	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getMax(int len){$/;"	f	class:PassGenerator
+getMax	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getMax(int len){$/;"	f	class:PassGenerator
 getMyIP	slave_md5cracker/slaveMD5Cracker.cpp	/^string SlaveMD5Cracker::getMyIP(){$/;"	f	class:SlaveMD5Cracker
 getTimeSpent	master_md5cracker/masterMD5Cracker.h	/^    double getTimeSpent(){return timeSpent;}$/;"	f	class:MasterMD5Cracker
 handshake	slave_md5cracker/masterProxy.cpp	/^void MasterProxy::handshake(SlaveMD5Cracker* slave){$/;"	f	class:MasterProxy
 headers	master_md5cracker/Makefile	/^headers = ..\/configure.h masterMD5Cracker.h logManager.h slaveProxy.h md5.h passGenerator.h $/;"	m
-headers	slave_md5cracker/Makefile	/^headers = ..\/configure.h slaveMD5Cracker.h masterProxy.h $/;"	m
+headers	slave_md5cracker/Makefile	/^headers = ..\/configure.h slaveMD5Cracker.h masterProxy.h md5.h passGenerator.h $/;"	m
 inc	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::inc(){$/;"	f	class:PassGenerator
+inc	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::inc(){$/;"	f	class:PassGenerator
 init	master_md5cracker/md5.cpp	/^void MD5::init() {$/;"	f	class:MD5
 init	master_md5cracker/passGenerator.cpp	/^void PassGenerator::init(){$/;"	f	class:PassGenerator
+init	slave_md5cracker/md5.cpp	/^void MD5::init() {$/;"	f	class:MD5
+init	slave_md5cracker/passGenerator.cpp	/^void PassGenerator::init(){$/;"	f	class:PassGenerator
 initUserCmd	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker:: initUserCmd(){$/;"	f	class:MasterMD5Cracker
+intVal	master_md5cracker/slaveProxy.h	/^    int intVal;$/;"	m	struct:Cmd
 isCracking	master_md5cracker/masterMD5Cracker.h	/^    bool isCracking;$/;"	m	class:MasterMD5Cracker
+isCracking	slave_md5cracker/slaveMD5Cracker.h	/^    bool isCracking ;$/;"	m	class:SlaveMD5Cracker
 isExistSlave	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::isExistSlave(string& key){$/;"	f	class:MasterMD5Cracker
 isExisting	master_md5cracker/masterMD5Cracker.h	/^    bool isExisting;$/;"	m	class:MasterMD5Cracker
 isFullConnected	master_md5cracker/slaveProxy.h	/^    bool isFullConnected;$/;"	m	class:SlaveProxy
 isLogFileOpen	master_md5cracker/logManager.h	/^    bool isLogFileOpen;$/;"	m	class:LogManager
-issueCmd	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::issueCmd(Cmd& cmd){$/;"	f	class:MasterMD5Cracker
 issueCmd	master_md5cracker/slaveProxy.cpp	/^void SlaveProxy::issueCmd(Cmd& cmd){$/;"	f	class:SlaveProxy
+issueCmdAll	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::issueCmdAll(Cmd& cmd){$/;"	f	class:MasterMD5Cracker
+issueCmdRoundRobin	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::issueCmdRoundRobin(deque<Cmd>& cmds){$/;"	f	class:MasterMD5Cracker
 key	master_md5cracker/slaveProxy.h	/^    string key;$/;"	m	class:SlaveProxy
-len_t	master_md5cracker/passGenerator.h	/^typedef unsigned long long len_t;$/;"	t
+len_t	master_md5cracker/passGenerator.h	/^typedef long long len_t;$/;"	t
+len_t	slave_md5cracker/passGenerator.h	/^typedef long long len_t;$/;"	t
 listeningSocket	master_md5cracker/masterMD5Cracker.h	/^    int listeningSocket;$/;"	m	class:MasterMD5Cracker
 listeningSocket	slave_md5cracker/slaveMD5Cracker.h	/^    int listeningSocket;$/;"	m	class:SlaveMD5Cracker
 listeningThread	master_md5cracker/masterMD5Cracker.h	/^    pthread_t listeningThread;$/;"	m	class:MasterMD5Cracker
 listeningThreadFunc	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::listeningThreadFunc(void* arg){$/;"	f	class:MasterMD5Cracker
 logFile	master_md5cracker/logManager.h	/^    ofstream logFile;$/;"	m	class:LogManager
+longVal	master_md5cracker/slaveProxy.h	/^    len_t longVal;$/;"	m	struct:Cmd
 main	master_md5cracker/main.cpp	/^int main(int argc, char* argv[]){$/;"	f
 main	slave_md5cracker/main.cpp	/^int main(){$/;"	f
 master	master_md5cracker/slaveProxy.h	/^    MasterMD5Cracker* master;$/;"	m	class:SlaveProxy
@@ -174,28 +248,34 @@ masterIP	slave_md5cracker/slaveMD5Cracker.h	/^    string masterIP;$/;"	m	class:S
 masterProxy	slave_md5cracker/slaveMD5Cracker.h	/^    MasterProxy masterProxy;$/;"	m	class:SlaveMD5Cracker
 masterReceiverFunc	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){$/;"	f	class:SlaveMD5Cracker
 masterSenderFunc	slave_md5cracker/slaveMD5Cracker.cpp	/^void* SlaveMD5Cracker::masterSenderFunc(void* arg){$/;"	f	class:SlaveMD5Cracker
+md5	master_md5cracker/masterMD5Cracker.h	/^    string md5;$/;"	m	class:MasterMD5Cracker
+md5Records	master_md5cracker/masterMD5Cracker.h	/^    unordered_map<string, string> md5Records;$/;"	m	class:MasterMD5Cracker
 myIP	slave_md5cracker/slaveMD5Cracker.h	/^    string myIP;$/;"	m	class:SlaveMD5Cracker
 myListenPort	slave_md5cracker/slaveMD5Cracker.h	/^    int myListenPort;$/;"	m	class:SlaveMD5Cracker
 name	master_md5cracker/slaveProxy.h	/^    string name;$/;"	m	struct:Cmd
 nextChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(char c, bool& carry){$/;"	f	class:PassGenerator
 nextChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(int pos, bool& carry){$/;"	f	class:PassGenerator
+nextChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(char c, bool& carry){$/;"	f	class:PassGenerator
+nextChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(int pos, bool& carry){$/;"	f	class:PassGenerator
 numOfSlaves	master_md5cracker/masterMD5Cracker.h	/^    int numOfSlaves(){return slaveProxies.size();}$/;"	f	class:MasterMD5Cracker
 objects	master_md5cracker/Makefile	/^objects = main.o masterMD5Cracker.o logManager.o slaveProxy.o md5.o passGenerator.o$/;"	m
-objects	slave_md5cracker/Makefile	/^objects = main.o slaveMD5Cracker.o  masterProxy.o$/;"	m
+objects	slave_md5cracker/Makefile	/^objects = main.o slaveMD5Cracker.o  masterProxy.o md5.o passGenerator.o$/;"	m
 operator ++	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::operator++(int){$/;"	f	class:PassGenerator
+operator ++	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::operator++(int){$/;"	f	class:PassGenerator
 operator <<	master_md5cracker/logManager.h	/^    LogManager& operator<<(const T& t){$/;"	f	class:LogManager
 operator =	master_md5cracker/logManager.h	/^    LogManager& operator=(const LogManager& logMgr){return *this ;}$/;"	f	class:LogManager
-param	master_md5cracker/slaveProxy.h	/^    string param;$/;"	m	struct:Cmd
+pass	master_md5cracker/masterMD5Cracker.h	/^    string pass;$/;"	m	class:MasterMD5Cracker
 registerSlave	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::registerSlave(string& key,SlaveProxy& proxy){$/;"	f	class:MasterMD5Cracker
 run	master_md5cracker/slaveProxy.cpp	/^bool SlaveProxy::run(){$/;"	f	class:SlaveProxy
 run	slave_md5cracker/slaveMD5Cracker.cpp	/^void SlaveMD5Cracker::run(){$/;"	f	class:SlaveMD5Cracker
 runDistribute	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::runDistribute(){$/;"	f	class:MasterMD5Cracker
 runLocal	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::runLocal(){$/;"	f	class:MasterMD5Cracker
-sendViaXMLRPC	master_md5cracker/slaveProxy.cpp	/^bool SlaveProxy::sendViaXMLRPC(int socket, string name,string param){$/;"	f	class:SlaveProxy
-slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:Fetch
+sendViaXMLRPC	master_md5cracker/slaveProxy.cpp	/^bool SlaveProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){$/;"	f	class:SlaveProxy
+slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:Feedback
 slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:HandShake
 slaveAddr	master_md5cracker/slaveProxy.h	/^    string slaveAddr;$/;"	m	class:SlaveProxy
 slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:QuitMethod
+slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:ReceiveChunkMethod
 slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StartMethod
 slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StatusMethod
 slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StopMethod
@@ -206,10 +286,14 @@ slaveSenderFunc	master_md5cracker/slaveProxy.cpp	/^void* SlaveProxy::slaveSender
 socket2Master	master_md5cracker/slaveProxy.h	/^    int socket2Master; \/\/receive cmd from slave$/;"	m	class:SlaveProxy
 socket2Slave	master_md5cracker/slaveProxy.h	/^    int socket2Slave; \/\/send cmd to slave$/;"	m	class:SlaveProxy
 start	master_md5cracker/passGenerator.h	/^    len_t start;$/;"	m	class:PassGenerator
+start	slave_md5cracker/passGenerator.h	/^    len_t start;$/;"	m	class:PassGenerator
 startDistributedCracking	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::startDistributedCracking(string md5){$/;"	f	class:MasterMD5Cracker
 state	slave_md5cracker/slaveMD5Cracker.h	/^    enum State state;$/;"	m	class:SlaveMD5Cracker	typeref:enum:SlaveMD5Cracker::State
 stop	slave_md5cracker/masterProxy.cpp	/^void MasterProxy::stop(SlaveMD5Cracker* slave){$/;"	f	class:MasterProxy
 strArr	master_md5cracker/passGenerator.h	/^    vector<char> strArr;$/;"	m	class:PassGenerator
+strArr	slave_md5cracker/passGenerator.h	/^    vector<char> strArr;$/;"	m	class:PassGenerator
+strVal	master_md5cracker/slaveProxy.h	/^    string strVal;$/;"	m	struct:Cmd
+targetMd5	slave_md5cracker/slaveMD5Cracker.h	/^    string targetMd5;$/;"	m	class:SlaveMD5Cracker
 terminate	master_md5cracker/slaveProxy.cpp	/^void SlaveProxy::terminate(){$/;"	f	class:SlaveProxy
 testPassGenerator	master_md5cracker/main.cpp	/^void testPassGenerator(){$/;"	f
 threadMasterReceiver	master_md5cracker/slaveProxy.h	/^    pthread_t threadMasterReceiver;$/;"	m	class:SlaveProxy
@@ -217,10 +301,14 @@ threadMasterSender	master_md5cracker/slaveProxy.h	/^    pthread_t threadMasterSe
 timeSpent	master_md5cracker/masterMD5Cracker.h	/^    double timeSpent;$/;"	m	class:MasterMD5Cracker
 toMasterSocket	slave_md5cracker/slaveMD5Cracker.h	/^    int toMasterSocket;$/;"	m	class:SlaveMD5Cracker
 transform	master_md5cracker/md5.cpp	/^void MD5::transform(const byte block[64]) {$/;"	f	class:MD5
+transform	slave_md5cracker/md5.cpp	/^void MD5::transform(const byte block[64]) {$/;"	f	class:MD5
 ulong	master_md5cracker/md5.h	/^typedef unsigned long ulong;$/;"	t
+ulong	slave_md5cracker/md5.h	/^typedef unsigned long ulong;$/;"	t
 unregisterSlave	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::unregisterSlave(string& key){$/;"	f	class:MasterMD5Cracker
 update	master_md5cracker/md5.cpp	/^void MD5::update(const byte *input, size_t length) {$/;"	f	class:MD5
 update	master_md5cracker/passGenerator.cpp	/^void PassGenerator::update(){$/;"	f	class:PassGenerator
+update	slave_md5cracker/md5.cpp	/^void MD5::update(const byte *input, size_t length) {$/;"	f	class:MD5
+update	slave_md5cracker/passGenerator.cpp	/^void PassGenerator::update(){$/;"	f	class:PassGenerator
 xmlrpclibs	master_md5cracker/Makefile	/^xmlrpclibs = -L\/usr\/local\/lib -lxmlrpc_client++ -lxmlrpc_client -lxmlrpc_server_pstream++ -lxmlrpc_server++ -lxmlrpc_server  -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_packetsocket $/;"	m
 xmlrpclibs	slave_md5cracker/Makefile	/^xmlrpclibs = -L\/usr\/local\/lib -lxmlrpc_client++ -lxmlrpc_client -lxmlrpc_server_pstream++ -lxmlrpc_server++ -lxmlrpc_server  -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_packetsocket #-lwwwxml -lxmltok -lxmlparse -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils -lmd5 #-ldl $/;"	m
 xmlwwwlibs	master_md5cracker/Makefile	/^xmlwwwlibs = -lwwwxml -lxmltok -lxmlparse -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils -L\/usr\/lib -lmd5 $/;"	m
