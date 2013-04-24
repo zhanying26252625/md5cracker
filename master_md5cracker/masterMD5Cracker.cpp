@@ -306,7 +306,7 @@ void* MasterMD5Cracker::generateThreadFunc(void* arg){
 
     deque<Cmd> cmds;
 
-    unsigned int batchSize = 16;
+    unsigned int batchSize = 8;
 
     while(master->isCracking && master->numOfSlaves() != 0){
 

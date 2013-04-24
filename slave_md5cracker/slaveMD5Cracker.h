@@ -1,7 +1,10 @@
 #ifndef _SLAVE_MD5CRACKER_H
 #define _SLAVE_MD5CRACKER_
 
+#include "rwBuffer.h"
 #include "masterProxy.h"
+#include "cpuCracker.h"
+#include "gpuCracker.h"
 #include <string>
 #include <xmlrpc-c/base.hpp>
 #include <xmlrpc-c/registry.hpp>
@@ -18,7 +21,7 @@ class ReceiveChunkMethod;
 class StopMethod;
 class StatusMethod;
 class QuitMethod;
- 
+
 class SlaveMD5Cracker{
 
 private:
@@ -59,6 +62,12 @@ private:
     bool isCracking ;
 
     string targetMd5;
+    //reader writer buffer to store the passwords generated.
+    RWBuffer rwBuf;
+
+    CpuCracker cpuCracker;
+
+    GpuCracker gpuCracker;
 
 public:
 
@@ -72,6 +81,8 @@ public:
     friend class StatusMethod;
     friend class QuitMethod;
     friend class MasterProxy;
+    friend class CpuCracker;
+    friend class GpuCracker;
 };
 
 class StartMethod : public xmlrpc_c::method{

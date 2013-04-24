@@ -20,12 +20,21 @@
 using namespace std;
 
 SlaveMD5Cracker::SlaveMD5Cracker(){
-
     isCracking = false;
     this->state = HANDSHAKE;
 }
 
 void SlaveMD5Cracker::run(){
+
+    if( ! cpuCracker.init(this) )
+        return ;
+
+    usleep(100);
+
+    if( ! gpuCracker.init(this) )
+        return ;
+
+    usleep(100);
 
     masterIP = getMasterIP();
 
@@ -211,7 +220,7 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
 
     int masterPort = ntohs(master_addr.sin_port);
 
-    cout << "Command Receiver at slave : Master connected to me, it is at ["<<masterAddr<<"] ["<<masterPort<<"]"<<endl;
+    cout << "Command Receiver at slave : Master connected to me, it is at ["<<masterAddr<<"] ["<<masterPort<<"] Now we can get started to work"<<endl;
     
     //run server for master
     try{
@@ -260,6 +269,8 @@ void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* 
 
     slaveCracker->isCracking = true;
 
+    slaveCracker->rwBuf.clear();
+
     return;
 }
 
@@ -286,18 +297,20 @@ void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::
         *retValP = xmlrpc_c::value_string(string("Deny"));
         return;
     }
-    
     //cout << "[Command] Receive Chunk of Passwords" <<endl;
-    
     //value_i8 is long long, which is supported by xmlrpc
-    //start
     string strVal = paramList.getString(0);
-
     len_t start = paramList.getI8(1);
-    //chunkSize
     int chunkSize = paramList.getInt(2);
 
-    cout << "[Command] Receive Password range ["<<start<<","<< start + chunkSize << ")" <<endl;
+    //cout << "[Command] Receive Password range ["<<start<<","<< start + chunkSize << ")" <<endl;
+
+    PassGenerator gp(start,chunkSize);
+    //c++11
+    for(string& pass : gp.generateAll()){
+        //cout<<pass<<endl;
+        slaveCracker->rwBuf.produce(pass);
+    }
 
 }
 
@@ -367,7 +380,7 @@ string SlaveMD5Cracker::getMyIP(){
     return "";
 }
 
-
+//Not used now ,since we let system to automatically select an available port
 int SlaveMD5Cracker::getAvailablePort(string tmpFile){
 
     return SLAVE_PORT;

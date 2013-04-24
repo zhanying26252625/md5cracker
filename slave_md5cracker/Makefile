@@ -12,9 +12,9 @@ CC = g++
 # maybe it's something related to debug info format
 CFLAGS = -std=c++11 -Wall -g  
 
-headers = ../configure.h slaveMD5Cracker.h masterProxy.h md5.h passGenerator.h 
+headers = ../configure.h slaveMD5Cracker.h masterProxy.h md5.h passGenerator.h cpuCracker.h gpuCracker.h rwBuffer.h 
 
-objects = main.o slaveMD5Cracker.o  masterProxy.o md5.o passGenerator.o
+objects = main.o slaveMD5Cracker.o  masterProxy.o md5.o passGenerator.o cpuCracker.o gpuCracker.o rwBuffer.o
 
 xmlrpclibs = -L/usr/local/lib -lxmlrpc_client++ -lxmlrpc_client -lxmlrpc_server_pstream++ -lxmlrpc_server++ -lxmlrpc_server  -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_packetsocket #-lwwwxml -lxmltok -lxmlparse -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils -lmd5 #-ldl 
 
