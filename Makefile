@@ -16,7 +16,6 @@ tags:
 cscope.out: cscope.files
 		cscope -Rbkq -i cscope.files
 
-#support c++, find should be followed by absolute path
 cscope.files:
 		find . -name "*.h" -o -name "*.c" -o -name "*.cpp" > cscope.files
 

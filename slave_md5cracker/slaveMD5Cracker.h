@@ -6,6 +6,7 @@
 #include "cpuCracker.h"
 #include "gpuCracker.h"
 #include <string>
+#include <queue>
 #include <xmlrpc-c/base.hpp>
 #include <xmlrpc-c/registry.hpp>
 #include <xmlrpc-c/server_pstream.hpp>
@@ -26,8 +27,6 @@ class SlaveMD5Cracker{
 
 private:
 
-    enum State{HANDSHAKE,WAIT,FEEDBACK,STOP};
-
 private:
 
     string getMasterIP(string fileName=string("masterIP.txt"));
@@ -45,6 +44,8 @@ private:
     //Receive cmd from master
     bool masterReceiverFunc(int listenPort);
 
+    void reportResult(string pass ,string md5);
+
     MasterProxy masterProxy;
 
     int toMasterSocket;
@@ -57,8 +58,6 @@ private:
 
     int listeningSocket;
 
-    enum State state;
-
     bool isCracking ;
 
     string targetMd5;
@@ -68,6 +67,8 @@ private:
     CpuCracker cpuCracker;
 
     GpuCracker gpuCracker;
+
+    queue<Cmd> cmdQueue;
 
 public:
 
@@ -141,6 +142,5 @@ public:
     }
     void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );
 };
-
 
 #endif

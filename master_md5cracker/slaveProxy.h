@@ -79,12 +79,13 @@ public:
 
     SlaveProxy();
 
+    friend class ReturnRet;
     friend class HandShake;
     friend class Feedback;
     friend class MasterMD5Cracker;
 };
 
-//Slave send feedback for previos passwords 
+//Slave send feedback for unsuccessful previos passwords 
 class Feedback : public xmlrpc_c::method{
 
 private:
@@ -93,7 +94,23 @@ private:
 public:
     Feedback(SlaveProxy* sp){
         this->slave = sp;
-        this->_help = "Slave fetch passwords to do md5hash";
+        this->_help = "Slave report unsuccessfull range of passwords";
+    }
+
+    void execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP );
+
+};
+
+//Slave send feedback for unsuccessful previos passwords 
+class ReturnRet : public xmlrpc_c::method{
+
+private:
+    SlaveProxy* slave;
+
+public:
+    ReturnRet(SlaveProxy* sp){
+        this->slave = sp;
+        this->_help = "Slave found the pass";
     }
 
     void execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP );

@@ -13,3 +13,7 @@ bool GpuCracker::init(SlaveMD5Cracker* sc){
 
     return true;
 }
+
+void GpuCracker::terminate(){
+
+}

@@ -21,21 +21,10 @@ using namespace std;
 
 SlaveMD5Cracker::SlaveMD5Cracker(){
     isCracking = false;
-    this->state = HANDSHAKE;
 }
 
 void SlaveMD5Cracker::run(){
-
-    if( ! cpuCracker.init(this) )
-        return ;
-
-    usleep(100);
-
-    if( ! gpuCracker.init(this) )
-        return ;
-
-    usleep(100);
-
+   
     masterIP = getMasterIP();
 
     myIP = getMyIP();
@@ -122,36 +111,28 @@ bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){
         return true;
 }
 
+//senc commands to master
+//Handshake,etc
 void* SlaveMD5Cracker::masterSenderFunc(void* arg){
-    //senc commands to master
-    //Handshake,etc
+
     SlaveMD5Cracker* slave = (SlaveMD5Cracker*)arg;
 
-    cout<<"Send handshake command to master"<<endl;
+    //Inject handshake first
+    Cmd handshakeCmd("handshake",slave->myListenPort); 
+    slave->cmdQueue.push(handshakeCmd);
 
     while(1){
 
-        switch(slave->state){
-            //One time thing at startup, inviting master to connect me back
-            case HANDSHAKE:
-                MasterProxy::handshake(slave);
-                slave->state = WAIT;
-                break;
-            //feedback
-            case FEEDBACK:
-                MasterProxy::feedback(slave);
-                break;
-            //Stop current hashing
-            case STOP:
-                MasterProxy::stop(slave);
-                break;
-            //Nothing special to do
-            case WAIT:
-                usleep(500);
-                break;
+        if( slave->cmdQueue.size() > 0 ){
+            
+            Cmd cmd = slave->cmdQueue.front();
+            slave->cmdQueue.pop();
 
-            default:
-                break;
+            MasterProxy::sendViaXMLRPC(slave->toMasterSocket, cmd.name,cmd.strVal,cmd.longVal,cmd.intVal);      
+
+        }
+        else{
+            usleep(500);
         }
     }
 
@@ -220,7 +201,7 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
 
     int masterPort = ntohs(master_addr.sin_port);
 
-    cout << "Command Receiver at slave : Master connected to me, it is at ["<<masterAddr<<"] ["<<masterPort<<"] Now we can get started to work"<<endl;
+    cout << "Command Receiver at slave : Master connected to me, it is at ["<<masterAddr<<"] ["<<masterPort<<"]"<<endl<<"Now we can get started to work"<<endl;
     
     //run server for master
     try{
@@ -254,6 +235,19 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
     return true;
 }
 
+void SlaveMD5Cracker::reportResult(string pass ,string md5){
+
+    cout <<"Password ["<<pass<<"] -> md5 ["<<md5<<"]"<<endl;
+
+    //stop working thread and wont receive chunks any more
+    //this->isCracking = false;
+
+    //send cmd back to master
+    Cmd retCmd("returnRet",pass);
+
+    this->cmdQueue.push(retCmd);
+
+}
 
 void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
 
@@ -267,9 +261,21 @@ void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* 
 
     slaveCracker->targetMd5 = md5;
 
+    //refresh buffer,since it may be dirty becaues of previous cracking
+    slaveCracker->rwBuf.init();
+
+    //spawn cpu working threads
+    slaveCracker->cpuCracker.init(slaveCracker);
+
+    //spawn gpu working threads
+    slaveCracker->gpuCracker.init(slaveCracker);
+
+    //We have a dedicated thread producing passwords
+    slaveCracker->rwBuf.run();
+
     slaveCracker->isCracking = true;
 
-    slaveCracker->rwBuf.clear();
+    cout <<"Start Done!"<<endl;
 
     return;
 }
@@ -283,9 +289,17 @@ void StopMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* r
     slaveCracker->targetMd5 = string("");
     
     slaveCracker->isCracking = false;
+   
+    //terminate threads
+    slaveCracker->cpuCracker.terminate();
 
-    //Stop cracking thread and clean resource
+    slaveCracker->gpuCracker.terminate();
 
+    slaveCracker->rwBuf.end();
+
+    slaveCracker->rwBuf.destroy();
+
+    cout <<"Stop Done!"<<endl;
 }
 
 void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
@@ -304,14 +318,24 @@ void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::
     int chunkSize = paramList.getInt(2);
 
     //cout << "[Command] Receive Password range ["<<start<<","<< start + chunkSize << ")" <<endl;
-
+    
+    //Maybe we should have a dedicated thread to generate password, then it wont block future cmd from master
+    
+    PassGenerator gp(start,chunkSize);
+    
+    slaveCracker->rwBuf.injectPG(gp);
+    /*
     PassGenerator gp(start,chunkSize);
     //c++11
     for(string& pass : gp.generateAll()){
         //cout<<pass<<endl;
+        
+        if(!slaveCracker->isCracking)
+            break;
+
         slaveCracker->rwBuf.produce(pass);
     }
-
+    */
 }
 
 
@@ -329,7 +353,10 @@ void QuitMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* r
     *retValP = xmlrpc_c::value_string(string("Accept"));
 
     cout <<"Terminated by master"<<endl;
-    
+   
+    //cancel working threads
+    slaveCracker->cpuCracker.terminate();
+
     //end this program
     exit(1);
 }

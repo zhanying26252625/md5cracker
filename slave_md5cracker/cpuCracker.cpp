@@ -13,6 +13,8 @@ bool CpuCracker::init(SlaveMD5Cracker* sc){
 
     this->slaveCracker = sc;
 
+    workThreads.clear();
+
     cores = getNumOfCores();
 
     cout<< "CpuCracker init, "<< cores <<"cores"<<endl;
@@ -25,7 +27,6 @@ bool CpuCracker::init(SlaveMD5Cracker* sc){
 
         if( -1 == rc ){
             cout<<"Can't creat cpu cracking thread"<<endl;
-
             return false;
         }
 
@@ -48,7 +49,7 @@ void* CpuCracker::workThreadFunc(void* arg){
     while( 1 ){
     
         if(!slaveCracker->isCracking){
-            usleep(200);
+            usleep(400);
         }
         else{
 
@@ -62,25 +63,48 @@ void* CpuCracker::workThreadFunc(void* arg){
 
                 string pass = passwords[i];
                 
-                cout<<"No."<<counter<<" Password :"<<pass<<endl;
-                
                 MD5 md5Engine;
 
                 string ret = md5Engine.calMD5FromString(pass);
 
-                if(!ret.compare(md5)){
+                //test only
+                if(!pass.compare(string("girl")))
+                    cout<<"consume-----------GrilGirlGrilGrilGril" <<endl;
 
-                    cout <<"----------Found the password ["<<pass<<"]----------"<<endl;
-                    exit(1); 
+                if(!ret.compare(md5)){
+                    //cout <<"----------Found the password ["<<pass<<"]----------"<<endl;
+                    slaveCracker->reportResult(pass,md5);
+                    //exit(1); 
                 }
             }
         }
     }
-
     return NULL;
 }
+
 
 int CpuCracker::getNumOfCores(){
     return sysconf(_SC_NPROCESSORS_ONLN);
 }
+
+bool CpuCracker::terminate(){
+
+    //Cancel the thrreads
+    for(unsigned int i =0 ;i< workThreads.size();i++){
+        pthread_cancel(workThreads[i]);
+    }
+    //wait for their exits
+    for(unsigned int i =0 ;i< workThreads.size();i++){
+        void* ret;
+        pthread_join(workThreads[i],&ret);
+    }
+
+    workThreads.clear();
+
+    cout << "All working threads terminated!" <<endl;
+
+    return true;
+}
+
+
 

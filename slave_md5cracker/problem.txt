@@ -1,0 +1,17 @@
+Start:1000000
+Start:3000000
+Start:5000000
+Start:7000000
+Produce-----------GrilGirlGrilGrilGril
+Start:9000000
+Start:11000000
+Start:13000000
+Start:15000000
+
+
+
+//problem here
+         if(foundGirl){
+            cout<<"A new Batch into Queue"<<endl;
+            foundGirl = false;
+         }

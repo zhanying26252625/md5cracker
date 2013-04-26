@@ -15,6 +15,9 @@
 using namespace std;
 
 class SlaveProxy;
+class ReturnRet;
+class Feedback;
+class Handshake;
 
 class MasterMD5Cracker{
     
@@ -32,6 +35,9 @@ public:
    
     double getTimeSpent(){return timeSpent;}
     
+    friend class ReturnRet;
+    friend class Feedback;
+    friend class Handshake;
     friend class SlaveProxy;
 
 private:
@@ -82,6 +88,8 @@ private:
     void unregisterSlave(string& key);
 
     int numOfSlaves(){return slaveProxies.size();}
+
+    void reportFoundPass(string pass);
 
 private:
     //BST cmd handlers

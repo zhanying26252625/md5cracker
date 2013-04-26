@@ -223,7 +223,7 @@ bool MasterMD5Cracker::endDistributedCracking(){
     if( !this->isCracking )
         return false;
 
-    //LogManager& logMgr = LogManager::getInstance();
+    LogManager& logMgr = LogManager::getInstance();
     
     //end the generation thread
     pthread_cancel(this->generateThread);
@@ -231,7 +231,7 @@ bool MasterMD5Cracker::endDistributedCracking(){
     void* retVal;
     pthread_join(this->generateThread,&retVal);
 
-    //logMgr << "Password generation thread is terminating......" << endl;
+    logMgr << "Password generation thread terminated!" << endl;
     
     return true;
 }
@@ -283,6 +283,8 @@ bool MasterMD5Cracker::startDistributedCracking(string md5){
 
     this->generateThread = thread;
 
+    logMgr << "Generate thread is running......" <<endl;
+
     return true;
 }
 
@@ -306,11 +308,13 @@ void* MasterMD5Cracker::generateThreadFunc(void* arg){
 
     deque<Cmd> cmds;
 
-    unsigned int batchSize = 8;
+    unsigned int batchSize = 16;
 
+    len_t cur = 0;
+    
     while(master->isCracking && master->numOfSlaves() != 0){
 
-        len_t cur = 0;
+        cur = 0;
 
         while( master->isCracking && cur < max ){
 
@@ -342,7 +346,7 @@ void* MasterMD5Cracker::generateThreadFunc(void* arg){
                 
                     cmds.clear();
                     //dont overwhelm the slaves
-                    sleep(4);
+                    sleep(2);
                 }
             }
         }
@@ -411,7 +415,18 @@ void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){
 
     master->isExisting = true;
 
+    exit(1);
+
     return NULL;
+}
+
+
+void MasterMD5Cracker::reportFoundPass(string pass){
+
+    //LogManager& logMgr = LogManager::getInstance();
+
+    MasterMD5Cracker::cmdStop(this,(void*)NULL);
+
 }
 
 //Be care of race condition from slaveProxies
@@ -465,13 +480,13 @@ void MasterMD5Cracker::issueCmdRoundRobin(deque<Cmd>& cmds){
 
         cmds.pop_front();
 
-        if(iter == this->slaveProxies.end()){
-                iter = this->slaveProxies.begin(); 
-        }
-
         (*iter).second.issueCmd(cmd);
 
         iter++;
+
+        if(iter == this->slaveProxies.end()){
+            iter = this->slaveProxies.begin(); 
+        }
     }
 
     pthread_mutex_unlock(&slaves_mutex);

@@ -29,6 +29,7 @@ public:
 
     bool init(SlaveMD5Cracker* sc);
 
+    bool terminate();
 };
 
 #endif

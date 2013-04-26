@@ -67,10 +67,12 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
 
         const xmlrpc_c::methodPtr feedbackMethodP(new Feedback(slave));
         const xmlrpc_c::methodPtr handShakeMethodP(new HandShake(slave));
+        const xmlrpc_c::methodPtr returnRetMethodP(new ReturnRet(slave));
         
         myReg.addMethod("feedback",feedbackMethodP);
         myReg.addMethod("handshake",handShakeMethodP);
-
+        myReg.addMethod("returnRet",returnRetMethodP);
+        
         xmlrpc_c::serverPstreamConn server(
             xmlrpc_c::serverPstreamConn::constrOpt()
             .socketFd( slave->socket2Master )
@@ -81,12 +83,7 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
         logMgr << "One slave left ["<< slave->key <<"]" <<endl;
 
         logMgr << "Kill both associated sender and receiver thread" <<endl;
-       
-        //These two method would somehow lead to crach? We need a gentle one
-        //canceling sender thread and close sockets
-        //pthread_cancel(slave->threadMasterSender);
-        //pthread_kill(slave->threadMasterSender,SIGKILL );
-
+        
         slave->isExisting = true;
 
         //wait sender exit
@@ -99,6 +96,8 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
         //unregister myself, be care of race condition
         slave->master->unregisterSlave(slave->key);
 
+        //We shoud redistribute passwords which are currently worked by this slave to other slaves
+    
     }
     catch(const exception& e){
         logMgr << "[Exception]"<<e.what()<<endl;
@@ -195,12 +194,42 @@ void SlaveProxy::terminate(){
 
 }
 
-//Get new batch of password to hash md5 code
+//report the unsuccessful bundle of passwords, start(len_t)
 void Feedback::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){
 
     LogManager& logMgr = LogManager::getInstance();
     
-    logMgr << slave->key <<"[Feedback]" <<endl;
+    logMgr <<"[Feedback] from "<< slave->key<<endl;
+
+    //string strVal = paramList.getString(0);
+    len_t longVal = paramList.getI8(1);
+    //int intVal = paramList.getInt(2);
+
+    len_t start = longVal;
+
+    cout<< "Report unsuccessful range ["<<start<<","<<start+slave->master->chunkSize <<")" <<endl;
+
+    *retValP = xmlrpc_c::value_string(string("Master accept my cmd"));
+}
+
+//found the password for the specific md5
+void ReturnRet::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){
+
+    LogManager& logMgr = LogManager::getInstance();
+    
+    logMgr <<"[PassFound] from "<< slave->key<<endl;
+
+    string strVal = paramList.getString(0);
+    //len_t longVal = paramList.getI8(1);
+    //int intVal = paramList.getInt(2);
+
+    string pass = strVal;
+
+    cout<<"["<<pass<<"] --> ["<<slave->master->md5<<"]" <<endl;
+
+    slave->master->reportFoundPass(pass);
+
+    *retValP = xmlrpc_c::value_string(string("Master accept my cmd"));
 
 }
 
@@ -209,7 +238,7 @@ void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* r
 
     LogManager& logMgr = LogManager::getInstance();
     
-    logMgr << slave->key <<"[Handshake]" <<endl;
+    logMgr <<"[Handshake] from "<< slave->key<<endl;
 
     if( slave->isFullConnected ){
 
@@ -221,12 +250,14 @@ void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* r
     bool ok = true;
 
     //We should then connect to slave trough a new socket for bi-diretional communication.
-
     //the paremeter is the listenPort sent by slave
-    
     string slaveIP = slave->slaveAddr;
 
-    int slaveListeningPort = paramList.getInt(0);
+    //string strVal = paramList.getString(0);
+    //len_t longVal = paramList.getI8(1);
+    int intVal = paramList.getInt(2);
+
+    int slaveListeningPort = intVal;
     
     logMgr <<"Slave is listening on port "<<slaveListeningPort <<endl;
 

@@ -50,6 +50,7 @@ public:
     
     string getCurPassword();
 
+    len_t getStartPosition();
     //postfix ++ 
     len_t operator++(int);
 

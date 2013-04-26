@@ -14,6 +14,8 @@ public:
     GpuCracker();
 
     bool init(SlaveMD5Cracker* sc);
+
+    void terminate();
 };
 
 #endif

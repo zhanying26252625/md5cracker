@@ -1,6 +1,8 @@
 #ifndef RW_BUFFER_H
 #define RW_BUFFER_H
 
+#include "passGenerator.h"
+
 #include <deque>
 #include <vector>
 #include <pthread.h>
@@ -27,6 +29,21 @@ public:
     int getBufSize(){ return buf.size(); }
 
     void clear();
+
+    //init resource
+    void init();
+
+    void destroy();
+   
+    static void* generatorFunc(void* arg);
+
+    //run a dedicated thread to produce passwords
+    void run();
+    //kill that thread
+    void end();
+
+    void injectPG(PassGenerator& pg);
+
 private:
     
     sem_t sema_empty;
@@ -37,8 +54,16 @@ private:
 
     deque< vector<string> > buf;
 
+    pthread_mutex_t mutex_pgs;
+   
+    pthread_t generatorThread;
+
+    deque< PassGenerator> pgs;
+
+    bool endGenerator;
+
     //a smart way to define constant
-    enum Size{BatchSize=128,QueueSize=1024};
+    enum Size{BatchSize=512,QueueSize=64};
 };
 
 #endif

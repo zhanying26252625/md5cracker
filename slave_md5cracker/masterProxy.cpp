@@ -22,29 +22,29 @@ MasterProxy::MasterProxy(){
 
 }
 
-void MasterProxy::handshake(SlaveMD5Cracker* slave){
-
-    cout<<"Handshaking with master"<<endl;
+bool MasterProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){
     
+    bool ok = true;
+
     try {
 
         xmlrpc_c::clientXmlTransport_pstream myTransport(
-            xmlrpc_c::clientXmlTransport_pstream::constrOpt()
-            .fd(slave->toMasterSocket));
+            xmlrpc_c::clientXmlTransport_pstream::constrOpt().fd( socket ));
 
         xmlrpc_c::client_xml myClient(&myTransport);
 
-        string const methodName("handshake");
+        string const methodName(name);
 
-        //The only parameter is listenPort 
-        //This port is selected by system         
-        int listenPort = slave->myListenPort;
+        cout <<"Proxy is sending ["<<name<<"] to master" <<endl;
 
         //parameters
-        xmlrpc_c::paramList handShakeParms;
-        handShakeParms.add(xmlrpc_c::value_int( listenPort ));
+        xmlrpc_c::paramList Parms;
 
-        xmlrpc_c::rpcPtr myRpcP(methodName, handShakeParms);
+        Parms.add(xmlrpc_c::value_string( strVal ));
+        Parms.add(xmlrpc_c::value_i8( longVal ));
+        Parms.add(xmlrpc_c::value_int( intVal ));
+
+        xmlrpc_c::rpcPtr myRpcP(methodName, Parms);
 
         xmlrpc_c::carriageParm_pstream myCarriageParm;
         // Empty; transport doesn't need any information
@@ -59,23 +59,14 @@ void MasterProxy::handshake(SlaveMD5Cracker* slave){
         cout << ans << endl;
 
     } catch (exception const& e) {
-        cout << "Client threw error: " << e.what() << endl;
+        cout << "masterProxy threw error: " << e.what() << endl;
+        ok = false;
     } catch (...) {
-        cout << "Client threw unexpected error." << endl;
+        //socket maybe broken, slave maybe lost
+        cout << "masterProxy threw unexpected error." << endl;
+        ok = false;
     }
 
+    return ok;
 }
-
-void MasterProxy::stop(SlaveMD5Cracker* slave){
-
-    cout<<"Stop cracking"<<endl;
-
-}
-
-void MasterProxy::feedback(SlaveMD5Cracker* slave){
-
-    cout<<"Send feedback of previous batch of passwords"<<endl;
-
-}
-
 

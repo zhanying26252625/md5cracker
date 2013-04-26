@@ -10,7 +10,6 @@ using namespace std;
 //xmlrpc c++ support value_i8 as long long
 typedef long long len_t;
 
-
 //Generator a range of passwords [start , start+chunkSize-1]
 class PassGenerator{
 
@@ -49,6 +48,8 @@ public:
     vector<string> generateAll();
     
     string getCurPassword();
+
+    len_t getStartPosition();
 
     //postfix ++ 
     len_t operator++(int);

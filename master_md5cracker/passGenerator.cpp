@@ -14,6 +14,9 @@ PassGenerator::PassGenerator(len_t startPosition, int chunkSize){
     init();
 }
 
+len_t PassGenerator::getStartPosition(){
+    return this->start;
+}
 
 void PassGenerator::init(){
 
