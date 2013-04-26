@@ -310,7 +310,7 @@ void* MasterMD5Cracker::generateThreadFunc(void* arg){
 
     deque<Cmd> cmds;
 
-    unsigned int batchSize = 16;
+    unsigned int batchSize = 8;
 
     len_t cur = 0;
     
@@ -348,7 +348,7 @@ void* MasterMD5Cracker::generateThreadFunc(void* arg){
                 
                     cmds.clear();
                     //dont overwhelm the slaves
-                    sleep(2);
+                    sleep(4);
                 }
             }
         }

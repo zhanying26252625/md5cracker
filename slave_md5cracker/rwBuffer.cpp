@@ -50,23 +50,25 @@ void RWBuffer::produce(string& newPass){
     tempBuf.push_back(newPass);
     
     //test only
+    /*
     static bool foundGirl = false;
     if(!newPass.compare(string("girl"))){
         cout<<"Produce-----------GrilGirlGrilGrilGril" <<endl;
         foundGirl = true;
     }
+    */
 
     //cout<<"( "<<counter<<" ) New password : "<<newPass <<endl;
     counter++;
 
     if( tempBuf.size() >=  RWBuffer::BatchSize ){
-       
+        /*
         //test only problem here sometimes? 
         if(foundGirl){
             cout<<"A new Batch into Queue"<<endl;
             foundGirl = false;        
         }
-
+        */
         produce(tempBuf);
         tempBuf.clear();
     }
@@ -83,7 +85,7 @@ void RWBuffer::produce( vector<string>& passwords){
     buf.push_back(passwords);
 
     //test only. sometimes it does not contains 'girl' strange? multi-threading vs static member?
-    
+    /* 
     for(unsigned int i =0;i<passwords.size();i++){
         string str = passwords[i];
 
@@ -91,6 +93,8 @@ void RWBuffer::produce( vector<string>& passwords){
             cout<<"Girl is int the buffer"<<endl;
 
     }
+    */
+
     //cout<<"Produce"<<endl;
 
     pthread_mutex_unlock(&mutex);

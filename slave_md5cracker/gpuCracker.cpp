@@ -62,13 +62,14 @@ void* GpuCracker::workThreadFunc(void* arg){
 
     while(1){
 
+        usleep(4000);
+        
         if(!slaveCracker->isCracking){
-            usleep(4000);
-            cout<<"GPU"<<endl;
+            //cout<<"GPU"<<endl;
         }
         else{
             //vector<string> passwords = slaveCracker->rwBuf.consume();
-            string md5 = slaveCracker->targetMd5;
+            //string md5 = slaveCracker->targetMd5;
         }
         
     }
