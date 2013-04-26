@@ -20,6 +20,8 @@ len_t PassGenerator::getStartPosition(){
 
 void PassGenerator::init(){
 
+    charArr.push_back('.');
+
     //A-Z,a-z,0-9
     for(char c = 'A'; c <= 'Z'; c++)
         charArr.push_back(c);
@@ -40,7 +42,8 @@ void PassGenerator::init(){
     //cout << "Current is ["<< getCurPassword() <<"]" <<endl;
 }
 
-//Be careful, that 'AA','AAA','AAA....' could not be generated below 
+//Be careful, that 'A*' could not be generated below
+//It's fixed by add '.' at the the fron the charArr
 void PassGenerator::update(){
 
     strArr.clear();

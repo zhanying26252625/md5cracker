@@ -1,5 +1,5 @@
 #ifndef _SLAVE_MD5CRACKER_H
-#define _SLAVE_MD5CRACKER_
+#define _SLAVE_MD5CRACKER_H
 
 #include "rwBuffer.h"
 #include "masterProxy.h"
@@ -27,26 +27,25 @@ class SlaveMD5Cracker{
 
 private:
 
-private:
-
     string getMasterIP(string fileName=string("masterIP.txt"));
 
     string getMyIP();
-
-    int getAvailablePort(string tmpFile = string("port.txt"));
 
     bool connectToMaster(string ip,int& toMasterSocket);
 
     //Send cmd to master
     static void* masterSenderFunc(void* arg); 
+
+    queue<Cmd> cmdQueue;
+    
+    MasterProxy masterProxy;
     //creat and bind a listening socket
     bool createAndBindSocket(int& socketPort,int& sock);
     //Receive cmd from master
     bool masterReceiverFunc(int listenPort);
 
+    //Found the result
     void reportResult(string pass ,string md5);
-
-    MasterProxy masterProxy;
 
     int toMasterSocket;
     
@@ -68,19 +67,19 @@ private:
 
     GpuCracker gpuCracker;
 
-    queue<Cmd> cmdQueue;
-
 public:
 
     SlaveMD5Cracker();
 
     void run();
 
+    //Cmd handler
     friend class StartMethod;
     friend class ReceiveChunkMethod;
     friend class StopMethod;
     friend class StatusMethod;
     friend class QuitMethod;
+
     friend class MasterProxy;
     friend class CpuCracker;
     friend class GpuCracker;

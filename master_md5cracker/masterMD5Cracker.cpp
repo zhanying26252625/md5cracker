@@ -11,7 +11,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <errno.h>
 #include <string.h>
 
@@ -128,16 +127,14 @@ void* MasterMD5Cracker::listeningThreadFunc(void* arg){
         slave.socket2Master = newSlaveSocket;
 
         master->registerSlave(key,slave);
-        
+        //create new dedicated thread to receive the cmd from slave
         bool ret = slaveProxies[key].run();
         
         if( !ret ){
-            logMgr << "[ERROR] can't run proxy" <<endl;
+            logMgr << "[ERROR] can't run slave proxy" <<endl;
             slaveProxies.erase(key);
         }
-
     }
-
     return NULL;
 }
 
@@ -163,22 +160,16 @@ void MasterMD5Cracker::unregisterSlave(string& key){
     pthread_mutex_lock(&slaves_mutex);
     
     //logMgr <<endl<< "unregisterSlave lock" <<endl;
-
     SlaveProxy& proxy = slaveProxies[key]; 
-    
     proxy.terminate();
-    
     slaveProxies.erase(key);
 
     //Test mutex to avoid race condition
     //sleep(5);
-
     pthread_mutex_unlock(&slaves_mutex);
 
     //logMgr <<endl<< "unregisterSlave unlock" <<endl;
 }
-
-
 
 void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
     
@@ -212,6 +203,7 @@ void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){
     master->isCracking = true;
 
     //generate all possible passwords and distribute them to slaves, in pull mode!
+    gettimeofday(&master->start,NULL);
 
     master->startDistributedCracking(pwMd5);
 
@@ -256,6 +248,17 @@ void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){
 
     master->isCracking = false;
     
+    gettimeofday(&master->end,NULL);
+    
+    struct timeval start = master->start;
+    struct timeval end = master->end;
+
+    double span = end.tv_sec - start.tv_sec + (end.tv_usec - start.tv_usec)/1000000.0;
+
+    master->timeSpent = span; 
+
+    logMgr << "[Distributed Mode] Time spent : "<<span << endl;
+
     return NULL;
 }
 
@@ -287,7 +290,6 @@ bool MasterMD5Cracker::startDistributedCracking(string md5){
 
     return true;
 }
-
 
 //The push mode thread that send passwords to slaves 
 void* MasterMD5Cracker::generateThreadFunc(void* arg){
@@ -384,8 +386,10 @@ void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){
     logMgr << "[cmdList]"<<endl;
 
     //print all connected slaves
-
     int count = 0;
+
+    //Be care of race condition
+    pthread_mutex_lock(&master->slaves_mutex);
 
     unordered_map<string, SlaveProxy>::iterator iter = master->slaveProxies.begin();
 
@@ -400,6 +404,8 @@ void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){
         count++;
     }
 
+    pthread_mutex_unlock(&master->slaves_mutex);
+    
     return NULL;
 }
 
@@ -415,6 +421,7 @@ void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){
 
     master->isExisting = true;
 
+    //A little bit brutal
     exit(1);
 
     return NULL;
@@ -423,10 +430,11 @@ void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){
 
 void MasterMD5Cracker::reportFoundPass(string pass){
 
-    //LogManager& logMgr = LogManager::getInstance();
+    LogManager& logMgr = LogManager::getInstance();
+
+    logMgr <<endl <<"Password found ["<<pass<<"] => ["<< this->md5 <<"]"  <<endl;
 
     MasterMD5Cracker::cmdStop(this,(void*)NULL);
-
 }
 
 //Be care of race condition from slaveProxies
@@ -538,6 +546,7 @@ void MasterMD5Cracker::cui(){
 }
 
 //A single-threaded md5 cracker
+//recursive password generation, different from distributed mode
 void MasterMD5Cracker::runLocal(){
 
     LogManager& logMgr = LogManager::getInstance();
@@ -598,24 +607,21 @@ void MasterMD5Cracker::runLocal(){
 
     if(found){
         cout <<"Password Found! it's ["<<pass<<"]"<<endl;
-        return ;
     }
     else{
         cout << "Can't find the password. Please Make sure password complies with rules" <<endl;
-        return;
     }
 
+    logMgr << "[Single Mode] Time spent : "<<timeSpent << endl;
 }
 
-
+//Recursion method 
 bool MasterMD5Cracker::crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level){
 
     if( level == len ){
         //Do md5 hash of the new password
         MD5 md5Engine;
-
         string str = md5Engine.calMD5FromString(newPass);
-
         //found
         if( !str.compare(md5) ){
             pass = newPass;
@@ -624,23 +630,17 @@ bool MasterMD5Cracker::crackPasswordLen(string& md5, string& pass, int len, vect
         else{
             return false;
         }
-
     }
     else{
 
         for(unsigned int i = 0; i< charArr.size(); i++){
-
             newPass.push_back( charArr[i] );
-
             bool found = crackPasswordLen(md5,pass,len,charArr,newPass,level+1);
-
             newPass.erase(level,1);
-
             if(found)
                 return true;
         }
     }
-
     return false;
 }
 

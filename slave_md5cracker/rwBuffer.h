@@ -55,7 +55,8 @@ private:
     deque< vector<string> > buf;
 
     pthread_mutex_t mutex_pgs;
-   
+
+    //generate password and inject into reader writer queue
     pthread_t generatorThread;
 
     deque< PassGenerator> pgs;
@@ -63,7 +64,7 @@ private:
     bool endGenerator;
 
     //a smart way to define constant
-    enum Size{BatchSize=512,QueueSize=64};
+    enum Size{BatchSize=1024,QueueSize=128};
 };
 
 #endif

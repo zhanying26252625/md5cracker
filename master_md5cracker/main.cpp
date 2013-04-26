@@ -8,13 +8,12 @@
 
 using namespace std;
 
-//single mode and distributed mode
-
+//test the password generator
 void testPassGenerator(){
 
     cout << "testPassGenerator" <<endl;
 
-    PassGenerator pg(0,62*62+3);
+    PassGenerator pg(0,63*63*3);
 
     int count = 0;
 
@@ -25,6 +24,7 @@ void testPassGenerator(){
     return ;
 }
 
+//single mode and distributed mode
 int main(int argc, char* argv[]){
 
     MasterMD5Cracker master;
@@ -42,10 +42,6 @@ int main(int argc, char* argv[]){
     else{
         master.runDistribute();
     }
-
-    double timeSpent = master.getTimeSpent();
-
-    cout << "Time spent : "<<timeSpent << endl;
 
     return 1;
 }

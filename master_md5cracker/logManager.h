@@ -11,7 +11,7 @@
 using namespace std;
 //Apache log4cxx is a good log library
 
-//Declaration and Definition should be in header since it's template in C++
+//Declaration and Definition should be in header since it's template in C++. This problem may be solved by c++11
 
 //Singleton pattern
 class LogManager{
@@ -65,6 +65,5 @@ public:
         return (*this);
     }
 };
-
 
 #endif

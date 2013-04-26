@@ -23,10 +23,12 @@ SlaveMD5Cracker::SlaveMD5Cracker(){
     isCracking = false;
 }
 
+//Two threads with two sockets for concurrent duplex communication
 void SlaveMD5Cracker::run(){
    
     masterIP = getMasterIP();
 
+    //Not used, just list all IPs that I have
     myIP = getMyIP();
 
     if( !masterIP.compare("") ){
@@ -67,7 +69,7 @@ void SlaveMD5Cracker::run(){
 
     this->listeningSocket = sock;
 
-    //create the thread which initiate data transfer to master
+    //create the thread which would send cmds to master
     pthread_t thread;
 
     int rc = pthread_create(&thread,NULL,SlaveMD5Cracker::masterSenderFunc, (void*)this );
@@ -135,10 +137,10 @@ void* SlaveMD5Cracker::masterSenderFunc(void* arg){
             usleep(500);
         }
     }
-
     return NULL;
 }
 
+//Let system select an available port for me
 bool SlaveMD5Cracker::createAndBindSocket(int& socketPort, int& sock){
 
     //create and listen the socket 
@@ -203,7 +205,7 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
 
     cout << "Command Receiver at slave : Master connected to me, it is at ["<<masterAddr<<"] ["<<masterPort<<"]"<<endl<<"Now we can get started to work"<<endl;
     
-    //run server for master
+    //install the command handlers
     try{
 
         xmlrpc_c::registry myReg;
@@ -225,8 +227,10 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
             .socketFd( master2MeSocket )
             .registryP(&myReg));
 
+        //It runs forever until pipe breaks
         server.run();
 
+        cout<<"Master is gone! I would vanish as well"<<endl;
     }
     catch(const exception& e){
         cout << "[Exception]"<<e.what()<<endl;
@@ -237,7 +241,7 @@ bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){
 
 void SlaveMD5Cracker::reportResult(string pass ,string md5){
 
-    cout <<"Password ["<<pass<<"] -> md5 ["<<md5<<"]"<<endl;
+    cout <<"Password ["<<pass<<"] => md5 ["<<md5<<"]"<<endl;
 
     //stop working thread and wont receive chunks any more
     //this->isCracking = false;
@@ -249,6 +253,10 @@ void SlaveMD5Cracker::reportResult(string pass ,string md5){
 
 }
 
+//Start a bunch of threads to crack the password
+//As many cores as CPU threads
+//One dedicated GPU thread
+//One password generation thread
 void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
 
     cout << "[Command] Start cracking" <<endl;
@@ -280,6 +288,7 @@ void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* 
     return;
 }
 
+//Kill all pre-allocated threads
 void StopMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
 
     cout << "[Command] Stop cracking" <<endl;
@@ -318,12 +327,11 @@ void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::
     int chunkSize = paramList.getInt(2);
 
     //cout << "[Command] Receive Password range ["<<start<<","<< start + chunkSize << ")" <<endl;
-    
-    //Maybe we should have a dedicated thread to generate password, then it wont block future cmd from master
-    
     PassGenerator gp(start,chunkSize);
     
     slaveCracker->rwBuf.injectPG(gp);
+
+    //Maybe we should have a dedicated thread to generate password, then it wont block future cmd from master
     /*
     PassGenerator gp(start,chunkSize);
     //c++11
@@ -338,7 +346,7 @@ void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::
     */
 }
 
-
+//Not implemented yet
 void StatusMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){
 
     cout << "[Command] Status" <<endl;
@@ -361,7 +369,7 @@ void QuitMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* r
     exit(1);
 }
 
-
+//Read from configure file
 string SlaveMD5Cracker::getMasterIP(string fileName){
 
     string ip("");
@@ -406,15 +414,6 @@ string SlaveMD5Cracker::getMyIP(){
 
     return "";
 }
-
-//Not used now ,since we let system to automatically select an available port
-int SlaveMD5Cracker::getAvailablePort(string tmpFile){
-
-    return SLAVE_PORT;
-}
-
-
-
 
 
 

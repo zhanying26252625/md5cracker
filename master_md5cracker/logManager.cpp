@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//Declaration and Definition should be in header since it's template in C++
+//Declaration and Definition should be in header since it's template in C++,This problem may be solved by c++11
 
 /*
 template<class T>

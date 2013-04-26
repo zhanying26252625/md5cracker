@@ -44,7 +44,7 @@ void* CpuCracker::workThreadFunc(void* arg){
 
     SlaveMD5Cracker* slaveCracker = cpuCracker->slaveCracker; 
 
-    cout<<"CpuCracker::workThreadFunc"<<endl;
+    cout<<"Cpu Cracker::workThreadFunc"<<endl;
 
     while( 1 ){
     
@@ -101,7 +101,7 @@ bool CpuCracker::terminate(){
 
     workThreads.clear();
 
-    cout << "All working threads terminated!" <<endl;
+    cout << "CPU threads terminated!" <<endl;
 
     return true;
 }

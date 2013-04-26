@@ -61,7 +61,7 @@ void RWBuffer::produce(string& newPass){
 
     if( tempBuf.size() >=  RWBuffer::BatchSize ){
        
-        //problem here 
+        //test only problem here sometimes? 
         if(foundGirl){
             cout<<"A new Batch into Queue"<<endl;
             foundGirl = false;        
@@ -148,7 +148,7 @@ void RWBuffer::end(){
     void* ret;
     pthread_join(generatorThread,&ret);
 
-    cout << "generate thread terminated!"<<endl;
+    cout << "Generate thread terminated!"<<endl;
 }
 
 void RWBuffer::injectPG(PassGenerator& pg){
@@ -183,7 +183,7 @@ void* RWBuffer::generatorFunc(void* arg){
             
             pthread_mutex_unlock(&rwBuf->mutex_pgs);
 
-            cout << "Start:"<< pg.getStartPosition()<<endl;
+            cout << "Cracking range from "<< pg.getStartPosition()<<endl;
                 
             for(string& pass : pg.generateAll()){
 

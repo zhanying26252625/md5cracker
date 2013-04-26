@@ -24,16 +24,15 @@
 using namespace std;
 
 SlaveProxy::SlaveProxy(){
-
     isExisting = false;
     isFullConnected = false;
 }
 
 void SlaveProxy::issueCmd(Cmd& cmd){
-
     this->cmdQueue.push(cmd);
 }
 
+//create the command receiver thread
 bool SlaveProxy::run(){
 
     LogManager& logMgr = LogManager::getInstance();
@@ -78,6 +77,7 @@ void* SlaveProxy::slaveReceiverFunc(void* arg){
             .socketFd( slave->socket2Master )
             .registryP(&myReg));
 
+        //It runs forever except when pipi breaks
         server.run();
         
         logMgr << "One slave left ["<< slave->key <<"]" <<endl;
@@ -142,6 +142,7 @@ void* SlaveProxy::slaveSenderFunc(void* arg){
     return NULL;
 }
 
+//Send command to slave through raw-xmlrpc
 bool SlaveProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){
 
     LogManager& logMgr = LogManager::getInstance();
@@ -195,6 +196,7 @@ void SlaveProxy::terminate(){
 }
 
 //report the unsuccessful bundle of passwords, start(len_t)
+//Not implemented so far
 void Feedback::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){
 
     LogManager& logMgr = LogManager::getInstance();
@@ -224,13 +226,11 @@ void ReturnRet::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* r
     //int intVal = paramList.getInt(2);
 
     string pass = strVal;
-
-    cout<<"["<<pass<<"] --> ["<<slave->master->md5<<"]" <<endl;
+    //cout<<"["<<pass<<"] --> ["<<slave->master->md5<<"]" <<endl;
 
     slave->master->reportFoundPass(pass);
-
-    *retValP = xmlrpc_c::value_string(string("Master accept my cmd"));
-
+    
+    *retValP = xmlrpc_c::value_string(string("Master appreciate your effort of cracking the md5"));
 }
 
 //Invite master to create new connection to slave
@@ -240,8 +240,8 @@ void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* r
     
     logMgr <<"[Handshake] from "<< slave->key<<endl;
 
+    //Not likely 
     if( slave->isFullConnected ){
-
         logMgr << "Duplicate Handshake from same slave" <<endl;
         *retValP = xmlrpc_c::value_string(string("[WARN] duplicate handshake"));
         return;
@@ -289,6 +289,7 @@ void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* r
 
     pthread_t thread;
 
+    //Command sender thread
     int rc = pthread_create(&thread,NULL,SlaveProxy::slaveSenderFunc,(void*)slave);
 
     if(-1 == rc){
@@ -301,7 +302,7 @@ void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* r
         slave->isFullConnected = true;
         //register the socket, sending cmd to slave
         slave->socket2Slave = sock;
-        *retValP = xmlrpc_c::value_string(string("Hello, new slave"));
+        *retValP = xmlrpc_c::value_string(string("Welcome you, my new slave"));
     }
     else{
         *retValP = xmlrpc_c::value_string(string("Error in Master"));

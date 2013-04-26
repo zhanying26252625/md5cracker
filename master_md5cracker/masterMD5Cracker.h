@@ -11,6 +11,8 @@
 #include <unordered_map> //experimtal in c++11
 #include <pthread.h>
 #include <semaphore.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -135,6 +137,7 @@ private:
     //run time
     double timeSpent;
 
+    struct timeval start, end;
 };
 
 

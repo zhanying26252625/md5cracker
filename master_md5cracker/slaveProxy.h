@@ -20,6 +20,7 @@ class MasterMD5Cracker;
 class Fetch;
 class HandShake;
 
+//command sent to slaves
 struct Cmd{
     //stop,status,quit
     Cmd(string n):name(n){longVal = intVal = 0; strVal=string("");}
@@ -38,19 +39,15 @@ class SlaveProxy{
 private:
 
     string key;
-
     string slaveAddr;
-
     int slavePort;
 
     //Use two sockets in two threads for concurrent bi-directional communication 
     int socket2Master; //receive cmd from slave
-
     int socket2Slave; //send cmd to slave
 
     //Receiver cmd thread for slave
     static void* slaveReceiverFunc(void* arg);
-
     //Sender cmd thread to slave
     static void* slaveSenderFunc(void* arg);
 
@@ -59,14 +56,10 @@ private:
     MasterMD5Cracker* master;
 
     pthread_t threadMasterSender;
-
     pthread_t threadMasterReceiver;
-
     //True is duplex connection is already there
     bool isFullConnected;
-
     queue<Cmd> cmdQueue;
-
     bool isExisting;
 
 public:
@@ -85,7 +78,10 @@ public:
     friend class MasterMD5Cracker;
 };
 
+//Handler for received command from slave
+
 //Slave send feedback for unsuccessful previos passwords 
+//Not implemented so far
 class Feedback : public xmlrpc_c::method{
 
 private:
@@ -101,7 +97,7 @@ public:
 
 };
 
-//Slave send feedback for unsuccessful previos passwords 
+//Slave send password found 
 class ReturnRet : public xmlrpc_c::method{
 
 private:
@@ -118,6 +114,8 @@ public:
 };
 
 //Slave invite master to connect back to itself 
+//Actually one socket is enough for concurrent duplex communication
+//when associate with two threads
 class HandShake : public xmlrpc_c::method{
 
 private:
