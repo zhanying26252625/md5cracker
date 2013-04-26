@@ -7,6 +7,6 @@ static const int SLAVE_PORT = 12626;
 
 static const int PASS_LEN = 10;
 
-static const int CHUNK_SIZE = 1000*1000;
+static const int CHUNK_SIZE = 1000*1000*10;
 
 #endif
