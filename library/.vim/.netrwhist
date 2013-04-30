@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/greenpea/Music'
 let g:netrw_dirhist_2='/home/greenpea/Work/cs552/project/md5cracker/master_cracker'
 let g:netrw_dirhist_3='/home/greenpea'
+let g:netrw_dirhist_4='/home/greenpea/Work/cs552/project/md5cracker/library/.vim'

@@ -1,0 +1,1511 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+<C-@><C-@>c	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>d	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>e	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>f	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	$/;"	m
+<C-@><C-@>g	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>i	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	$/;"	m
+<C-@><C-@>s	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>t	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@>c	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-@>d	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-@>e	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-@>f	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	$/;"	m
+<C-@>g	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-@>i	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	$/;"	m
+<C-@>s	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-@>t	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-\>c	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-\>d	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-\>e	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-\>f	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	$/;"	m
+<C-\>g	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-\>i	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>$/;"	m
+<C-\>s	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<C-\>t	library/.vim/plugin/cscope_maps.vim	/^    nmap <C-\\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	$/;"	m
+<SID>xx	library/.vim/plugin/taglist.vim	/^    map <SID>xx <SID>xx$/;"	m
+BUFFER_SIZE	master_md5cracker/md5.h	/^	static const size_t BUFFER_SIZE = 1024*16;$/;"	m	class:MD5	access:private
+BUFFER_SIZE	slave_md5cracker/md5.h	/^	static const size_t BUFFER_SIZE = 1024*16;$/;"	m	class:MD5	access:private
+BatchSize	slave_md5cracker/rwBuffer.h	/^    enum Size{BatchSize=1024*2,QueueSize=100};$/;"	e	enum:RWBuffer::Size
+Bookmark.AddBookmark	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.AddBookmark(name, path)$/;"	f
+Bookmark.BookmarkExistsFor	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.BookmarkExistsFor(name)$/;"	f
+Bookmark.BookmarkFor	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.BookmarkFor(name)$/;"	f
+Bookmark.BookmarkNames	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.BookmarkNames()$/;"	f
+Bookmark.Bookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.Bookmarks()$/;"	f
+Bookmark.CacheBookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.CacheBookmarks(silent)$/;"	f
+Bookmark.ClearAll	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.ClearAll()$/;"	f
+Bookmark.GetNodeForName	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.GetNodeForName(name, searchFromAbsoluteRoot)$/;"	f
+Bookmark.GetSelected	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.GetSelected()$/;"	f
+Bookmark.InvalidBookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.InvalidBookmarks()$/;"	f
+Bookmark.New	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.New(name, path)$/;"	f
+Bookmark.Sort	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.Sort()$/;"	f
+Bookmark.ToRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.ToRoot(name)$/;"	f
+Bookmark.Write	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.Write()$/;"	f
+Bookmark.activate	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.activate()$/;"	f
+Bookmark.compareTo	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.compareTo(otherbookmark)$/;"	f
+Bookmark.delete	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.delete()$/;"	f
+Bookmark.getNode	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.getNode(searchFromAbsoluteRoot)$/;"	f
+Bookmark.mustExist	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.mustExist()$/;"	f
+Bookmark.openInNewTab	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.openInNewTab(options)$/;"	f
+Bookmark.setPath	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.setPath(path)$/;"	f
+Bookmark.str	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.str()$/;"	f
+Bookmark.toRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.toRoot()$/;"	f
+Bookmark.validate	library/.vim/plugin/NERD_tree.vim	/^function! s:Bookmark.validate()$/;"	f
+BuildContextStack	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:BuildContextStack(namespaces, szCurrentScope)$/;"	f
+CC	master_md5cracker/Makefile	/^CC = g++$/;"	m
+CC	slave_md5cracker/Makefile	/^CC = g++$/;"	m
+CFLAGS	master_md5cracker/Makefile	/^CFLAGS = -std=c++11 -Wall -g  $/;"	m
+CFLAGS	slave_md5cracker/Makefile	/^CFLAGS = -std=c++11 -Wall -g  $/;"	m
+CHUNK_SIZE	configure.h	/^static const int CHUNK_SIZE = 1000*1000;$/;"	v
+COUT	master_md5cracker/logManager.h	8;"	d
+CanUseOmnicompletion	library/.vim/autoload/omni/cpp/maycomplete.vim	/^function! s:CanUseOmnicompletion()$/;"	f
+Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n):name(n){longVal = intVal = 0; strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n)
+Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n,len_t l, int i):name(n),longVal(l),intVal(i){strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n,len_t l, int i)
+Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n,string s):name(n),strVal(s){ longVal = intVal = 0;}$/;"	f	struct:Cmd	access:public	signature:(string n,string s)
+Cmd	master_md5cracker/slaveProxy.h	/^struct Cmd{$/;"	s
+Cmd	slave_md5cracker/masterProxy.h	/^    Cmd(string n,int i):name(n),intVal(i){longVal = 0; strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n,int i)
+Cmd	slave_md5cracker/masterProxy.h	/^    Cmd(string n,len_t l):name(n),longVal(l){intVal = 0; strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n,len_t l)
+Cmd	slave_md5cracker/masterProxy.h	/^    Cmd(string n,string s):name(n),strVal(s){ longVal = intVal = 0;}$/;"	f	struct:Cmd	access:public	signature:(string n,string s)
+Cmd	slave_md5cracker/masterProxy.h	/^struct Cmd{$/;"	s
+Cmd::Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n):name(n){longVal = intVal = 0; strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n)
+Cmd::Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n,len_t l, int i):name(n),longVal(l),intVal(i){strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n,len_t l, int i)
+Cmd::Cmd	master_md5cracker/slaveProxy.h	/^    Cmd(string n,string s):name(n),strVal(s){ longVal = intVal = 0;}$/;"	f	struct:Cmd	access:public	signature:(string n,string s)
+Cmd::Cmd	slave_md5cracker/masterProxy.h	/^    Cmd(string n,int i):name(n),intVal(i){longVal = 0; strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n,int i)
+Cmd::Cmd	slave_md5cracker/masterProxy.h	/^    Cmd(string n,len_t l):name(n),longVal(l){intVal = 0; strVal=string("");}$/;"	f	struct:Cmd	access:public	signature:(string n,len_t l)
+Cmd::Cmd	slave_md5cracker/masterProxy.h	/^    Cmd(string n,string s):name(n),strVal(s){ longVal = intVal = 0;}$/;"	f	struct:Cmd	access:public	signature:(string n,string s)
+Cmd::intVal	master_md5cracker/slaveProxy.h	/^    int intVal;$/;"	m	struct:Cmd	access:public
+Cmd::intVal	slave_md5cracker/masterProxy.h	/^    int intVal;$/;"	m	struct:Cmd	access:public
+Cmd::longVal	master_md5cracker/slaveProxy.h	/^    len_t longVal;$/;"	m	struct:Cmd	access:public
+Cmd::longVal	slave_md5cracker/masterProxy.h	/^    len_t longVal;$/;"	m	struct:Cmd	access:public
+Cmd::name	master_md5cracker/slaveProxy.h	/^    string name;$/;"	m	struct:Cmd	access:public
+Cmd::name	slave_md5cracker/masterProxy.h	/^    string name;$/;"	m	struct:Cmd	access:public
+Cmd::strVal	master_md5cracker/slaveProxy.h	/^    string strVal;$/;"	m	struct:Cmd	access:public
+Cmd::strVal	slave_md5cracker/masterProxy.h	/^    string strVal;$/;"	m	struct:Cmd	access:public
+CmdHandler	master_md5cracker/masterMD5Cracker.h	/^    typedef void* (*CmdHandler)(MasterMD5Cracker* master, void* arg);$/;"	t	class:MasterMD5Cracker	access:private
+CpuCracker	slave_md5cracker/cpuCracker.cpp	/^CpuCracker::CpuCracker(){$/;"	f	class:CpuCracker	signature:()
+CpuCracker	slave_md5cracker/cpuCracker.h	/^    CpuCracker();$/;"	p	class:CpuCracker	access:public	signature:()
+CpuCracker	slave_md5cracker/cpuCracker.h	/^class CpuCracker{$/;"	c
+CpuCracker::CpuCracker	slave_md5cracker/cpuCracker.cpp	/^CpuCracker::CpuCracker(){$/;"	f	class:CpuCracker	signature:()
+CpuCracker::CpuCracker	slave_md5cracker/cpuCracker.h	/^    CpuCracker();$/;"	p	class:CpuCracker	access:public	signature:()
+CpuCracker::cores	slave_md5cracker/cpuCracker.h	/^    int cores;$/;"	m	class:CpuCracker	access:private
+CpuCracker::getNumOfCores	slave_md5cracker/cpuCracker.cpp	/^int CpuCracker::getNumOfCores(){$/;"	f	class:CpuCracker	signature:()
+CpuCracker::getNumOfCores	slave_md5cracker/cpuCracker.h	/^    int getNumOfCores();$/;"	p	class:CpuCracker	access:private	signature:()
+CpuCracker::init	slave_md5cracker/cpuCracker.cpp	/^bool CpuCracker::init(SlaveMD5Cracker* sc){$/;"	f	class:CpuCracker	signature:(SlaveMD5Cracker* sc)
+CpuCracker::init	slave_md5cracker/cpuCracker.h	/^    bool init(SlaveMD5Cracker* sc);$/;"	p	class:CpuCracker	access:public	signature:(SlaveMD5Cracker* sc)
+CpuCracker::slaveCracker	slave_md5cracker/cpuCracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:CpuCracker	access:private
+CpuCracker::terminate	slave_md5cracker/cpuCracker.cpp	/^bool CpuCracker::terminate(){$/;"	f	class:CpuCracker	signature:()
+CpuCracker::terminate	slave_md5cracker/cpuCracker.h	/^    bool terminate();$/;"	p	class:CpuCracker	access:public	signature:()
+CpuCracker::workThreadFunc	slave_md5cracker/cpuCracker.cpp	/^void* CpuCracker::workThreadFunc(void* arg){$/;"	f	class:CpuCracker	signature:(void* arg)
+CpuCracker::workThreadFunc	slave_md5cracker/cpuCracker.h	/^    static void* workThreadFunc(void* arg);$/;"	p	class:CpuCracker	access:private	signature:(void* arg)
+CpuCracker::workThreads	slave_md5cracker/cpuCracker.h	/^    vector<pthread_t> workThreads;$/;"	m	class:CpuCracker	access:private
+DisplayIncludeTree	library/.vim/autoload/omni/cpp/includes.vim	/^function! s:DisplayIncludeTree(szFilePath, indent, ...)$/;"	f
+ExtendTagItemToPopupItem	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:ExtendTagItemToPopupItem(tagItem, szTypeName)$/;"	f
+ExtractScopeFromTypeInfo	library/.vim/autoload/omni/cpp/utils.vim	/^function! s:ExtractScopeFromTypeInfo(szTypeInfo)$/;"	f
+ExtractTypeInfoFromDecl	library/.vim/autoload/omni/cpp/items.vim	/^function! s:ExtractTypeInfoFromDecl(tokens)$/;"	f
+F	master_md5cracker/md5.cpp	54;"	d	file:
+F	slave_md5cracker/md5.cpp	54;"	d	file:
+FF	master_md5cracker/md5.cpp	66;"	d	file:
+FF	slave_md5cracker/md5.cpp	66;"	d	file:
+FILELOG	master_md5cracker/logManager.h	9;"	d
+Feedback	master_md5cracker/slaveProxy.h	/^    Feedback(SlaveProxy* sp){$/;"	f	class:Feedback	access:public	signature:(SlaveProxy* sp)
+Feedback	master_md5cracker/slaveProxy.h	/^class Feedback : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+Feedback::Feedback	master_md5cracker/slaveProxy.h	/^    Feedback(SlaveProxy* sp){$/;"	f	class:Feedback	access:public	signature:(SlaveProxy* sp)
+Feedback::execute	master_md5cracker/slaveProxy.cpp	/^void Feedback::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:Feedback	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+Feedback::execute	master_md5cracker/slaveProxy.h	/^    void execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP );$/;"	p	class:Feedback	access:public	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+Feedback::slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:Feedback	access:private
+FilterClassMembers	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:FilterClassMembers(tagPopupList, szAccessFilter)$/;"	f
+FilterClassScopeMembers	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:FilterClassScopeMembers(tagPopupList, szAccessFilter)$/;"	f
+FilterNamespaceScopeMembers	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:FilterNamespaceScopeMembers(tagPopupList)$/;"	f
+FilterOverloadedFunctions	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:FilterOverloadedFunctions(tagPopupList)$/;"	f
+FilterStaticClassMembers	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:FilterStaticClassMembers(tagPopupList, szAccessFilter)$/;"	f
+FindStartPositionOfCompletion	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:FindStartPositionOfCompletion()$/;"	f
+G	master_md5cracker/md5.cpp	55;"	d	file:
+G	slave_md5cracker/md5.cpp	55;"	d	file:
+GG	master_md5cracker/md5.cpp	71;"	d	file:
+GG	slave_md5cracker/md5.cpp	71;"	d	file:
+GetAccessFilter	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:GetAccessFilter(szFilter, szAccessFilter)$/;"	f
+GetAllUsingNamespaceMapFromCurrentBuffer	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetAllUsingNamespaceMapFromCurrentBuffer(...)$/;"	f
+GetAllUsingNamespaceMapFromFile	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetAllUsingNamespaceMapFromFile(szFilePath, ...)$/;"	f
+GetClassScopeAtCursor	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetClassScopeAtCursor()$/;"	f
+GetIncludeListFromCurrentBuffer	library/.vim/autoload/omni/cpp/includes.vim	/^function! s:GetIncludeListFromCurrentBuffer()$/;"	f
+GetIncludeListFromFile	library/.vim/autoload/omni/cpp/includes.vim	/^function! s:GetIncludeListFromFile(szFilePath, bUpdate) $/;"	f
+GetNamespaceAliasListFromLine	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetNamespaceAliasListFromLine(szLine)$/;"	f
+GetNamespaceAliasMap	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetNamespaceAliasMap()$/;"	f
+GetNamespaceListFromLine	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetNamespaceListFromLine(szLine)$/;"	f
+GetStopPositionForLocalSearch	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetStopPositionForLocalSearch()$/;"	f
+GetSymbol	library/.vim/autoload/omni/cpp/items.vim	/^function! s:GetSymbol(tokens)$/;"	f
+GetTagOfSameScope	library/.vim/autoload/omni/cpp/utils.vim	/^function! s:GetTagOfSameScope(listTags, szScopeToMatch)$/;"	f
+GetTypeInfoOfReturnedType	library/.vim/autoload/omni/cpp/items.vim	/^function! s:GetTypeInfoOfReturnedType(contextStack, szFunctionName)$/;"	f
+GetTypeInfoOfVariable	library/.vim/autoload/omni/cpp/items.vim	/^function! s:GetTypeInfoOfVariable(contextStack, szVariable, bSearchDecl)$/;"	f
+GetUsingNamespaceListFromMap	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:GetUsingNamespaceListFromMap(namespaceMap, ...)$/;"	f
+GpuCracker	slave_md5cracker/gpuCracker.cpp	/^GpuCracker::GpuCracker(){$/;"	f	class:GpuCracker	signature:()
+GpuCracker	slave_md5cracker/gpuCracker.h	/^    GpuCracker();$/;"	p	class:GpuCracker	access:public	signature:()
+GpuCracker	slave_md5cracker/gpuCracker.h	/^class GpuCracker{$/;"	c
+GpuCracker::GpuCracker	slave_md5cracker/gpuCracker.cpp	/^GpuCracker::GpuCracker(){$/;"	f	class:GpuCracker	signature:()
+GpuCracker::GpuCracker	slave_md5cracker/gpuCracker.h	/^    GpuCracker();$/;"	p	class:GpuCracker	access:public	signature:()
+GpuCracker::init	slave_md5cracker/gpuCracker.cpp	/^bool GpuCracker::init(SlaveMD5Cracker* sc){$/;"	f	class:GpuCracker	signature:(SlaveMD5Cracker* sc)
+GpuCracker::init	slave_md5cracker/gpuCracker.h	/^    bool init(SlaveMD5Cracker* sc);$/;"	p	class:GpuCracker	access:public	signature:(SlaveMD5Cracker* sc)
+GpuCracker::isGPUsupported	slave_md5cracker/gpuCracker.cpp	/^bool GpuCracker::isGPUsupported(){$/;"	f	class:GpuCracker	signature:()
+GpuCracker::isGPUsupported	slave_md5cracker/gpuCracker.h	/^    bool isGPUsupported();$/;"	p	class:GpuCracker	access:private	signature:()
+GpuCracker::slaveCracker	slave_md5cracker/gpuCracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:GpuCracker	access:private
+GpuCracker::terminate	slave_md5cracker/gpuCracker.cpp	/^bool GpuCracker::terminate(){$/;"	f	class:GpuCracker	signature:()
+GpuCracker::terminate	slave_md5cracker/gpuCracker.h	/^    bool terminate();$/;"	p	class:GpuCracker	access:public	signature:()
+GpuCracker::thread	slave_md5cracker/gpuCracker.h	/^    pthread_t thread;$/;"	m	class:GpuCracker	access:private
+GpuCracker::workThreadFunc	slave_md5cracker/gpuCracker.cpp	/^void* GpuCracker::workThreadFunc(void* arg){$/;"	f	class:GpuCracker	signature:(void* arg)
+GpuCracker::workThreadFunc	slave_md5cracker/gpuCracker.h	/^    static void* workThreadFunc(void* arg);$/;"	p	class:GpuCracker	access:private	signature:(void* arg)
+H	master_md5cracker/md5.cpp	56;"	d	file:
+H	slave_md5cracker/md5.cpp	56;"	d	file:
+HEX	master_md5cracker/md5.cpp	/^const char MD5::HEX[16] = {$/;"	m	class:MD5	file:
+HEX	master_md5cracker/md5.h	/^	static const char HEX[16];$/;"	m	class:MD5	access:private
+HEX	slave_md5cracker/md5.cpp	/^const char MD5::HEX[16] = {$/;"	m	class:MD5	file:
+HEX	slave_md5cracker/md5.h	/^	static const char HEX[16];$/;"	m	class:MD5	access:private
+HH	master_md5cracker/md5.cpp	76;"	d	file:
+HH	slave_md5cracker/md5.cpp	76;"	d	file:
+HandShake	master_md5cracker/slaveProxy.h	/^    HandShake(SlaveProxy* sp){$/;"	f	class:HandShake	access:public	signature:(SlaveProxy* sp)
+HandShake	master_md5cracker/slaveProxy.h	/^class HandShake : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+HandShake::HandShake	master_md5cracker/slaveProxy.h	/^    HandShake(SlaveProxy* sp){$/;"	f	class:HandShake	access:public	signature:(SlaveProxy* sp)
+HandShake::execute	master_md5cracker/slaveProxy.cpp	/^void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:HandShake	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+HandShake::execute	master_md5cracker/slaveProxy.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:HandShake	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+HandShake::slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:HandShake	access:private
+HasATagFileOrTagEnvChanged	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:HasATagFileOrTagEnvChanged()$/;"	f
+HasTagEnvChanged	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:HasTagEnvChanged()$/;"	f
+I	master_md5cracker/md5.cpp	57;"	d	file:
+I	slave_md5cracker/md5.cpp	57;"	d	file:
+II	master_md5cracker/md5.cpp	81;"	d	file:
+II	slave_md5cracker/md5.cpp	81;"	d	file:
+InitComplete	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:InitComplete()$/;"	f
+IsCached	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:IsCached(cache, szKey1, szKey2)$/;"	f
+IsTypeInfoResolved	library/.vim/autoload/omni/cpp/utils.vim	/^function! s:IsTypeInfoResolved(szTypeInfo)$/;"	f
+IsUnnamedType	library/.vim/autoload/omni/cpp/items.vim	/^function! s:IsUnnamedType(tagItem)$/;"	f
+KeyMap.All	library/.vim/plugin/NERD_tree.vim	/^function! s:KeyMap.All()$/;"	f
+KeyMap.BindAll	library/.vim/plugin/NERD_tree.vim	/^function! s:KeyMap.BindAll()$/;"	f
+KeyMap.Create	library/.vim/plugin/NERD_tree.vim	/^function! s:KeyMap.Create(options)$/;"	f
+KeyMap.bind	library/.vim/plugin/NERD_tree.vim	/^function! s:KeyMap.bind()$/;"	f
+LIST	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+LocalSearchDecl	library/.vim/autoload/omni/cpp/items.vim	/^function! s:LocalSearchDecl(name)$/;"	f
+LogManager	master_md5cracker/logManager.cpp	/^LogManager::LogManager(const string& logName){$/;"	f	class:LogManager	signature:(const string& logName)
+LogManager	master_md5cracker/logManager.h	/^    LogManager(){}$/;"	f	class:LogManager	access:private	signature:()
+LogManager	master_md5cracker/logManager.h	/^    LogManager(const LogManager& logMgr){}$/;"	f	class:LogManager	access:private	signature:(const LogManager& logMgr)
+LogManager	master_md5cracker/logManager.h	/^    LogManager(const string& logName);$/;"	p	class:LogManager	access:private	signature:(const string& logName)
+LogManager	master_md5cracker/logManager.h	/^class LogManager{$/;"	c
+LogManager::LogManager	master_md5cracker/logManager.cpp	/^LogManager::LogManager(const string& logName){$/;"	f	class:LogManager	signature:(const string& logName)
+LogManager::LogManager	master_md5cracker/logManager.h	/^    LogManager(){}$/;"	f	class:LogManager	access:private	signature:()
+LogManager::LogManager	master_md5cracker/logManager.h	/^    LogManager(const LogManager& logMgr){}$/;"	f	class:LogManager	access:private	signature:(const LogManager& logMgr)
+LogManager::LogManager	master_md5cracker/logManager.h	/^    LogManager(const string& logName);$/;"	p	class:LogManager	access:private	signature:(const string& logName)
+LogManager::func	master_md5cracker/logManager.h	/^    LogManager& operator<<(std::ostream& (*func) (std::ostream&) ){$/;"	f	class:LogManager	access:public	signature:(std::ostream&)
+LogManager::getInstance	master_md5cracker/logManager.h	/^    static LogManager& getInstance(){$/;"	f	class:LogManager	access:public	signature:()
+LogManager::isLogFileOpen	master_md5cracker/logManager.h	/^    bool isLogFileOpen;$/;"	m	class:LogManager	access:private
+LogManager::logFile	master_md5cracker/logManager.h	/^    ofstream logFile;$/;"	m	class:LogManager	access:private
+LogManager::operator <<	master_md5cracker/logManager.h	/^    LogManager& operator<<(const T& t){$/;"	f	class:LogManager	access:public	signature:(const T& t)
+LogManager::operator =	master_md5cracker/logManager.h	/^    LogManager& operator=(const LogManager& logMgr){return *this ;}$/;"	f	class:LogManager	access:private	signature:(const LogManager& logMgr)
+LogManager::~LogManager	master_md5cracker/logManager.h	/^    ~LogManager(){}$/;"	f	class:LogManager	access:private	signature:()
+MASTER_DIR	Makefile	/^MASTER_DIR = .\/master_md5cracker$/;"	m
+MASTER_PORT	configure.h	/^static const int MASTER_PORT = 12625;$/;"	v
+MD5	master_md5cracker/md5.cpp	/^MD5::MD5() {$/;"	f	class:MD5	signature:()
+MD5	master_md5cracker/md5.h	/^	MD5();$/;"	p	class:MD5	access:public	signature:()
+MD5	master_md5cracker/md5.h	/^	MD5(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+MD5	master_md5cracker/md5.h	/^class MD5 {$/;"	c
+MD5	slave_md5cracker/md5.cpp	/^MD5::MD5() {$/;"	f	class:MD5	signature:()
+MD5	slave_md5cracker/md5.h	/^	MD5();$/;"	p	class:MD5	access:public	signature:()
+MD5	slave_md5cracker/md5.h	/^	MD5(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+MD5	slave_md5cracker/md5.h	/^class MD5 {$/;"	c
+MD5::BUFFER_SIZE	master_md5cracker/md5.h	/^	static const size_t BUFFER_SIZE = 1024*16;$/;"	m	class:MD5	access:private
+MD5::BUFFER_SIZE	slave_md5cracker/md5.h	/^	static const size_t BUFFER_SIZE = 1024*16;$/;"	m	class:MD5	access:private
+MD5::HEX	master_md5cracker/md5.cpp	/^const char MD5::HEX[16] = {$/;"	m	class:MD5	file:
+MD5::HEX	master_md5cracker/md5.h	/^	static const char HEX[16];$/;"	m	class:MD5	access:private
+MD5::HEX	slave_md5cracker/md5.cpp	/^const char MD5::HEX[16] = {$/;"	m	class:MD5	file:
+MD5::HEX	slave_md5cracker/md5.h	/^	static const char HEX[16];$/;"	m	class:MD5	access:private
+MD5::MD5	master_md5cracker/md5.cpp	/^MD5::MD5() {$/;"	f	class:MD5	signature:()
+MD5::MD5	master_md5cracker/md5.h	/^	MD5();$/;"	p	class:MD5	access:public	signature:()
+MD5::MD5	master_md5cracker/md5.h	/^	MD5(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+MD5::MD5	slave_md5cracker/md5.cpp	/^MD5::MD5() {$/;"	f	class:MD5	signature:()
+MD5::MD5	slave_md5cracker/md5.h	/^	MD5();$/;"	p	class:MD5	access:public	signature:()
+MD5::MD5	slave_md5cracker/md5.h	/^	MD5(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+MD5::PADDING	master_md5cracker/md5.cpp	/^const byte MD5::PADDING[64] = { 0x80 };$/;"	m	class:MD5	file:
+MD5::PADDING	master_md5cracker/md5.h	/^	static const byte PADDING[64];	\/* padding for calculate *\/$/;"	m	class:MD5	access:private
+MD5::PADDING	slave_md5cracker/md5.cpp	/^const byte MD5::PADDING[64] = { 0x80 };$/;"	m	class:MD5	file:
+MD5::PADDING	slave_md5cracker/md5.h	/^	static const byte PADDING[64];	\/* padding for calculate *\/$/;"	m	class:MD5	access:private
+MD5::_buffer	master_md5cracker/md5.h	/^	byte _buffer[64];	\/* input buffer *\/$/;"	m	class:MD5	access:private
+MD5::_buffer	slave_md5cracker/md5.h	/^	byte _buffer[64];	\/* input buffer *\/$/;"	m	class:MD5	access:private
+MD5::_count	master_md5cracker/md5.h	/^	ulong _count[2];	\/* number of bits, modulo 2^64 (low-order word first) *\/$/;"	m	class:MD5	access:private
+MD5::_count	slave_md5cracker/md5.h	/^	ulong _count[2];	\/* number of bits, modulo 2^64 (low-order word first) *\/$/;"	m	class:MD5	access:private
+MD5::_digest	master_md5cracker/md5.h	/^	byte _digest[16];	\/* message digest *\/$/;"	m	class:MD5	access:private
+MD5::_digest	slave_md5cracker/md5.h	/^	byte _digest[16];	\/* message digest *\/$/;"	m	class:MD5	access:private
+MD5::_finished	master_md5cracker/md5.h	/^	bool _finished;		\/* calculate finished ? *\/$/;"	m	class:MD5	access:private
+MD5::_finished	slave_md5cracker/md5.h	/^	bool _finished;		\/* calculate finished ? *\/$/;"	m	class:MD5	access:private
+MD5::_state	master_md5cracker/md5.h	/^	ulong _state[4];	\/* state (ABCD) *\/$/;"	m	class:MD5	access:private
+MD5::_state	slave_md5cracker/md5.h	/^	ulong _state[4];	\/* state (ABCD) *\/$/;"	m	class:MD5	access:private
+MD5::bytesToHexString	master_md5cracker/md5.cpp	/^string MD5::bytesToHexString(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+MD5::bytesToHexString	master_md5cracker/md5.h	/^	string bytesToHexString(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+MD5::bytesToHexString	slave_md5cracker/md5.cpp	/^string MD5::bytesToHexString(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+MD5::bytesToHexString	slave_md5cracker/md5.h	/^	string bytesToHexString(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+MD5::calMD5FromFile	master_md5cracker/md5.cpp	/^string MD5::calMD5FromFile(const string& fileName){$/;"	f	class:MD5	signature:(const string& fileName)
+MD5::calMD5FromFile	master_md5cracker/md5.h	/^    string calMD5FromFile(const string& fileName);$/;"	p	class:MD5	access:public	signature:(const string& fileName)
+MD5::calMD5FromFile	slave_md5cracker/md5.cpp	/^string MD5::calMD5FromFile(const string& fileName){$/;"	f	class:MD5	signature:(const string& fileName)
+MD5::calMD5FromFile	slave_md5cracker/md5.h	/^    string calMD5FromFile(const string& fileName);$/;"	p	class:MD5	access:public	signature:(const string& fileName)
+MD5::calMD5FromString	master_md5cracker/md5.cpp	/^string MD5::calMD5FromString(const string& str) {$/;"	f	class:MD5	signature:(const string& str)
+MD5::calMD5FromString	master_md5cracker/md5.h	/^	string calMD5FromString(const string& str);$/;"	p	class:MD5	access:public	signature:(const string& str)
+MD5::calMD5FromString	slave_md5cracker/md5.cpp	/^string MD5::calMD5FromString(const string& str) {$/;"	f	class:MD5	signature:(const string& str)
+MD5::calMD5FromString	slave_md5cracker/md5.h	/^	string calMD5FromString(const string& str);$/;"	p	class:MD5	access:public	signature:(const string& str)
+MD5::decode	master_md5cracker/md5.cpp	/^void MD5::decode(const byte *input, ulong *output, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, ulong *output, size_t length)
+MD5::decode	master_md5cracker/md5.h	/^	void decode(const byte *input, ulong *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, ulong *output, size_t length)
+MD5::decode	slave_md5cracker/md5.cpp	/^void MD5::decode(const byte *input, ulong *output, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, ulong *output, size_t length)
+MD5::decode	slave_md5cracker/md5.h	/^	void decode(const byte *input, ulong *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, ulong *output, size_t length)
+MD5::digest	master_md5cracker/md5.cpp	/^const byte* MD5::digest() {$/;"	f	class:MD5	signature:()
+MD5::digest	master_md5cracker/md5.h	/^    const byte* digest();$/;"	p	class:MD5	access:private	signature:()
+MD5::digest	slave_md5cracker/md5.cpp	/^const byte* MD5::digest() {$/;"	f	class:MD5	signature:()
+MD5::digest	slave_md5cracker/md5.h	/^    const byte* digest();$/;"	p	class:MD5	access:private	signature:()
+MD5::encode	master_md5cracker/md5.cpp	/^void MD5::encode(const ulong *input, byte *output, size_t length) {$/;"	f	class:MD5	signature:(const ulong *input, byte *output, size_t length)
+MD5::encode	master_md5cracker/md5.h	/^	void encode(const ulong *input, byte *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const ulong *input, byte *output, size_t length)
+MD5::encode	slave_md5cracker/md5.cpp	/^void MD5::encode(const ulong *input, byte *output, size_t length) {$/;"	f	class:MD5	signature:(const ulong *input, byte *output, size_t length)
+MD5::encode	slave_md5cracker/md5.h	/^	void encode(const ulong *input, byte *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const ulong *input, byte *output, size_t length)
+MD5::final	master_md5cracker/md5.cpp	/^void MD5::final() {$/;"	f	class:MD5	signature:()
+MD5::final	master_md5cracker/md5.h	/^	void final();$/;"	p	class:MD5	access:private	signature:()
+MD5::final	slave_md5cracker/md5.cpp	/^void MD5::final() {$/;"	f	class:MD5	signature:()
+MD5::final	slave_md5cracker/md5.h	/^	void final();$/;"	p	class:MD5	access:private	signature:()
+MD5::init	master_md5cracker/md5.cpp	/^void MD5::init() {$/;"	f	class:MD5	signature:()
+MD5::init	master_md5cracker/md5.h	/^	void init();$/;"	p	class:MD5	access:private	signature:()
+MD5::init	slave_md5cracker/md5.cpp	/^void MD5::init() {$/;"	f	class:MD5	signature:()
+MD5::init	slave_md5cracker/md5.h	/^	void init();$/;"	p	class:MD5	access:private	signature:()
+MD5::operator =	master_md5cracker/md5.h	/^	MD5& operator=(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+MD5::operator =	slave_md5cracker/md5.h	/^	MD5& operator=(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+MD5::transform	master_md5cracker/md5.cpp	/^void MD5::transform(const byte block[64]) {$/;"	f	class:MD5	signature:(const byte block[64])
+MD5::transform	master_md5cracker/md5.h	/^	void transform(const byte block[64]);$/;"	p	class:MD5	access:private	signature:(const byte block[64])
+MD5::transform	slave_md5cracker/md5.cpp	/^void MD5::transform(const byte block[64]) {$/;"	f	class:MD5	signature:(const byte block[64])
+MD5::transform	slave_md5cracker/md5.h	/^	void transform(const byte block[64]);$/;"	p	class:MD5	access:private	signature:(const byte block[64])
+MD5::update	master_md5cracker/md5.cpp	/^void MD5::update(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+MD5::update	master_md5cracker/md5.h	/^    void update(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+MD5::update	slave_md5cracker/md5.cpp	/^void MD5::update(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+MD5::update	slave_md5cracker/md5.h	/^    void update(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+MD5_H	master_md5cracker/md5.h	2;"	d
+MD5_H	slave_md5cracker/md5.h	2;"	d
+MasterMD5Cracker	master_md5cracker/masterMD5Cracker.cpp	/^MasterMD5Cracker::MasterMD5Cracker(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker	master_md5cracker/masterMD5Cracker.h	/^    MasterMD5Cracker();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+MasterMD5Cracker	master_md5cracker/masterMD5Cracker.h	/^class MasterMD5Cracker{$/;"	c
+MasterMD5Cracker::CmdHandler	master_md5cracker/masterMD5Cracker.h	/^    typedef void* (*CmdHandler)(MasterMD5Cracker* master, void* arg);$/;"	t	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::LIST	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+MasterMD5Cracker::MasterMD5Cracker	master_md5cracker/masterMD5Cracker.cpp	/^MasterMD5Cracker::MasterMD5Cracker(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::MasterMD5Cracker	master_md5cracker/masterMD5Cracker.h	/^    MasterMD5Cracker();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+MasterMD5Cracker::PASSLEN	master_md5cracker/masterMD5Cracker.cpp	/^int MasterMD5Cracker::PASSLEN = PASS_LEN;$/;"	m	class:MasterMD5Cracker	file:
+MasterMD5Cracker::PASSLEN	master_md5cracker/masterMD5Cracker.h	/^    static int PASSLEN ;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::QUIT	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+MasterMD5Cracker::START	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+MasterMD5Cracker::STATUS	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+MasterMD5Cracker::STOP	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+MasterMD5Cracker::UserCmd	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	g	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::badPassRanges	master_md5cracker/masterMD5Cracker.h	/^    set<len_t> badPassRanges;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::chunkSize	master_md5cracker/masterMD5Cracker.h	/^    int chunkSize;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::cmdHandlers	master_md5cracker/masterMD5Cracker.h	/^    map<string,CmdHandler> cmdHandlers;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::cmdHelp	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::cmdHelp(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::cmdHelp	master_md5cracker/masterMD5Cracker.h	/^    void cmdHelp();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+MasterMD5Cracker::cmdList	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdList	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdList(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdQuit	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdQuit	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdQuit(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdStart	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdStart	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdStart(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdStatus	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdStatus	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdStatus(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdStop	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::cmdStop	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdStop(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+MasterMD5Cracker::crackPasswordLen	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level){$/;"	f	class:MasterMD5Cracker	signature:(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level)
+MasterMD5Cracker::crackPasswordLen	master_md5cracker/masterMD5Cracker.h	/^    bool crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level)
+MasterMD5Cracker::createListeningThread	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::createListeningThread(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::createListeningThread	master_md5cracker/masterMD5Cracker.h	/^    bool createListeningThread();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+MasterMD5Cracker::cui	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::cui(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::cui	master_md5cracker/masterMD5Cracker.h	/^    void cui();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+MasterMD5Cracker::end	master_md5cracker/masterMD5Cracker.h	/^    struct timeval start, end;$/;"	m	class:MasterMD5Cracker	typeref:struct:MasterMD5Cracker::	access:private
+MasterMD5Cracker::endDistributedCracking	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::endDistributedCracking(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::endDistributedCracking	master_md5cracker/masterMD5Cracker.h	/^    bool endDistributedCracking();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+MasterMD5Cracker::generateThread	master_md5cracker/masterMD5Cracker.h	/^    pthread_t generateThread;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::generateThreadFunc	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::generateThreadFunc(void* arg){$/;"	f	class:MasterMD5Cracker	signature:(void* arg)
+MasterMD5Cracker::generateThreadFunc	master_md5cracker/masterMD5Cracker.h	/^    static void* generateThreadFunc(void* arg); $/;"	p	class:MasterMD5Cracker	access:private	signature:(void* arg)
+MasterMD5Cracker::getTimeSpent	master_md5cracker/masterMD5Cracker.h	/^    double getTimeSpent(){return timeSpent;}$/;"	f	class:MasterMD5Cracker	access:public	signature:()
+MasterMD5Cracker::initUserCmd	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker:: initUserCmd(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::initUserCmd	master_md5cracker/masterMD5Cracker.h	/^    void initUserCmd();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+MasterMD5Cracker::isCracking	master_md5cracker/masterMD5Cracker.h	/^    bool isCracking;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::isExistSlave	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::isExistSlave(string& key){$/;"	f	class:MasterMD5Cracker	signature:(string& key)
+MasterMD5Cracker::isExistSlave	master_md5cracker/masterMD5Cracker.h	/^    bool isExistSlave(string& key);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& key)
+MasterMD5Cracker::isExisting	master_md5cracker/masterMD5Cracker.h	/^    bool isExisting;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::issueCmdAll	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::issueCmdAll(Cmd& cmd){$/;"	f	class:MasterMD5Cracker	signature:(Cmd& cmd)
+MasterMD5Cracker::issueCmdAll	master_md5cracker/masterMD5Cracker.h	/^    void issueCmdAll(Cmd& cmd);$/;"	p	class:MasterMD5Cracker	access:private	signature:(Cmd& cmd)
+MasterMD5Cracker::issueCmdRoundRobin	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::issueCmdRoundRobin(deque<Cmd>& cmds){$/;"	f	class:MasterMD5Cracker	signature:(deque<Cmd>& cmds)
+MasterMD5Cracker::issueCmdRoundRobin	master_md5cracker/masterMD5Cracker.h	/^    void issueCmdRoundRobin(deque<Cmd>& cmds);$/;"	p	class:MasterMD5Cracker	access:private	signature:(deque<Cmd>& cmds)
+MasterMD5Cracker::listeningSocket	master_md5cracker/masterMD5Cracker.h	/^    int listeningSocket;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::listeningThread	master_md5cracker/masterMD5Cracker.h	/^    pthread_t listeningThread;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::listeningThreadFunc	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::listeningThreadFunc(void* arg){$/;"	f	class:MasterMD5Cracker	signature:(void* arg)
+MasterMD5Cracker::listeningThreadFunc	master_md5cracker/masterMD5Cracker.h	/^    static void* listeningThreadFunc(void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(void* arg)
+MasterMD5Cracker::md5	master_md5cracker/masterMD5Cracker.h	/^    string md5;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::md5Records	master_md5cracker/masterMD5Cracker.h	/^    unordered_map<string, string> md5Records;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::numOfSlaves	master_md5cracker/masterMD5Cracker.h	/^    int numOfSlaves(){return slaveProxies.size();}$/;"	f	class:MasterMD5Cracker	access:private	signature:()
+MasterMD5Cracker::pass	master_md5cracker/masterMD5Cracker.h	/^    string pass;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::registerSlave	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::registerSlave(string& key,SlaveProxy& proxy){$/;"	f	class:MasterMD5Cracker	signature:(string& key,SlaveProxy& proxy)
+MasterMD5Cracker::registerSlave	master_md5cracker/masterMD5Cracker.h	/^    void registerSlave(string& key,SlaveProxy& proxy);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& key,SlaveProxy& proxy)
+MasterMD5Cracker::reportFoundPass	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::reportFoundPass(string pass){$/;"	f	class:MasterMD5Cracker	signature:(string pass)
+MasterMD5Cracker::reportFoundPass	master_md5cracker/masterMD5Cracker.h	/^    void reportFoundPass(string pass);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string pass)
+MasterMD5Cracker::runDistribute	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::runDistribute(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::runDistribute	master_md5cracker/masterMD5Cracker.h	/^    void runDistribute();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+MasterMD5Cracker::runLocal	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::runLocal(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::runLocal	master_md5cracker/masterMD5Cracker.h	/^    void runLocal();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+MasterMD5Cracker::slaveProxies	master_md5cracker/masterMD5Cracker.h	/^    unordered_map<string, SlaveProxy> slaveProxies;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::slaves_mutex	master_md5cracker/masterMD5Cracker.h	/^    pthread_mutex_t slaves_mutex;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::start	master_md5cracker/masterMD5Cracker.h	/^    struct timeval start, end;$/;"	m	class:MasterMD5Cracker	typeref:struct:MasterMD5Cracker::timeval	access:private
+MasterMD5Cracker::startDistributedCracking	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::startDistributedCracking(string md5){$/;"	f	class:MasterMD5Cracker	signature:(string md5)
+MasterMD5Cracker::startDistributedCracking	master_md5cracker/masterMD5Cracker.h	/^    bool startDistributedCracking(string md5);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string md5)
+MasterMD5Cracker::timeSpent	master_md5cracker/masterMD5Cracker.h	/^    double timeSpent;$/;"	m	class:MasterMD5Cracker	access:private
+MasterMD5Cracker::unregisterSlave	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::unregisterSlave(string& key){$/;"	f	class:MasterMD5Cracker	signature:(string& key)
+MasterMD5Cracker::unregisterSlave	master_md5cracker/masterMD5Cracker.h	/^    void unregisterSlave(string& key);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& key)
+MasterMD5Cracker::~MasterMD5Cracker	master_md5cracker/masterMD5Cracker.cpp	/^MasterMD5Cracker::~MasterMD5Cracker(){$/;"	f	class:MasterMD5Cracker	signature:()
+MasterMD5Cracker::~MasterMD5Cracker	master_md5cracker/masterMD5Cracker.h	/^    virtual ~MasterMD5Cracker();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+MasterProxy	slave_md5cracker/masterProxy.cpp	/^MasterProxy::MasterProxy(){$/;"	f	class:MasterProxy	signature:()
+MasterProxy	slave_md5cracker/masterProxy.h	/^    MasterProxy();$/;"	p	class:MasterProxy	access:public	signature:()
+MasterProxy	slave_md5cracker/masterProxy.h	/^class MasterProxy{$/;"	c
+MasterProxy::MasterProxy	slave_md5cracker/masterProxy.cpp	/^MasterProxy::MasterProxy(){$/;"	f	class:MasterProxy	signature:()
+MasterProxy::MasterProxy	slave_md5cracker/masterProxy.h	/^    MasterProxy();$/;"	p	class:MasterProxy	access:public	signature:()
+MasterProxy::sendViaXMLRPC	slave_md5cracker/masterProxy.cpp	/^bool MasterProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){$/;"	f	class:MasterProxy	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+MasterProxy::sendViaXMLRPC	slave_md5cracker/masterProxy.h	/^    static bool sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal);$/;"	p	class:MasterProxy	access:public	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+MenuController.New	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController.New(menuItems)$/;"	f
+MenuController._allIndexesFor	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._allIndexesFor(shortcut)$/;"	f
+MenuController._current	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._current()$/;"	f
+MenuController._cursorDown	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._cursorDown()$/;"	f
+MenuController._cursorUp	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._cursorUp()$/;"	f
+MenuController._echoPrompt	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._echoPrompt()$/;"	f
+MenuController._handleKeypress	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._handleKeypress(key)$/;"	f
+MenuController._nextIndexFor	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._nextIndexFor(shortcut)$/;"	f
+MenuController._restoreOptions	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._restoreOptions()$/;"	f
+MenuController._saveOptions	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._saveOptions()$/;"	f
+MenuController._setCmdheight	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController._setCmdheight()$/;"	f
+MenuController.showMenu	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuController.showMenu()$/;"	f
+MenuItem.All	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.All()$/;"	f
+MenuItem.AllEnabled	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.AllEnabled()$/;"	f
+MenuItem.Create	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.Create(options)$/;"	f
+MenuItem.CreateSeparator	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.CreateSeparator(options)$/;"	f
+MenuItem.CreateSubmenu	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.CreateSubmenu(options)$/;"	f
+MenuItem.enabled	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.enabled()$/;"	f
+MenuItem.execute	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.execute()$/;"	f
+MenuItem.isSeparator	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.isSeparator()$/;"	f
+MenuItem.isSubmenu	library/.vim/plugin/NERD_tree.vim	/^function! s:MenuItem.isSubmenu()$/;"	f
+NERDTree	library/.vim/plugin/NERD_tree.vim	/^augroup NERDTree$/;"	a
+NERDTree	library/.vim/plugin/NERD_tree.vim	/^command! -n=? -complete=dir -bar NERDTree :call s:initNerdTree('<args>')$/;"	c
+NERDTreeAddKeyMap	library/.vim/plugin/NERD_tree.vim	/^function! NERDTreeAddKeyMap(options)$/;"	f
+NERDTreeAddMenuItem	library/.vim/plugin/NERD_tree.vim	/^function! NERDTreeAddMenuItem(options)$/;"	f
+NERDTreeAddMenuSeparator	library/.vim/plugin/NERD_tree.vim	/^function! NERDTreeAddMenuSeparator(...)$/;"	f
+NERDTreeAddNode	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeAddNode()$/;"	f
+NERDTreeAddSubmenu	library/.vim/plugin/NERD_tree.vim	/^function! NERDTreeAddSubmenu(options)$/;"	f
+NERDTreeClose	library/.vim/plugin/NERD_tree.vim	/^command! -n=0 -bar NERDTreeClose :call s:closeTreeIfOpen()$/;"	c
+NERDTreeCopyNode	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeCopyNode()$/;"	f
+NERDTreeDeleteNode	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeDeleteNode()$/;"	f
+NERDTreeExecFile	library/.vim/nerdtree_plugin/exec_menuitem.vim	/^function! NERDTreeExecFile()$/;"	f
+NERDTreeExecFileActive	library/.vim/nerdtree_plugin/exec_menuitem.vim	/^function! NERDTreeExecFileActive()$/;"	f
+NERDTreeExecuteFile	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeExecuteFile()$/;"	f
+NERDTreeFind	library/.vim/plugin/NERD_tree.vim	/^command! -n=0 -bar NERDTreeFind call s:findAndRevealPath()$/;"	c
+NERDTreeFromBookmark	library/.vim/plugin/NERD_tree.vim	/^command! -n=1 -complete=customlist,s:completeBookmarks -bar NERDTreeFromBookmark call s:initNerdTree('<args>')$/;"	c
+NERDTreeHijackNetrw	library/.vim/plugin/NERD_tree.vim	/^    augroup NERDTreeHijackNetrw$/;"	a
+NERDTreeMirror	library/.vim/plugin/NERD_tree.vim	/^command! -n=0 -bar NERDTreeMirror call s:initNerdTreeMirror()$/;"	c
+NERDTreeMoveNode	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeMoveNode()$/;"	f
+NERDTreeQuickLook	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeQuickLook()$/;"	f
+NERDTreeRender	library/.vim/plugin/NERD_tree.vim	/^function! NERDTreeRender()$/;"	f
+NERDTreeRevealInFinder	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeRevealInFinder()$/;"	f
+NERDTreeToggle	library/.vim/plugin/NERD_tree.vim	/^command! -n=? -complete=dir -bar NERDTreeToggle :call s:toggle('<args>')$/;"	c
+PADDING	master_md5cracker/md5.cpp	/^const byte MD5::PADDING[64] = { 0x80 };$/;"	m	class:MD5	file:
+PADDING	master_md5cracker/md5.h	/^	static const byte PADDING[64];	\/* padding for calculate *\/$/;"	m	class:MD5	access:private
+PADDING	slave_md5cracker/md5.cpp	/^const byte MD5::PADDING[64] = { 0x80 };$/;"	m	class:MD5	file:
+PADDING	slave_md5cracker/md5.h	/^	static const byte PADDING[64];	\/* padding for calculate *\/$/;"	m	class:MD5	access:private
+PASSLEN	master_md5cracker/masterMD5Cracker.cpp	/^int MasterMD5Cracker::PASSLEN = PASS_LEN;$/;"	m	class:MasterMD5Cracker	file:
+PASSLEN	master_md5cracker/masterMD5Cracker.h	/^    static int PASSLEN ;$/;"	m	class:MasterMD5Cracker	access:private
+PASS_LEN	configure.h	/^static const int PASS_LEN = 10;$/;"	v
+PassGenerator	master_md5cracker/passGenerator.cpp	/^PassGenerator::PassGenerator(len_t startPosition, int chunkSize){$/;"	f	class:PassGenerator	signature:(len_t startPosition, int chunkSize)
+PassGenerator	master_md5cracker/passGenerator.h	/^    PassGenerator(len_t startPosition=0, int chunkSize=1);$/;"	p	class:PassGenerator	access:public	signature:(len_t startPosition=0, int chunkSize=1)
+PassGenerator	master_md5cracker/passGenerator.h	/^class PassGenerator{$/;"	c
+PassGenerator	slave_md5cracker/passGenerator.cpp	/^PassGenerator::PassGenerator(len_t startPosition, int chunkSize){$/;"	f	class:PassGenerator	signature:(len_t startPosition, int chunkSize)
+PassGenerator	slave_md5cracker/passGenerator.h	/^    PassGenerator(len_t startPosition=0, int chunkSize=1);$/;"	p	class:PassGenerator	access:public	signature:(len_t startPosition=0, int chunkSize=1)
+PassGenerator	slave_md5cracker/passGenerator.h	/^class PassGenerator{$/;"	c
+PassGenerator::PassGenerator	master_md5cracker/passGenerator.cpp	/^PassGenerator::PassGenerator(len_t startPosition, int chunkSize){$/;"	f	class:PassGenerator	signature:(len_t startPosition, int chunkSize)
+PassGenerator::PassGenerator	master_md5cracker/passGenerator.h	/^    PassGenerator(len_t startPosition=0, int chunkSize=1);$/;"	p	class:PassGenerator	access:public	signature:(len_t startPosition=0, int chunkSize=1)
+PassGenerator::PassGenerator	slave_md5cracker/passGenerator.cpp	/^PassGenerator::PassGenerator(len_t startPosition, int chunkSize){$/;"	f	class:PassGenerator	signature:(len_t startPosition, int chunkSize)
+PassGenerator::PassGenerator	slave_md5cracker/passGenerator.h	/^    PassGenerator(len_t startPosition=0, int chunkSize=1);$/;"	p	class:PassGenerator	access:public	signature:(len_t startPosition=0, int chunkSize=1)
+PassGenerator::base	master_md5cracker/passGenerator.h	/^    int base;$/;"	m	class:PassGenerator	access:private
+PassGenerator::base	slave_md5cracker/passGenerator.h	/^    int base;$/;"	m	class:PassGenerator	access:private
+PassGenerator::charArr	master_md5cracker/passGenerator.h	/^    vector<char> charArr;$/;"	m	class:PassGenerator	access:private
+PassGenerator::charArr	slave_md5cracker/passGenerator.h	/^    vector<char> charArr;$/;"	m	class:PassGenerator	access:private
+PassGenerator::chunkSize	master_md5cracker/passGenerator.h	/^    int chunkSize;$/;"	m	class:PassGenerator	access:private
+PassGenerator::chunkSize	slave_md5cracker/passGenerator.h	/^    int chunkSize;$/;"	m	class:PassGenerator	access:private
+PassGenerator::current	master_md5cracker/passGenerator.h	/^    len_t current;$/;"	m	class:PassGenerator	access:private
+PassGenerator::current	slave_md5cracker/passGenerator.h	/^    len_t current;$/;"	m	class:PassGenerator	access:private
+PassGenerator::generateAll	master_md5cracker/passGenerator.cpp	/^vector<string> PassGenerator::generateAll(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::generateAll	master_md5cracker/passGenerator.h	/^    vector<string> generateAll();$/;"	p	class:PassGenerator	access:public	signature:()
+PassGenerator::generateAll	slave_md5cracker/passGenerator.cpp	/^vector<string> PassGenerator::generateAll(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::generateAll	slave_md5cracker/passGenerator.h	/^    vector<string> generateAll();$/;"	p	class:PassGenerator	access:public	signature:()
+PassGenerator::getChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::getChar(int digit){$/;"	f	class:PassGenerator	signature:(int digit)
+PassGenerator::getChar	master_md5cracker/passGenerator.h	/^    char getChar(int digit);$/;"	p	class:PassGenerator	access:private	signature:(int digit)
+PassGenerator::getChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::getChar(int digit){$/;"	f	class:PassGenerator	signature:(int digit)
+PassGenerator::getChar	slave_md5cracker/passGenerator.h	/^    char getChar(int digit);$/;"	p	class:PassGenerator	access:private	signature:(int digit)
+PassGenerator::getCurPassword	master_md5cracker/passGenerator.cpp	/^string PassGenerator::getCurPassword(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::getCurPassword	master_md5cracker/passGenerator.h	/^    string getCurPassword();$/;"	p	class:PassGenerator	access:public	signature:()
+PassGenerator::getCurPassword	slave_md5cracker/passGenerator.cpp	/^string PassGenerator::getCurPassword(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::getCurPassword	slave_md5cracker/passGenerator.h	/^    string getCurPassword();$/;"	p	class:PassGenerator	access:public	signature:()
+PassGenerator::getMax	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getMax(int len){$/;"	f	class:PassGenerator	signature:(int len)
+PassGenerator::getMax	master_md5cracker/passGenerator.h	/^    len_t getMax(int len);$/;"	p	class:PassGenerator	access:public	signature:(int len)
+PassGenerator::getMax	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getMax(int len){$/;"	f	class:PassGenerator	signature:(int len)
+PassGenerator::getMax	slave_md5cracker/passGenerator.h	/^    len_t getMax(int len);$/;"	p	class:PassGenerator	access:public	signature:(int len)
+PassGenerator::getStartPosition	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getStartPosition(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::getStartPosition	master_md5cracker/passGenerator.h	/^    len_t getStartPosition();$/;"	p	class:PassGenerator	access:public	signature:()
+PassGenerator::getStartPosition	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getStartPosition(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::getStartPosition	slave_md5cracker/passGenerator.h	/^    len_t getStartPosition();$/;"	p	class:PassGenerator	access:public	signature:()
+PassGenerator::inc	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::inc(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::inc	master_md5cracker/passGenerator.h	/^    len_t inc();$/;"	p	class:PassGenerator	access:private	signature:()
+PassGenerator::inc	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::inc(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::inc	slave_md5cracker/passGenerator.h	/^    len_t inc();$/;"	p	class:PassGenerator	access:private	signature:()
+PassGenerator::init	master_md5cracker/passGenerator.cpp	/^void PassGenerator::init(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::init	master_md5cracker/passGenerator.h	/^    void init();$/;"	p	class:PassGenerator	access:private	signature:()
+PassGenerator::init	slave_md5cracker/passGenerator.cpp	/^void PassGenerator::init(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::init	slave_md5cracker/passGenerator.h	/^    void init();$/;"	p	class:PassGenerator	access:private	signature:()
+PassGenerator::nextChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(char c, bool& carry){$/;"	f	class:PassGenerator	signature:(char c, bool& carry)
+PassGenerator::nextChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(int pos, bool& carry){$/;"	f	class:PassGenerator	signature:(int pos, bool& carry)
+PassGenerator::nextChar	master_md5cracker/passGenerator.h	/^    char nextChar(char c, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(char c, bool& carry)
+PassGenerator::nextChar	master_md5cracker/passGenerator.h	/^    char nextChar(int pos, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(int pos, bool& carry)
+PassGenerator::nextChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(char c, bool& carry){$/;"	f	class:PassGenerator	signature:(char c, bool& carry)
+PassGenerator::nextChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(int pos, bool& carry){$/;"	f	class:PassGenerator	signature:(int pos, bool& carry)
+PassGenerator::nextChar	slave_md5cracker/passGenerator.h	/^    char nextChar(char c, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(char c, bool& carry)
+PassGenerator::nextChar	slave_md5cracker/passGenerator.h	/^    char nextChar(int pos, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(int pos, bool& carry)
+PassGenerator::operator ++	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::operator++(int){$/;"	f	class:PassGenerator	signature:(int)
+PassGenerator::operator ++	master_md5cracker/passGenerator.h	/^    len_t operator++(int);$/;"	p	class:PassGenerator	access:public	signature:(int)
+PassGenerator::operator ++	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::operator++(int){$/;"	f	class:PassGenerator	signature:(int)
+PassGenerator::operator ++	slave_md5cracker/passGenerator.h	/^    len_t operator++(int);$/;"	p	class:PassGenerator	access:public	signature:(int)
+PassGenerator::start	master_md5cracker/passGenerator.h	/^    len_t start;$/;"	m	class:PassGenerator	access:private
+PassGenerator::start	slave_md5cracker/passGenerator.h	/^    len_t start;$/;"	m	class:PassGenerator	access:private
+PassGenerator::strArr	master_md5cracker/passGenerator.h	/^    vector<char> strArr;$/;"	m	class:PassGenerator	access:private
+PassGenerator::strArr	slave_md5cracker/passGenerator.h	/^    vector<char> strArr;$/;"	m	class:PassGenerator	access:private
+PassGenerator::update	master_md5cracker/passGenerator.cpp	/^void PassGenerator::update(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::update	master_md5cracker/passGenerator.h	/^    void update();$/;"	p	class:PassGenerator	access:private	signature:()
+PassGenerator::update	slave_md5cracker/passGenerator.cpp	/^void PassGenerator::update(){$/;"	f	class:PassGenerator	signature:()
+PassGenerator::update	slave_md5cracker/passGenerator.h	/^    void update();$/;"	p	class:PassGenerator	access:private	signature:()
+Path.AbsolutePathFor	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.AbsolutePathFor(str)$/;"	f
+Path.CopyingSupported	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.CopyingSupported()$/;"	f
+Path.Create	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.Create(fullpath)$/;"	f
+Path.JoinPathStrings	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.JoinPathStrings(...)$/;"	f
+Path.New	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.New(path)$/;"	f
+Path.Slash	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.Slash()$/;"	f
+Path.WinToUnixPath	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.WinToUnixPath(pathstr)$/;"	f
+Path._str	library/.vim/plugin/NERD_tree.vim	/^function! s:Path._str()$/;"	f
+Path._strForCd	library/.vim/plugin/NERD_tree.vim	/^function! s:Path._strForCd()$/;"	f
+Path._strForEdit	library/.vim/plugin/NERD_tree.vim	/^function! s:Path._strForEdit()$/;"	f
+Path._strForGlob	library/.vim/plugin/NERD_tree.vim	/^function! s:Path._strForGlob()$/;"	f
+Path._strForUI	library/.vim/plugin/NERD_tree.vim	/^function! s:Path._strForUI()$/;"	f
+Path.bookmarkNames	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.bookmarkNames()$/;"	f
+Path.cacheDisplayString	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.cacheDisplayString()$/;"	f
+Path.changeToDir	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.changeToDir()$/;"	f
+Path.compareTo	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.compareTo(path)$/;"	f
+Path.copy	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.copy(dest)$/;"	f
+Path.copyingWillOverwrite	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.copyingWillOverwrite(dest)$/;"	f
+Path.delete	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.delete()$/;"	f
+Path.displayString	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.displayString()$/;"	f
+Path.equals	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.equals(path)$/;"	f
+Path.exists	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.exists()$/;"	f
+Path.extractDriveLetter	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.extractDriveLetter(fullpath)$/;"	f
+Path.getDir	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.getDir()$/;"	f
+Path.getLastPathComponent	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.getLastPathComponent(dirSlash)$/;"	f
+Path.getParent	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.getParent()$/;"	f
+Path.getSortOrderIndex	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.getSortOrderIndex()$/;"	f
+Path.ignore	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.ignore()$/;"	f
+Path.isUnder	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.isUnder(path)$/;"	f
+Path.readInfoFromDisk	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.readInfoFromDisk(fullpath)$/;"	f
+Path.refresh	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.refresh()$/;"	f
+Path.rename	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.rename(newPath)$/;"	f
+Path.str	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.str(...)$/;"	f
+Path.strTrunk	library/.vim/plugin/NERD_tree.vim	/^function! s:Path.strTrunk()$/;"	f
+QUIT	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+QueueSize	slave_md5cracker/rwBuffer.h	/^    enum Size{BatchSize=1024*2,QueueSize=100};$/;"	e	enum:RWBuffer::Size
+QuitMethod	slave_md5cracker/slaveMD5Cracker.h	/^    QuitMethod( SlaveMD5Cracker* sc){$/;"	f	class:QuitMethod	access:public	signature:( SlaveMD5Cracker* sc)
+QuitMethod	slave_md5cracker/slaveMD5Cracker.h	/^class QuitMethod : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+QuitMethod::QuitMethod	slave_md5cracker/slaveMD5Cracker.h	/^    QuitMethod( SlaveMD5Cracker* sc){$/;"	f	class:QuitMethod	access:public	signature:( SlaveMD5Cracker* sc)
+QuitMethod::execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void QuitMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:QuitMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+QuitMethod::execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:QuitMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+QuitMethod::slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:QuitMethod	access:private
+ROTATE_LEFT	master_md5cracker/md5.cpp	61;"	d	file:
+ROTATE_LEFT	slave_md5cracker/md5.cpp	61;"	d	file:
+RWBuffer	slave_md5cracker/rwBuffer.cpp	/^RWBuffer::RWBuffer(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer	slave_md5cracker/rwBuffer.h	/^    RWBuffer();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer	slave_md5cracker/rwBuffer.h	/^class RWBuffer{$/;"	c
+RWBuffer::BatchSize	slave_md5cracker/rwBuffer.h	/^    enum Size{BatchSize=1024*2,QueueSize=100};$/;"	e	enum:RWBuffer::Size
+RWBuffer::QueueSize	slave_md5cracker/rwBuffer.h	/^    enum Size{BatchSize=1024*2,QueueSize=100};$/;"	e	enum:RWBuffer::Size
+RWBuffer::RWBuffer	slave_md5cracker/rwBuffer.cpp	/^RWBuffer::RWBuffer(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer::RWBuffer	slave_md5cracker/rwBuffer.h	/^    RWBuffer();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer::Size	slave_md5cracker/rwBuffer.h	/^    enum Size{BatchSize=1024*2,QueueSize=100};$/;"	g	class:RWBuffer	access:private
+RWBuffer::buf	slave_md5cracker/rwBuffer.h	/^    deque< vector<string> > buf;$/;"	m	class:RWBuffer	access:private
+RWBuffer::clear	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::clear(){ $/;"	f	class:RWBuffer	signature:()
+RWBuffer::clear	slave_md5cracker/rwBuffer.h	/^    void clear();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer::consume	slave_md5cracker/rwBuffer.cpp	/^vector<string> RWBuffer::consume(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer::consume	slave_md5cracker/rwBuffer.h	/^    vector<string> consume();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer::destroy	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::destroy(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer::destroy	slave_md5cracker/rwBuffer.h	/^    void destroy();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer::end	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::end(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer::end	slave_md5cracker/rwBuffer.h	/^    void end();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer::endGenerator	slave_md5cracker/rwBuffer.h	/^    bool endGenerator;$/;"	m	class:RWBuffer	access:private
+RWBuffer::generatorFunc	slave_md5cracker/rwBuffer.cpp	/^void* RWBuffer::generatorFunc(void* arg){$/;"	f	class:RWBuffer	signature:(void* arg)
+RWBuffer::generatorFunc	slave_md5cracker/rwBuffer.h	/^    static void* generatorFunc(void* arg);$/;"	p	class:RWBuffer	access:public	signature:(void* arg)
+RWBuffer::generatorThread	slave_md5cracker/rwBuffer.h	/^    pthread_t generatorThread;$/;"	m	class:RWBuffer	access:private
+RWBuffer::getBufSize	slave_md5cracker/rwBuffer.h	/^    int getBufSize(){ return buf.size(); }$/;"	f	class:RWBuffer	access:public	signature:()
+RWBuffer::init	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::init(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer::init	slave_md5cracker/rwBuffer.h	/^    void init();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer::injectPG	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::injectPG(PassGenerator& pg){$/;"	f	class:RWBuffer	signature:(PassGenerator& pg)
+RWBuffer::injectPG	slave_md5cracker/rwBuffer.h	/^    void injectPG(PassGenerator& pg);$/;"	p	class:RWBuffer	access:public	signature:(PassGenerator& pg)
+RWBuffer::mutex	slave_md5cracker/rwBuffer.h	/^    pthread_mutex_t mutex;$/;"	m	class:RWBuffer	access:private
+RWBuffer::mutex_pgs	slave_md5cracker/rwBuffer.h	/^    pthread_mutex_t mutex_pgs;$/;"	m	class:RWBuffer	access:private
+RWBuffer::pgs	slave_md5cracker/rwBuffer.h	/^    deque< PassGenerator> pgs;$/;"	m	class:RWBuffer	access:private
+RWBuffer::produce	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::produce( vector<string>& passwords){$/;"	f	class:RWBuffer	signature:( vector<string>& passwords)
+RWBuffer::produce	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::produce(string& newPass){$/;"	f	class:RWBuffer	signature:(string& newPass)
+RWBuffer::produce	slave_md5cracker/rwBuffer.h	/^    void produce( vector<string>& passwords);$/;"	p	class:RWBuffer	access:public	signature:( vector<string>& passwords)
+RWBuffer::produce	slave_md5cracker/rwBuffer.h	/^    void produce(string& newPass);$/;"	p	class:RWBuffer	access:public	signature:(string& newPass)
+RWBuffer::run	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::run(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer::run	slave_md5cracker/rwBuffer.h	/^    void run();$/;"	p	class:RWBuffer	access:public	signature:()
+RWBuffer::sema_empty	slave_md5cracker/rwBuffer.h	/^    sem_t sema_empty;$/;"	m	class:RWBuffer	access:private
+RWBuffer::sema_full	slave_md5cracker/rwBuffer.h	/^    sem_t sema_full;$/;"	m	class:RWBuffer	access:private
+RWBuffer::~RWBuffer	slave_md5cracker/rwBuffer.cpp	/^RWBuffer::~RWBuffer(){$/;"	f	class:RWBuffer	signature:()
+RWBuffer::~RWBuffer	slave_md5cracker/rwBuffer.h	/^    ~RWBuffer();$/;"	p	class:RWBuffer	access:public	signature:()
+RW_BUFFER_H	slave_md5cracker/rwBuffer.h	2;"	d
+ReceiveChunkMethod	slave_md5cracker/slaveMD5Cracker.h	/^    ReceiveChunkMethod( SlaveMD5Cracker* sc){$/;"	f	class:ReceiveChunkMethod	access:public	signature:( SlaveMD5Cracker* sc)
+ReceiveChunkMethod	slave_md5cracker/slaveMD5Cracker.h	/^class ReceiveChunkMethod : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+ReceiveChunkMethod::ReceiveChunkMethod	slave_md5cracker/slaveMD5Cracker.h	/^    ReceiveChunkMethod( SlaveMD5Cracker* sc){$/;"	f	class:ReceiveChunkMethod	access:public	signature:( SlaveMD5Cracker* sc)
+ReceiveChunkMethod::execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:ReceiveChunkMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+ReceiveChunkMethod::execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:ReceiveChunkMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+ReceiveChunkMethod::slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:ReceiveChunkMethod	access:private
+RemoveCComments	library/.vim/autoload/omni/cpp/utils.vim	/^function! s:RemoveCComments(szLine)$/;"	f
+ResolveAliasInNamespaceList	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:ResolveAliasInNamespaceList(mapNamespaceAlias, listNamespaces)$/;"	f
+ResolveAliasKey	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:ResolveAliasKey(mapNamespaceAlias, szAlias)$/;"	f
+ResolveAliasKeys	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:ResolveAliasKeys(mapNamespaceAlias)$/;"	f
+ResolveCCast	library/.vim/autoload/omni/cpp/items.vim	/^function! s:ResolveCCast(tokens)$/;"	f
+ResolveCast	library/.vim/autoload/omni/cpp/items.vim	/^function! s:ResolveCast(tokens, startChar, endChar)$/;"	f
+ResolveCppCast	library/.vim/autoload/omni/cpp/items.vim	/^function! s:ResolveCppCast(tokens)$/;"	f
+ResolveNamespace	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! s:ResolveNamespace(namespace, mapCurrentContexts)$/;"	f
+ResolveSymbol	library/.vim/autoload/omni/cpp/items.vim	/^function! s:ResolveSymbol(contextStack, szSymbol, szTagFilter)$/;"	f
+ReturnRet	master_md5cracker/slaveProxy.h	/^    ReturnRet(SlaveProxy* sp){$/;"	f	class:ReturnRet	access:public	signature:(SlaveProxy* sp)
+ReturnRet	master_md5cracker/slaveProxy.h	/^class ReturnRet : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+ReturnRet::ReturnRet	master_md5cracker/slaveProxy.h	/^    ReturnRet(SlaveProxy* sp){$/;"	f	class:ReturnRet	access:public	signature:(SlaveProxy* sp)
+ReturnRet::execute	master_md5cracker/slaveProxy.cpp	/^void ReturnRet::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:ReturnRet	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+ReturnRet::execute	master_md5cracker/slaveProxy.h	/^    void execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP );$/;"	p	class:ReturnRet	access:public	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+ReturnRet::slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:ReturnRet	access:private
+S11	master_md5cracker/md5.cpp	34;"	d	file:
+S11	slave_md5cracker/md5.cpp	34;"	d	file:
+S12	master_md5cracker/md5.cpp	35;"	d	file:
+S12	slave_md5cracker/md5.cpp	35;"	d	file:
+S13	master_md5cracker/md5.cpp	36;"	d	file:
+S13	slave_md5cracker/md5.cpp	36;"	d	file:
+S14	master_md5cracker/md5.cpp	37;"	d	file:
+S14	slave_md5cracker/md5.cpp	37;"	d	file:
+S21	master_md5cracker/md5.cpp	38;"	d	file:
+S21	slave_md5cracker/md5.cpp	38;"	d	file:
+S22	master_md5cracker/md5.cpp	39;"	d	file:
+S22	slave_md5cracker/md5.cpp	39;"	d	file:
+S23	master_md5cracker/md5.cpp	40;"	d	file:
+S23	slave_md5cracker/md5.cpp	40;"	d	file:
+S24	master_md5cracker/md5.cpp	41;"	d	file:
+S24	slave_md5cracker/md5.cpp	41;"	d	file:
+S31	master_md5cracker/md5.cpp	42;"	d	file:
+S31	slave_md5cracker/md5.cpp	42;"	d	file:
+S32	master_md5cracker/md5.cpp	43;"	d	file:
+S32	slave_md5cracker/md5.cpp	43;"	d	file:
+S33	master_md5cracker/md5.cpp	44;"	d	file:
+S33	slave_md5cracker/md5.cpp	44;"	d	file:
+S34	master_md5cracker/md5.cpp	45;"	d	file:
+S34	slave_md5cracker/md5.cpp	45;"	d	file:
+S41	master_md5cracker/md5.cpp	46;"	d	file:
+S41	slave_md5cracker/md5.cpp	46;"	d	file:
+S42	master_md5cracker/md5.cpp	47;"	d	file:
+S42	slave_md5cracker/md5.cpp	47;"	d	file:
+S43	master_md5cracker/md5.cpp	48;"	d	file:
+S43	slave_md5cracker/md5.cpp	48;"	d	file:
+S44	master_md5cracker/md5.cpp	49;"	d	file:
+S44	slave_md5cracker/md5.cpp	49;"	d	file:
+SLAVE_DIR	Makefile	/^SLAVE_DIR = .\/slave_md5cracker$/;"	m
+SLAVE_PORT	configure.h	/^static const int SLAVE_PORT = 12626;$/;"	v
+START	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+STATUS	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+STOP	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	e	enum:MasterMD5Cracker::UserCmd
+SearchDecl	library/.vim/autoload/omni/cpp/items.vim	/^function! s:SearchDecl(szVariable)$/;"	f
+SearchGlobalMembers	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:SearchGlobalMembers(szBase)$/;"	f
+SearchMembers	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:SearchMembers(resolvedTagItem, szBase)$/;"	f
+SearchTypeInfoOfDecl	library/.vim/autoload/omni/cpp/items.vim	/^function! s:SearchTypeInfoOfDecl(szVariable)$/;"	f
+Size	slave_md5cracker/rwBuffer.h	/^    enum Size{BatchSize=1024*2,QueueSize=100};$/;"	g	class:RWBuffer	access:private
+SlaveMD5Cracker	slave_md5cracker/slaveMD5Cracker.cpp	/^SlaveMD5Cracker::SlaveMD5Cracker(){$/;"	f	class:SlaveMD5Cracker	signature:()
+SlaveMD5Cracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker();$/;"	p	class:SlaveMD5Cracker	access:public	signature:()
+SlaveMD5Cracker	slave_md5cracker/slaveMD5Cracker.h	/^class SlaveMD5Cracker{$/;"	c
+SlaveMD5Cracker::SlaveMD5Cracker	slave_md5cracker/slaveMD5Cracker.cpp	/^SlaveMD5Cracker::SlaveMD5Cracker(){$/;"	f	class:SlaveMD5Cracker	signature:()
+SlaveMD5Cracker::SlaveMD5Cracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker();$/;"	p	class:SlaveMD5Cracker	access:public	signature:()
+SlaveMD5Cracker::cmdQueue	slave_md5cracker/slaveMD5Cracker.h	/^    queue<Cmd> cmdQueue;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::connectToMaster	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){$/;"	f	class:SlaveMD5Cracker	signature:(string ip,int& toMasterSocket)
+SlaveMD5Cracker::connectToMaster	slave_md5cracker/slaveMD5Cracker.h	/^    bool connectToMaster(string ip,int& toMasterSocket);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(string ip,int& toMasterSocket)
+SlaveMD5Cracker::cpuCracker	slave_md5cracker/slaveMD5Cracker.h	/^    CpuCracker cpuCracker;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::createAndBindSocket	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::createAndBindSocket(int& socketPort, int& sock){$/;"	f	class:SlaveMD5Cracker	signature:(int& socketPort, int& sock)
+SlaveMD5Cracker::createAndBindSocket	slave_md5cracker/slaveMD5Cracker.h	/^    bool createAndBindSocket(int& socketPort,int& sock);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(int& socketPort,int& sock)
+SlaveMD5Cracker::getMasterIP	slave_md5cracker/slaveMD5Cracker.cpp	/^string SlaveMD5Cracker::getMasterIP(string fileName){$/;"	f	class:SlaveMD5Cracker	signature:(string fileName)
+SlaveMD5Cracker::getMasterIP	slave_md5cracker/slaveMD5Cracker.h	/^    string getMasterIP(string fileName=string("masterIP.txt"));$/;"	p	class:SlaveMD5Cracker	access:private	signature:(string fileName=string(У))
+SlaveMD5Cracker::getMyIP	slave_md5cracker/slaveMD5Cracker.cpp	/^string SlaveMD5Cracker::getMyIP(){$/;"	f	class:SlaveMD5Cracker	signature:()
+SlaveMD5Cracker::getMyIP	slave_md5cracker/slaveMD5Cracker.h	/^    string getMyIP();$/;"	p	class:SlaveMD5Cracker	access:private	signature:()
+SlaveMD5Cracker::gpuCracker	slave_md5cracker/slaveMD5Cracker.h	/^    GpuCracker gpuCracker;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::isCracking	slave_md5cracker/slaveMD5Cracker.h	/^    bool isCracking ;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::listeningSocket	slave_md5cracker/slaveMD5Cracker.h	/^    int listeningSocket;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::masterIP	slave_md5cracker/slaveMD5Cracker.h	/^    string masterIP;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::masterProxy	slave_md5cracker/slaveMD5Cracker.h	/^    MasterProxy masterProxy;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::masterReceiverFunc	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){$/;"	f	class:SlaveMD5Cracker	signature:(int listenPort)
+SlaveMD5Cracker::masterReceiverFunc	slave_md5cracker/slaveMD5Cracker.h	/^    bool masterReceiverFunc(int listenPort);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(int listenPort)
+SlaveMD5Cracker::masterSenderFunc	slave_md5cracker/slaveMD5Cracker.cpp	/^void* SlaveMD5Cracker::masterSenderFunc(void* arg){$/;"	f	class:SlaveMD5Cracker	signature:(void* arg)
+SlaveMD5Cracker::masterSenderFunc	slave_md5cracker/slaveMD5Cracker.h	/^    static void* masterSenderFunc(void* arg); $/;"	p	class:SlaveMD5Cracker	access:private	signature:(void* arg)
+SlaveMD5Cracker::myIP	slave_md5cracker/slaveMD5Cracker.h	/^    string myIP;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::myListenPort	slave_md5cracker/slaveMD5Cracker.h	/^    int myListenPort;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::reportResult	slave_md5cracker/slaveMD5Cracker.cpp	/^void SlaveMD5Cracker::reportResult(string pass ,string md5){$/;"	f	class:SlaveMD5Cracker	signature:(string pass ,string md5)
+SlaveMD5Cracker::reportResult	slave_md5cracker/slaveMD5Cracker.h	/^    void reportResult(string pass ,string md5);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(string pass ,string md5)
+SlaveMD5Cracker::run	slave_md5cracker/slaveMD5Cracker.cpp	/^void SlaveMD5Cracker::run(){$/;"	f	class:SlaveMD5Cracker	signature:()
+SlaveMD5Cracker::run	slave_md5cracker/slaveMD5Cracker.h	/^    void run();$/;"	p	class:SlaveMD5Cracker	access:public	signature:()
+SlaveMD5Cracker::rwBuf	slave_md5cracker/slaveMD5Cracker.h	/^    RWBuffer rwBuf;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::targetMd5	slave_md5cracker/slaveMD5Cracker.h	/^    string targetMd5;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveMD5Cracker::toMasterSocket	slave_md5cracker/slaveMD5Cracker.h	/^    int toMasterSocket;$/;"	m	class:SlaveMD5Cracker	access:private
+SlaveProxy	master_md5cracker/slaveProxy.cpp	/^SlaveProxy::SlaveProxy(){$/;"	f	class:SlaveProxy	signature:()
+SlaveProxy	master_md5cracker/slaveProxy.h	/^    SlaveProxy();$/;"	p	class:SlaveProxy	access:public	signature:()
+SlaveProxy	master_md5cracker/slaveProxy.h	/^class SlaveProxy{$/;"	c
+SlaveProxy::SlaveProxy	master_md5cracker/slaveProxy.cpp	/^SlaveProxy::SlaveProxy(){$/;"	f	class:SlaveProxy	signature:()
+SlaveProxy::SlaveProxy	master_md5cracker/slaveProxy.h	/^    SlaveProxy();$/;"	p	class:SlaveProxy	access:public	signature:()
+SlaveProxy::cmdQueue	master_md5cracker/slaveProxy.h	/^    queue<Cmd> cmdQueue;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::isExisting	master_md5cracker/slaveProxy.h	/^    bool isExisting;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::isFullConnected	master_md5cracker/slaveProxy.h	/^    bool isFullConnected;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::issueCmd	master_md5cracker/slaveProxy.cpp	/^void SlaveProxy::issueCmd(Cmd& cmd){$/;"	f	class:SlaveProxy	signature:(Cmd& cmd)
+SlaveProxy::issueCmd	master_md5cracker/slaveProxy.h	/^    void issueCmd(Cmd& cmd);$/;"	p	class:SlaveProxy	access:public	signature:(Cmd& cmd)
+SlaveProxy::key	master_md5cracker/slaveProxy.h	/^    string key;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::master	master_md5cracker/slaveProxy.h	/^    MasterMD5Cracker* master;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::run	master_md5cracker/slaveProxy.cpp	/^bool SlaveProxy::run(){$/;"	f	class:SlaveProxy	signature:()
+SlaveProxy::run	master_md5cracker/slaveProxy.h	/^    bool run();$/;"	p	class:SlaveProxy	access:public	signature:()
+SlaveProxy::sendViaXMLRPC	master_md5cracker/slaveProxy.cpp	/^bool SlaveProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){$/;"	f	class:SlaveProxy	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+SlaveProxy::sendViaXMLRPC	master_md5cracker/slaveProxy.h	/^    static bool sendViaXMLRPC(int socket, string name, string strVal, len_t longVal, int intVal);$/;"	p	class:SlaveProxy	access:private	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+SlaveProxy::slaveAddr	master_md5cracker/slaveProxy.h	/^    string slaveAddr;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::slavePort	master_md5cracker/slaveProxy.h	/^    int slavePort;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::slaveReceiverFunc	master_md5cracker/slaveProxy.cpp	/^void* SlaveProxy::slaveReceiverFunc(void* arg){$/;"	f	class:SlaveProxy	signature:(void* arg)
+SlaveProxy::slaveReceiverFunc	master_md5cracker/slaveProxy.h	/^    static void* slaveReceiverFunc(void* arg);$/;"	p	class:SlaveProxy	access:private	signature:(void* arg)
+SlaveProxy::slaveSenderFunc	master_md5cracker/slaveProxy.cpp	/^void* SlaveProxy::slaveSenderFunc(void* arg){$/;"	f	class:SlaveProxy	signature:(void* arg)
+SlaveProxy::slaveSenderFunc	master_md5cracker/slaveProxy.h	/^    static void* slaveSenderFunc(void* arg);$/;"	p	class:SlaveProxy	access:private	signature:(void* arg)
+SlaveProxy::socket2Master	master_md5cracker/slaveProxy.h	/^    int socket2Master; \/\/receive cmd from slave$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::socket2Slave	master_md5cracker/slaveProxy.h	/^    int socket2Slave; \/\/send cmd to slave$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::terminate	master_md5cracker/slaveProxy.cpp	/^void SlaveProxy::terminate(){$/;"	f	class:SlaveProxy	signature:()
+SlaveProxy::terminate	master_md5cracker/slaveProxy.h	/^    void terminate();$/;"	p	class:SlaveProxy	access:public	signature:()
+SlaveProxy::threadMasterReceiver	master_md5cracker/slaveProxy.h	/^    pthread_t threadMasterReceiver;$/;"	m	class:SlaveProxy	access:private
+SlaveProxy::threadMasterSender	master_md5cracker/slaveProxy.h	/^    pthread_t threadMasterSender;$/;"	m	class:SlaveProxy	access:private
+StartMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StartMethod( SlaveMD5Cracker* sc){$/;"	f	class:StartMethod	access:public	signature:( SlaveMD5Cracker* sc)
+StartMethod	slave_md5cracker/slaveMD5Cracker.h	/^class StartMethod : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+StartMethod::StartMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StartMethod( SlaveMD5Cracker* sc){$/;"	f	class:StartMethod	access:public	signature:( SlaveMD5Cracker* sc)
+StartMethod::execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StartMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+StartMethod::execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:StartMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+StartMethod::slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StartMethod	access:private
+StatusMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StatusMethod( SlaveMD5Cracker* sc){$/;"	f	class:StatusMethod	access:public	signature:( SlaveMD5Cracker* sc)
+StatusMethod	slave_md5cracker/slaveMD5Cracker.h	/^class StatusMethod : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+StatusMethod::StatusMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StatusMethod( SlaveMD5Cracker* sc){$/;"	f	class:StatusMethod	access:public	signature:( SlaveMD5Cracker* sc)
+StatusMethod::execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StatusMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StatusMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+StatusMethod::execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:StatusMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+StatusMethod::slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StatusMethod	access:private
+StopMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StopMethod( SlaveMD5Cracker* sc){$/;"	f	class:StopMethod	access:public	signature:( SlaveMD5Cracker* sc)
+StopMethod	slave_md5cracker/slaveMD5Cracker.h	/^class StopMethod : public xmlrpc_c::method{$/;"	c	inherits:xmlrpc_c::method
+StopMethod::StopMethod	slave_md5cracker/slaveMD5Cracker.h	/^    StopMethod( SlaveMD5Cracker* sc){$/;"	f	class:StopMethod	access:public	signature:( SlaveMD5Cracker* sc)
+StopMethod::execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StopMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StopMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+StopMethod::execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:StopMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+StopMethod::slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StopMethod	access:private
+TagList_IsValid	library/.vim/plugin/taglist.vim	/^function! TagList_IsValid()$/;"	f
+TagList_Start	library/.vim/plugin/taglist.vim	/^function! TagList_Start()$/;"	f
+TagList_WrapUp	library/.vim/plugin/taglist.vim	/^function! TagList_WrapUp()$/;"	f
+TagList_title	library/.vim/plugin/taglist.vim	/^    let TagList_title = "__Tag_List__"$/;"	v
+TagPopupList	library/.vim/autoload/omni/cpp/complete.vim	/^function! s:TagPopupList(szTypeName, szBase)$/;"	f
+Tlist	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar Tlist TlistToggle$/;"	c
+TlistAddFiles	library/.vim/plugin/taglist.vim	/^    command! -nargs=+ -complete=file TlistAddFiles$/;"	c
+TlistAddFilesRecursive	library/.vim/plugin/taglist.vim	/^    command! -nargs=+ -complete=dir TlistAddFilesRecursive$/;"	c
+TlistClose	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistClose call s:Tlist_Window_Close()$/;"	c
+TlistDebug	library/.vim/plugin/taglist.vim	/^    command! -nargs=? -complete=file -bar TlistDebug$/;"	c
+TlistHighlightTag	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistHighlightTag call s:Tlist_Window_Highlight_Tag($/;"	c
+TlistLock	library/.vim/plugin/taglist.vim	/^    command! -bar TlistLock let Tlist_Auto_Update=0$/;"	c
+TlistMessages	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistMessages call s:Tlist_Debug_Show()$/;"	c
+TlistOpen	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistOpen call s:Tlist_Window_Open()$/;"	c
+TlistSessionLoad	library/.vim/plugin/taglist.vim	/^    command! -nargs=* -complete=file TlistSessionLoad$/;"	c
+TlistSessionSave	library/.vim/plugin/taglist.vim	/^    command! -nargs=* -complete=file TlistSessionSave$/;"	c
+TlistShowPrototype	library/.vim/plugin/taglist.vim	/^    command! -nargs=* -complete=buffer TlistShowPrototype$/;"	c
+TlistShowTag	library/.vim/plugin/taglist.vim	/^    command! -nargs=* -complete=buffer TlistShowTag$/;"	c
+TlistSync	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistSync TlistHighlightTag$/;"	c
+TlistToggle	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistToggle call s:Tlist_Window_Toggle()$/;"	c
+TlistUndebug	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistUndebug  call s:Tlist_Debug_Disable()$/;"	c
+TlistUnlock	library/.vim/plugin/taglist.vim	/^    command! -bar TlistUnlock let Tlist_Auto_Update=1$/;"	c
+TlistUpdate	library/.vim/plugin/taglist.vim	/^    command! -nargs=0 -bar TlistUpdate call s:Tlist_Update_Current_File()$/;"	c
+Tlist_Add_Files	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Add_Files(...)$/;"	f
+Tlist_Add_Files_Recursive	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Add_Files_Recursive(dir, ...)$/;"	f
+Tlist_Auto_Highlight_Tag	library/.vim/plugin/taglist.vim	/^        let Tlist_Auto_Highlight_Tag = 1$/;"	v
+Tlist_Auto_Open	library/.vim/plugin/taglist.vim	/^        let Tlist_Auto_Open = 0$/;"	v
+Tlist_Auto_Update	library/.vim/plugin/taglist.vim	/^        let Tlist_Auto_Update = 1$/;"	v
+Tlist_Ballon_Expr	library/.vim/plugin/taglist.vim	/^function! Tlist_Ballon_Expr()$/;"	f
+Tlist_Buffer_Removed	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Buffer_Removed(filename)$/;"	f
+Tlist_Change_Sort	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Change_Sort(caller, action, sort_type)$/;"	f
+Tlist_Close_On_Select	library/.vim/plugin/taglist.vim	/^        let Tlist_Close_On_Select = 0$/;"	v
+Tlist_Compact_Format	library/.vim/plugin/taglist.vim	/^        let Tlist_Compact_Format = 0$/;"	v
+Tlist_Create_Folds_For_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Create_Folds_For_File(fidx)$/;"	f
+Tlist_Ctags_Cmd	library/.vim/plugin/taglist.vim	/^            let Tlist_Ctags_Cmd = 'ctags'$/;"	v
+Tlist_Ctags_Cmd	library/.vim/plugin/taglist.vim	/^            let Tlist_Ctags_Cmd = 'ctags.exe'$/;"	v
+Tlist_Ctags_Cmd	library/.vim/plugin/taglist.vim	/^            let Tlist_Ctags_Cmd = 'exctags'$/;"	v
+Tlist_Ctags_Cmd	library/.vim/plugin/taglist.vim	/^            let Tlist_Ctags_Cmd = 'exuberant-ctags'$/;"	v
+Tlist_Ctags_Cmd	library/.vim/plugin/taglist.vim	/^            let Tlist_Ctags_Cmd = 'tags'$/;"	v
+Tlist_Debug_Disable	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Debug_Disable(...)$/;"	f
+Tlist_Debug_Enable	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Debug_Enable(...)$/;"	f
+Tlist_Debug_Show	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Debug_Show()$/;"	f
+Tlist_Detect_Filetype	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Detect_Filetype(fname)$/;"	f
+Tlist_Discard_FileInfo	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Discard_FileInfo(fidx)$/;"	f
+Tlist_Discard_TagInfo	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Discard_TagInfo(fidx)$/;"	f
+Tlist_Display_Prototype	library/.vim/plugin/taglist.vim	/^        let Tlist_Display_Prototype = 0$/;"	v
+Tlist_Display_Tag_Scope	library/.vim/plugin/taglist.vim	/^        let Tlist_Display_Tag_Scope = 1$/;"	v
+Tlist_Enable_Fold_Column	library/.vim/plugin/taglist.vim	/^        let Tlist_Enable_Fold_Column = 1$/;"	v
+Tlist_Exe_Cmd_No_Acmds	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Exe_Cmd_No_Acmds(cmd)$/;"	f
+Tlist_Exit_OnlyWindow	library/.vim/plugin/taglist.vim	/^        let Tlist_Exit_OnlyWindow = 0$/;"	v
+Tlist_Extract_Tag_Scope	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Extract_Tag_Scope(tag_line)$/;"	f
+Tlist_Extract_Tagtype	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Extract_Tagtype(tag_line)$/;"	f
+Tlist_FileType_Init	library/.vim/plugin/taglist.vim	/^function! s:Tlist_FileType_Init(ftype)$/;"	f
+Tlist_File_Fold_Auto_Close	library/.vim/plugin/taglist.vim	/^        let Tlist_File_Fold_Auto_Close = 0$/;"	v
+Tlist_Find_Nearest_Tag_Idx	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Find_Nearest_Tag_Idx(fidx, linenum)$/;"	f
+Tlist_GainFocus_On_ToggleOpen	library/.vim/plugin/taglist.vim	/^        let Tlist_GainFocus_On_ToggleOpen = 0$/;"	v
+Tlist_Get_Buffer_Filetype	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Get_Buffer_Filetype(bnum)$/;"	f
+Tlist_Get_File_Index	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Get_File_Index(fname)$/;"	f
+Tlist_Get_Filenames	library/.vim/plugin/taglist.vim	/^function! Tlist_Get_Filenames()$/;"	f
+Tlist_Get_Tag_Linenum	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Get_Tag_Linenum(fidx, tidx)$/;"	f
+Tlist_Get_Tag_Prototype	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Get_Tag_Prototype(fidx, tidx)$/;"	f
+Tlist_Get_Tag_Prototype_By_Line	library/.vim/plugin/taglist.vim	/^function! Tlist_Get_Tag_Prototype_By_Line(...)$/;"	f
+Tlist_Get_Tag_Scope	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Get_Tag_Scope(fidx, tidx)$/;"	f
+Tlist_Get_Tag_SearchPat	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Get_Tag_SearchPat(fidx, tidx)$/;"	f
+Tlist_Get_Tag_Type_By_Tag	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Get_Tag_Type_By_Tag(fidx, tidx)$/;"	f
+Tlist_Get_Tagname_By_Line	library/.vim/plugin/taglist.vim	/^function! Tlist_Get_Tagname_By_Line(...)$/;"	f
+Tlist_Highlight_Tag_On_BufEnter	library/.vim/plugin/taglist.vim	/^        let Tlist_Highlight_Tag_On_BufEnter = 1$/;"	v
+Tlist_Inc_Winwidth	library/.vim/plugin/taglist.vim	/^            let Tlist_Inc_Winwidth = 0$/;"	v
+Tlist_Inc_Winwidth	library/.vim/plugin/taglist.vim	/^            let Tlist_Inc_Winwidth = 1$/;"	v
+Tlist_Init_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Init_File(filename, ftype)$/;"	f
+Tlist_Log_Msg	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Log_Msg(msg)$/;"	f
+Tlist_Max_Submenu_Items	library/.vim/plugin/taglist.vim	/^        let Tlist_Max_Submenu_Items = 20$/;"	v
+Tlist_Max_Tag_Length	library/.vim/plugin/taglist.vim	/^        let Tlist_Max_Tag_Length = 10$/;"	v
+Tlist_Menu_Add_Base_Menu	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_Add_Base_Menu()$/;"	f
+Tlist_Menu_File_Refresh	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_File_Refresh(fidx)$/;"	f
+Tlist_Menu_Get_Tag_Type_Cmd	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_Get_Tag_Type_Cmd(fidx, ftype, add_ttype_name, ttype_idx)$/;"	f
+Tlist_Menu_Init	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_Init()$/;"	f
+Tlist_Menu_Jump_To_Tag	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_Jump_To_Tag(tidx)$/;"	f
+Tlist_Menu_Refresh	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_Refresh()$/;"	f
+Tlist_Menu_Remove_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_Remove_File()$/;"	f
+Tlist_Menu_Update_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Menu_Update_File(clear_menu)$/;"	f
+Tlist_Parse_Tagline	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Parse_Tagline(tag_line)$/;"	f
+Tlist_Post_Close_Cleanup	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Post_Close_Cleanup()$/;"	f
+Tlist_Process_Dir	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Process_Dir(dir_name, pat)$/;"	f
+Tlist_Process_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Process_File(filename, ftype)$/;"	f
+Tlist_Process_File_Always	library/.vim/plugin/taglist.vim	/^        let Tlist_Process_File_Always = 0$/;"	v
+Tlist_Process_Filelist	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Process_Filelist(file_names)$/;"	f
+Tlist_Refresh	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Refresh()$/;"	f
+Tlist_Refresh_Folds	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Refresh_Folds()$/;"	f
+Tlist_Remove_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Remove_File(file_idx, user_request)$/;"	f
+Tlist_Session_Load	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Session_Load(...)$/;"	f
+Tlist_Session_Save	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Session_Save(...)$/;"	f
+Tlist_Set_App	library/.vim/plugin/taglist.vim	/^function! Tlist_Set_App(name)$/;"	f
+Tlist_Show_Menu	library/.vim/plugin/taglist.vim	/^        let Tlist_Show_Menu = 0$/;"	v
+Tlist_Show_One_File	library/.vim/plugin/taglist.vim	/^        let Tlist_Show_One_File = 0$/;"	v
+Tlist_Skip_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Skip_File(filename, ftype)$/;"	f
+Tlist_Sort_Type	library/.vim/plugin/taglist.vim	/^        let Tlist_Sort_Type = 'order'$/;"	v
+Tlist_Update_Current_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Update_Current_File()$/;"	f
+Tlist_Update_File	library/.vim/plugin/taglist.vim	/^function! Tlist_Update_File(filename, ftype)$/;"	f
+Tlist_Update_Remove_List	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Update_Remove_List(filename, add)$/;"	f
+Tlist_Use_Horiz_Window	library/.vim/plugin/taglist.vim	/^        let Tlist_Use_Horiz_Window = 0$/;"	v
+Tlist_Use_Right_Window	library/.vim/plugin/taglist.vim	/^        let Tlist_Use_Right_Window = 0$/;"	v
+Tlist_Use_SingleClick	library/.vim/plugin/taglist.vim	/^        let Tlist_Use_SingleClick = 0$/;"	v
+Tlist_User_Removed_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_User_Removed_File(filename)$/;"	f
+Tlist_Vim_Session_Load	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Vim_Session_Load()$/;"	f
+Tlist_Warning_Msg	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Warning_Msg(msg)$/;"	f
+Tlist_WinHeight	library/.vim/plugin/taglist.vim	/^        let Tlist_WinHeight = 10$/;"	v
+Tlist_WinWidth	library/.vim/plugin/taglist.vim	/^        let Tlist_WinWidth = 30$/;"	v
+Tlist_Window_Check_Auto_Open	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Check_Auto_Open()$/;"	f
+Tlist_Window_Check_Width	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Check_Width()$/;"	f
+Tlist_Window_Close	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Close()$/;"	f
+Tlist_Window_Create	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Create()$/;"	f
+Tlist_Window_Display_Help	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Display_Help()$/;"	f
+Tlist_Window_Exit_Only_Window	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Exit_Only_Window()$/;"	f
+Tlist_Window_Get_File_Index_By_Linenum	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Get_File_Index_By_Linenum(lnum)$/;"	f
+Tlist_Window_Get_Tag_Index	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Get_Tag_Index(fidx, lnum)$/;"	f
+Tlist_Window_Get_Tag_Type_By_Linenum	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Get_Tag_Type_By_Linenum(fidx, lnum)$/;"	f
+Tlist_Window_Goto_Window	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Goto_Window()$/;"	f
+Tlist_Window_Highlight_Line	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Highlight_Line()$/;"	f
+Tlist_Window_Highlight_Tag	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Highlight_Tag(filename, cur_lnum, cntx, center)$/;"	f
+Tlist_Window_Init	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Init()$/;"	f
+Tlist_Window_Jump_To_Tag	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Jump_To_Tag(win_ctrl)$/;"	f
+Tlist_Window_Mark_File_Window	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Mark_File_Window()$/;"	f
+Tlist_Window_Move_To_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Move_To_File(dir)$/;"	f
+Tlist_Window_Open	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Open()$/;"	f
+Tlist_Window_Open_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Open_File(win_ctrl, filename, tagpat)$/;"	f
+Tlist_Window_Open_File_Fold	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Open_File_Fold(acmd_bufnr)$/;"	f
+Tlist_Window_Refresh	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Refresh()$/;"	f
+Tlist_Window_Refresh_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Refresh_File(filename, ftype)$/;"	f
+Tlist_Window_Remove_File_From_Display	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Remove_File_From_Display(fidx)$/;"	f
+Tlist_Window_Show_Info	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Show_Info()$/;"	f
+Tlist_Window_Toggle	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Toggle()$/;"	f
+Tlist_Window_Toggle_Help_Text	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Toggle_Help_Text()$/;"	f
+Tlist_Window_Update_File	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Update_File()$/;"	f
+Tlist_Window_Update_Line_Offsets	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Update_Line_Offsets(start_idx, increment, offset)$/;"	f
+Tlist_Window_Zoom	library/.vim/plugin/taglist.vim	/^function! s:Tlist_Window_Zoom()$/;"	f
+TokensToString	library/.vim/autoload/omni/cpp/items.vim	/^function! s:TokensToString(tokens)$/;"	f
+TreeDirNode.AbsoluteTreeRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.AbsoluteTreeRoot()$/;"	f
+TreeDirNode.GetSelected	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.GetSelected()$/;"	f
+TreeDirNode.New	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.New(path)$/;"	f
+TreeDirNode._initChildren	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode._initChildren(silent)$/;"	f
+TreeDirNode._openRecursively2	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode._openRecursively2(forceOpen)$/;"	f
+TreeDirNode.activate	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.activate(forceKeepWinOpen)$/;"	f
+TreeDirNode.addChild	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.addChild(treenode, inOrder)$/;"	f
+TreeDirNode.close	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.close()$/;"	f
+TreeDirNode.closeChildren	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.closeChildren()$/;"	f
+TreeDirNode.createChild	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.createChild(path, inOrder)$/;"	f
+TreeDirNode.findNode	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.findNode(path)$/;"	f
+TreeDirNode.getChild	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.getChild(path)$/;"	f
+TreeDirNode.getChildByIndex	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.getChildByIndex(indx, visible)$/;"	f
+TreeDirNode.getChildCount	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.getChildCount()$/;"	f
+TreeDirNode.getChildIndex	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.getChildIndex(path)$/;"	f
+TreeDirNode.getVisibleChildCount	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.getVisibleChildCount()$/;"	f
+TreeDirNode.getVisibleChildren	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.getVisibleChildren()$/;"	f
+TreeDirNode.hasVisibleChildren	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.hasVisibleChildren()$/;"	f
+TreeDirNode.open	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.open()$/;"	f
+TreeDirNode.openExplorer	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.openExplorer()$/;"	f
+TreeDirNode.openInNewTab	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.openInNewTab(options)$/;"	f
+TreeDirNode.openRecursively	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.openRecursively()$/;"	f
+TreeDirNode.refresh	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.refresh()$/;"	f
+TreeDirNode.removeChild	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.removeChild(treenode)$/;"	f
+TreeDirNode.reveal	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.reveal(path)$/;"	f
+TreeDirNode.sortChildren	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.sortChildren()$/;"	f
+TreeDirNode.toggleOpen	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.toggleOpen()$/;"	f
+TreeDirNode.transplantChild	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeDirNode.transplantChild(newNode)$/;"	f
+TreeFileNode.GetRootForTab	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.GetRootForTab()$/;"	f
+TreeFileNode.GetRootLineNum	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.GetRootLineNum()$/;"	f
+TreeFileNode.GetSelected	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.GetSelected()$/;"	f
+TreeFileNode.New	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.New(path)$/;"	f
+TreeFileNode._renderToString	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode._renderToString(depth, drawText, vertMap, isLastChild)$/;"	f
+TreeFileNode.activate	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.activate(forceKeepWinOpen)$/;"	f
+TreeFileNode.bookmark	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.bookmark(name)$/;"	f
+TreeFileNode.cacheParent	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.cacheParent()$/;"	f
+TreeFileNode.clearBoomarks	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.clearBoomarks()$/;"	f
+TreeFileNode.copy	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.copy(dest)$/;"	f
+TreeFileNode.delete	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.delete()$/;"	f
+TreeFileNode.displayString	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.displayString()$/;"	f
+TreeFileNode.equals	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.equals(treenode)$/;"	f
+TreeFileNode.findNode	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.findNode(path)$/;"	f
+TreeFileNode.findOpenDirSiblingWithVisibleChildren	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.findOpenDirSiblingWithVisibleChildren(direction)$/;"	f
+TreeFileNode.findSibling	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.findSibling(direction)$/;"	f
+TreeFileNode.getLineNum	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.getLineNum()$/;"	f
+TreeFileNode.isRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.isRoot()$/;"	f
+TreeFileNode.isVisible	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.isVisible()$/;"	f
+TreeFileNode.makeRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.makeRoot()$/;"	f
+TreeFileNode.open	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.open()$/;"	f
+TreeFileNode.openInNewTab	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.openInNewTab(options)$/;"	f
+TreeFileNode.openSplit	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.openSplit()$/;"	f
+TreeFileNode.openVSplit	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.openVSplit()$/;"	f
+TreeFileNode.putCursorHere	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.putCursorHere(isJump, recurseUpward)$/;"	f
+TreeFileNode.refresh	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.refresh()$/;"	f
+TreeFileNode.rename	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.rename(newName)$/;"	f
+TreeFileNode.renderToString	library/.vim/plugin/NERD_tree.vim	/^function! s:TreeFileNode.renderToString()$/;"	f
+UserCmd	master_md5cracker/masterMD5Cracker.h	/^    enum UserCmd{START, STOP, STATUS, LIST, QUIT};$/;"	g	class:MasterMD5Cracker	access:private
+_CONFIG_H	configure.h	2;"	d
+_CPU_CRACKER_H	slave_md5cracker/cpuCracker.h	2;"	d
+_GPU_CRACKER_H	slave_md5cracker/gpuCracker.h	2;"	d
+_LOG_MGR_H	master_md5cracker/logManager.h	2;"	d
+_MASTER_H	master_md5cracker/masterMD5Cracker.h	2;"	d
+_MASTER_PROXY_H	slave_md5cracker/masterProxy.h	2;"	d
+_PASS_GENERATOR_H	master_md5cracker/passGenerator.h	2;"	d
+_PASS_GENERATOR_H	slave_md5cracker/passGenerator.h	2;"	d
+_SLAVE_MD5CRACKER_H	slave_md5cracker/slaveMD5Cracker.h	2;"	d
+_SLAVE_PROXY_H	master_md5cracker/slaveProxy.h	2;"	d
+_buffer	master_md5cracker/md5.h	/^	byte _buffer[64];	\/* input buffer *\/$/;"	m	class:MD5	access:private
+_buffer	slave_md5cracker/md5.h	/^	byte _buffer[64];	\/* input buffer *\/$/;"	m	class:MD5	access:private
+_count	master_md5cracker/md5.h	/^	ulong _count[2];	\/* number of bits, modulo 2^64 (low-order word first) *\/$/;"	m	class:MD5	access:private
+_count	slave_md5cracker/md5.h	/^	ulong _count[2];	\/* number of bits, modulo 2^64 (low-order word first) *\/$/;"	m	class:MD5	access:private
+_digest	master_md5cracker/md5.h	/^	byte _digest[16];	\/* message digest *\/$/;"	m	class:MD5	access:private
+_digest	slave_md5cracker/md5.h	/^	byte _digest[16];	\/* message digest *\/$/;"	m	class:MD5	access:private
+_finished	master_md5cracker/md5.h	/^	bool _finished;		\/* calculate finished ? *\/$/;"	m	class:MD5	access:private
+_finished	slave_md5cracker/md5.h	/^	bool _finished;		\/* calculate finished ? *\/$/;"	m	class:MD5	access:private
+_state	master_md5cracker/md5.h	/^	ulong _state[4];	\/* state (ABCD) *\/$/;"	m	class:MD5	access:private
+_state	slave_md5cracker/md5.h	/^	ulong _state[4];	\/* state (ABCD) *\/$/;"	m	class:MD5	access:private
+activateNode	library/.vim/plugin/NERD_tree.vim	/^function! s:activateNode(forceKeepWindowOpen)$/;"	f
+badPassRanges	master_md5cracker/masterMD5Cracker.h	/^    set<len_t> badPassRanges;$/;"	m	class:MasterMD5Cracker	access:private
+base	master_md5cracker/passGenerator.h	/^    int base;$/;"	m	class:PassGenerator	access:private
+base	slave_md5cracker/passGenerator.h	/^    int base;$/;"	m	class:PassGenerator	access:private
+bindMappings	library/.vim/plugin/NERD_tree.vim	/^function! s:bindMappings()$/;"	f
+bookmarkNode	library/.vim/plugin/NERD_tree.vim	/^function! s:bookmarkNode(...)$/;"	f
+buf	slave_md5cracker/rwBuffer.h	/^    deque< vector<string> > buf;$/;"	m	class:RWBuffer	access:private
+bufInWindows	library/.vim/plugin/NERD_tree.vim	/^function! s:bufInWindows(bnum)$/;"	f
+byte	master_md5cracker/md5.h	/^typedef unsigned char byte;$/;"	t
+byte	slave_md5cracker/md5.h	/^typedef unsigned char byte;$/;"	t
+bytesToHexString	master_md5cracker/md5.cpp	/^string MD5::bytesToHexString(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+bytesToHexString	master_md5cracker/md5.h	/^	string bytesToHexString(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+bytesToHexString	slave_md5cracker/md5.cpp	/^string MD5::bytesToHexString(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+bytesToHexString	slave_md5cracker/md5.h	/^	string bytesToHexString(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+calMD5FromFile	master_md5cracker/md5.cpp	/^string MD5::calMD5FromFile(const string& fileName){$/;"	f	class:MD5	signature:(const string& fileName)
+calMD5FromFile	master_md5cracker/md5.h	/^    string calMD5FromFile(const string& fileName);$/;"	p	class:MD5	access:public	signature:(const string& fileName)
+calMD5FromFile	slave_md5cracker/md5.cpp	/^string MD5::calMD5FromFile(const string& fileName){$/;"	f	class:MD5	signature:(const string& fileName)
+calMD5FromFile	slave_md5cracker/md5.h	/^    string calMD5FromFile(const string& fileName);$/;"	p	class:MD5	access:public	signature:(const string& fileName)
+calMD5FromString	master_md5cracker/md5.cpp	/^string MD5::calMD5FromString(const string& str) {$/;"	f	class:MD5	signature:(const string& str)
+calMD5FromString	master_md5cracker/md5.h	/^	string calMD5FromString(const string& str);$/;"	p	class:MD5	access:public	signature:(const string& str)
+calMD5FromString	slave_md5cracker/md5.cpp	/^string MD5::calMD5FromString(const string& str) {$/;"	f	class:MD5	signature:(const string& str)
+calMD5FromString	slave_md5cracker/md5.h	/^	string calMD5FromString(const string& str);$/;"	p	class:MD5	access:public	signature:(const string& str)
+centerView	library/.vim/plugin/NERD_tree.vim	/^function! s:centerView()$/;"	f
+chCwd	library/.vim/plugin/NERD_tree.vim	/^function! s:chCwd()$/;"	f
+chRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:chRoot()$/;"	f
+charArr	master_md5cracker/passGenerator.h	/^    vector<char> charArr;$/;"	m	class:PassGenerator	access:private
+charArr	slave_md5cracker/passGenerator.h	/^    vector<char> charArr;$/;"	m	class:PassGenerator	access:private
+checkForActivate	library/.vim/plugin/NERD_tree.vim	/^function! s:checkForActivate()$/;"	f
+checkForBrowse	library/.vim/plugin/NERD_tree.vim	/^function! s:checkForBrowse(dir)$/;"	f
+chunkSize	master_md5cracker/masterMD5Cracker.h	/^    int chunkSize;$/;"	m	class:MasterMD5Cracker	access:private
+chunkSize	master_md5cracker/passGenerator.h	/^    int chunkSize;$/;"	m	class:PassGenerator	access:private
+chunkSize	slave_md5cracker/passGenerator.h	/^    int chunkSize;$/;"	m	class:PassGenerator	access:private
+clear	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::clear(){ $/;"	f	class:RWBuffer	signature:()
+clear	slave_md5cracker/rwBuffer.h	/^    void clear();$/;"	p	class:RWBuffer	access:public	signature:()
+clearBookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:clearBookmarks(bookmarks)$/;"	f
+closeChildren	library/.vim/plugin/NERD_tree.vim	/^function! s:closeChildren()$/;"	f
+closeCurrentDir	library/.vim/plugin/NERD_tree.vim	/^function! s:closeCurrentDir()$/;"	f
+closeTree	library/.vim/plugin/NERD_tree.vim	/^function! s:closeTree()$/;"	f
+closeTreeIfOpen	library/.vim/plugin/NERD_tree.vim	/^function! s:closeTreeIfOpen()$/;"	f
+closeTreeIfQuitOnOpen	library/.vim/plugin/NERD_tree.vim	/^function! s:closeTreeIfQuitOnOpen()$/;"	f
+closeTreeWindow	library/.vim/plugin/NERD_tree.vim	/^function! s:closeTreeWindow()$/;"	f
+cmdHandlers	master_md5cracker/masterMD5Cracker.h	/^    map<string,CmdHandler> cmdHandlers;$/;"	m	class:MasterMD5Cracker	access:private
+cmdHelp	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::cmdHelp(){$/;"	f	class:MasterMD5Cracker	signature:()
+cmdHelp	master_md5cracker/masterMD5Cracker.h	/^    void cmdHelp();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+cmdList	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdList(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+cmdList	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdList(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+cmdQueue	master_md5cracker/slaveProxy.h	/^    queue<Cmd> cmdQueue;$/;"	m	class:SlaveProxy	access:private
+cmdQueue	slave_md5cracker/slaveMD5Cracker.h	/^    queue<Cmd> cmdQueue;$/;"	m	class:SlaveMD5Cracker	access:private
+cmdQuit	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdQuit(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+cmdQuit	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdQuit(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+cmdStart	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdStart(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+cmdStart	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdStart(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+cmdStatus	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdStatus(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+cmdStatus	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdStatus(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+cmdStop	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::cmdStop(MasterMD5Cracker* master, void* arg){$/;"	f	class:MasterMD5Cracker	signature:(MasterMD5Cracker* master, void* arg)
+cmdStop	master_md5cracker/masterMD5Cracker.h	/^    static void* cmdStop(MasterMD5Cracker* master, void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(MasterMD5Cracker* master, void* arg)
+compareBookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:compareBookmarks(first, second)$/;"	f
+compareNodes	library/.vim/plugin/NERD_tree.vim	/^function! s:compareNodes(n1, n2)$/;"	f
+completeBookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:completeBookmarks(A,L,P)$/;"	f
+connectToMaster	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::connectToMaster(string ip,int& toMasterSocket){$/;"	f	class:SlaveMD5Cracker	signature:(string ip,int& toMasterSocket)
+connectToMaster	slave_md5cracker/slaveMD5Cracker.h	/^    bool connectToMaster(string ip,int& toMasterSocket);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(string ip,int& toMasterSocket)
+consume	slave_md5cracker/rwBuffer.cpp	/^vector<string> RWBuffer::consume(){$/;"	f	class:RWBuffer	signature:()
+consume	slave_md5cracker/rwBuffer.h	/^    vector<string> consume();$/;"	p	class:RWBuffer	access:public	signature:()
+cores	slave_md5cracker/cpuCracker.h	/^    int cores;$/;"	m	class:CpuCracker	access:private
+cpuCracker	slave_md5cracker/slaveMD5Cracker.h	/^    CpuCracker cpuCracker;$/;"	m	class:SlaveMD5Cracker	access:private
+crackPasswordLen	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level){$/;"	f	class:MasterMD5Cracker	signature:(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level)
+crackPasswordLen	master_md5cracker/masterMD5Cracker.h	/^    bool crackPasswordLen(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& md5, string& pass, int len, vector<char>& charArr, string& newPass, int level)
+createAndBindSocket	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::createAndBindSocket(int& socketPort, int& sock){$/;"	f	class:SlaveMD5Cracker	signature:(int& socketPort, int& sock)
+createAndBindSocket	slave_md5cracker/slaveMD5Cracker.h	/^    bool createAndBindSocket(int& socketPort,int& sock);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(int& socketPort,int& sock)
+createListeningThread	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::createListeningThread(){$/;"	f	class:MasterMD5Cracker	signature:()
+createListeningThread	master_md5cracker/masterMD5Cracker.h	/^    bool createListeningThread();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+createTreeWin	library/.vim/plugin/NERD_tree.vim	/^function! s:createTreeWin()$/;"	f
+cui	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::cui(){$/;"	f	class:MasterMD5Cracker	signature:()
+cui	master_md5cracker/masterMD5Cracker.h	/^    void cui();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+current	master_md5cracker/passGenerator.h	/^    len_t current;$/;"	m	class:PassGenerator	access:private
+current	slave_md5cracker/passGenerator.h	/^    len_t current;$/;"	m	class:PassGenerator	access:private
+decode	master_md5cracker/md5.cpp	/^void MD5::decode(const byte *input, ulong *output, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, ulong *output, size_t length)
+decode	master_md5cracker/md5.h	/^	void decode(const byte *input, ulong *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, ulong *output, size_t length)
+decode	slave_md5cracker/md5.cpp	/^void MD5::decode(const byte *input, ulong *output, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, ulong *output, size_t length)
+decode	slave_md5cracker/md5.h	/^	void decode(const byte *input, ulong *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, ulong *output, size_t length)
+deleteBookmark	library/.vim/plugin/NERD_tree.vim	/^function! s:deleteBookmark()$/;"	f
+destroy	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::destroy(){$/;"	f	class:RWBuffer	signature:()
+destroy	slave_md5cracker/rwBuffer.h	/^    void destroy();$/;"	p	class:RWBuffer	access:public	signature:()
+digest	master_md5cracker/md5.cpp	/^const byte* MD5::digest() {$/;"	f	class:MD5	signature:()
+digest	master_md5cracker/md5.h	/^    const byte* digest();$/;"	p	class:MD5	access:private	signature:()
+digest	slave_md5cracker/md5.cpp	/^const byte* MD5::digest() {$/;"	f	class:MD5	signature:()
+digest	slave_md5cracker/md5.h	/^    const byte* digest();$/;"	p	class:MD5	access:private	signature:()
+displayHelp	library/.vim/plugin/NERD_tree.vim	/^function! s:displayHelp()$/;"	f
+dumpHelp	library/.vim/plugin/NERD_tree.vim	/^function! s:dumpHelp()$/;"	f
+echo	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! s:echo(msg)$/;"	f
+echo	library/.vim/plugin/NERD_tree.vim	/^function! s:echo(msg)$/;"	f
+echoError	library/.vim/plugin/NERD_tree.vim	/^function! s:echoError(msg)$/;"	f
+echoWarning	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! s:echoWarning(msg)$/;"	f
+echoWarning	library/.vim/plugin/NERD_tree.vim	/^function! s:echoWarning(msg)$/;"	f
+encode	master_md5cracker/md5.cpp	/^void MD5::encode(const ulong *input, byte *output, size_t length) {$/;"	f	class:MD5	signature:(const ulong *input, byte *output, size_t length)
+encode	master_md5cracker/md5.h	/^	void encode(const ulong *input, byte *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const ulong *input, byte *output, size_t length)
+encode	slave_md5cracker/md5.cpp	/^void MD5::encode(const ulong *input, byte *output, size_t length) {$/;"	f	class:MD5	signature:(const ulong *input, byte *output, size_t length)
+encode	slave_md5cracker/md5.h	/^	void encode(const ulong *input, byte *output, size_t length);$/;"	p	class:MD5	access:private	signature:(const ulong *input, byte *output, size_t length)
+end	master_md5cracker/masterMD5Cracker.h	/^    struct timeval start, end;$/;"	m	class:MasterMD5Cracker	typeref:struct:MasterMD5Cracker::	access:private
+end	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::end(){$/;"	f	class:RWBuffer	signature:()
+end	slave_md5cracker/rwBuffer.h	/^    void end();$/;"	p	class:RWBuffer	access:public	signature:()
+endDistributedCracking	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::endDistributedCracking(){$/;"	f	class:MasterMD5Cracker	signature:()
+endDistributedCracking	master_md5cracker/masterMD5Cracker.h	/^    bool endDistributedCracking();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+endGenerator	slave_md5cracker/rwBuffer.h	/^    bool endGenerator;$/;"	m	class:RWBuffer	access:private
+exec	library/.vim/plugin/NERD_tree.vim	/^function! s:exec(cmd)$/;"	f
+execute	master_md5cracker/slaveProxy.cpp	/^void Feedback::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:Feedback	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+execute	master_md5cracker/slaveProxy.cpp	/^void HandShake::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:HandShake	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+execute	master_md5cracker/slaveProxy.cpp	/^void ReturnRet::execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP ){$/;"	f	class:ReturnRet	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+execute	master_md5cracker/slaveProxy.h	/^    void execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP );$/;"	p	class:Feedback	access:public	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+execute	master_md5cracker/slaveProxy.h	/^    void execute(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP );$/;"	p	class:ReturnRet	access:public	signature:(const xmlrpc_c::paramList& paramList, xmlrpc_c::value* retValP )
+execute	master_md5cracker/slaveProxy.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:HandShake	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void QuitMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:QuitMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void ReceiveChunkMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:ReceiveChunkMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StartMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StatusMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StatusMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.cpp	/^void StopMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP ){$/;"	f	class:StopMethod	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:QuitMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:ReceiveChunkMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:StartMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:StatusMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+execute	slave_md5cracker/slaveMD5Cracker.h	/^    void execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP );$/;"	p	class:StopMethod	access:public	signature:(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* retValP )
+final	master_md5cracker/md5.cpp	/^void MD5::final() {$/;"	f	class:MD5	signature:()
+final	master_md5cracker/md5.h	/^	void final();$/;"	p	class:MD5	access:private	signature:()
+final	slave_md5cracker/md5.cpp	/^void MD5::final() {$/;"	f	class:MD5	signature:()
+final	slave_md5cracker/md5.h	/^	void final();$/;"	p	class:MD5	access:private	signature:()
+findAndRevealPath	library/.vim/plugin/NERD_tree.vim	/^function! s:findAndRevealPath()$/;"	f
+firstUsableWindow	library/.vim/plugin/NERD_tree.vim	/^function! s:firstUsableWindow()$/;"	f
+func	master_md5cracker/logManager.h	/^    LogManager& operator<<(std::ostream& (*func) (std::ostream&) ){$/;"	f	class:LogManager	access:public	signature:(std::ostream&)
+g:NERDTreeBookmark	library/.vim/plugin/NERD_tree.vim	/^let g:NERDTreeBookmark = s:Bookmark$/;"	v
+g:NERDTreeDirNode	library/.vim/plugin/NERD_tree.vim	/^let g:NERDTreeDirNode = s:TreeDirNode$/;"	v
+g:NERDTreeFileNode	library/.vim/plugin/NERD_tree.vim	/^let g:NERDTreeFileNode = s:TreeFileNode$/;"	v
+g:NERDTreeIgnore	library/.vim/plugin/NERD_tree.vim	/^    let g:NERDTreeIgnore = ['\\~$']$/;"	v
+g:NERDTreePath	library/.vim/plugin/NERD_tree.vim	/^let g:NERDTreePath = s:Path$/;"	v
+g:NERDTreeSortOrder	library/.vim/plugin/NERD_tree.vim	/^    let g:NERDTreeSortOrder = ['\\\/$', '*', '\\.swp$',  '\\.bak$', '\\~$']$/;"	v
+g:NERDTreeStatusline	library/.vim/plugin/NERD_tree.vim	/^    let g:NERDTreeStatusline = "%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}"$/;"	v
+g:loaded_nerdtree_exec_menuitem	library/.vim/nerdtree_plugin/exec_menuitem.vim	/^let g:loaded_nerdtree_exec_menuitem = 1$/;"	v
+g:loaded_nerdtree_fs_menu	library/.vim/nerdtree_plugin/fs_menu.vim	/^let g:loaded_nerdtree_fs_menu = 1$/;"	v
+g:omni#cpp#includes#CACHE_FILE_TIME	library/.vim/autoload/omni/cpp/includes.vim	/^let g:omni#cpp#includes#CACHE_FILE_TIME = {}$/;"	v
+g:omni#cpp#includes#CACHE_INCLUDES	library/.vim/autoload/omni/cpp/includes.vim	/^let g:omni#cpp#includes#CACHE_INCLUDES = {}$/;"	v
+g:omni#cpp#namespaces#CacheResolve	library/.vim/autoload/omni/cpp/namespaces.vim	/^let g:omni#cpp#namespaces#CacheResolve = {}$/;"	v
+g:omni#cpp#namespaces#CacheUsing	library/.vim/autoload/omni/cpp/namespaces.vim	/^let g:omni#cpp#namespaces#CacheUsing = {}$/;"	v
+g:omni#cpp#utils#CACHE_TAG_INHERITS	library/.vim/autoload/omni/cpp/utils.vim	/^let g:omni#cpp#utils#CACHE_TAG_INHERITS = {}$/;"	v
+g:omni#cpp#utils#szFilterGlobalScope	library/.vim/autoload/omni/cpp/utils.vim	/^let g:omni#cpp#utils#szFilterGlobalScope .= "&& (!has_key(v:val, 'enum') || (has_key(v:val, 'enum') && v:val.enum =~ '^\\\\w\\\\+$')))"$/;"	v
+g:omni#cpp#utils#szFilterGlobalScope	library/.vim/autoload/omni/cpp/utils.vim	/^let g:omni#cpp#utils#szFilterGlobalScope = "(!has_key(v:val, 'class') && !has_key(v:val, 'struct') && !has_key(v:val, 'union') && !has_key(v:val, 'namespace')"$/;"	v
+generateAll	master_md5cracker/passGenerator.cpp	/^vector<string> PassGenerator::generateAll(){$/;"	f	class:PassGenerator	signature:()
+generateAll	master_md5cracker/passGenerator.h	/^    vector<string> generateAll();$/;"	p	class:PassGenerator	access:public	signature:()
+generateAll	slave_md5cracker/passGenerator.cpp	/^vector<string> PassGenerator::generateAll(){$/;"	f	class:PassGenerator	signature:()
+generateAll	slave_md5cracker/passGenerator.h	/^    vector<string> generateAll();$/;"	p	class:PassGenerator	access:public	signature:()
+generateThread	master_md5cracker/masterMD5Cracker.h	/^    pthread_t generateThread;$/;"	m	class:MasterMD5Cracker	access:private
+generateThreadFunc	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::generateThreadFunc(void* arg){$/;"	f	class:MasterMD5Cracker	signature:(void* arg)
+generateThreadFunc	master_md5cracker/masterMD5Cracker.h	/^    static void* generateThreadFunc(void* arg); $/;"	p	class:MasterMD5Cracker	access:private	signature:(void* arg)
+generatorFunc	slave_md5cracker/rwBuffer.cpp	/^void* RWBuffer::generatorFunc(void* arg){$/;"	f	class:RWBuffer	signature:(void* arg)
+generatorFunc	slave_md5cracker/rwBuffer.h	/^    static void* generatorFunc(void* arg);$/;"	p	class:RWBuffer	access:public	signature:(void* arg)
+generatorThread	slave_md5cracker/rwBuffer.h	/^    pthread_t generatorThread;$/;"	m	class:RWBuffer	access:private
+getBufSize	slave_md5cracker/rwBuffer.h	/^    int getBufSize(){ return buf.size(); }$/;"	f	class:RWBuffer	access:public	signature:()
+getChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::getChar(int digit){$/;"	f	class:PassGenerator	signature:(int digit)
+getChar	master_md5cracker/passGenerator.h	/^    char getChar(int digit);$/;"	p	class:PassGenerator	access:private	signature:(int digit)
+getChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::getChar(int digit){$/;"	f	class:PassGenerator	signature:(int digit)
+getChar	slave_md5cracker/passGenerator.h	/^    char getChar(int digit);$/;"	p	class:PassGenerator	access:private	signature:(int digit)
+getCurPassword	master_md5cracker/passGenerator.cpp	/^string PassGenerator::getCurPassword(){$/;"	f	class:PassGenerator	signature:()
+getCurPassword	master_md5cracker/passGenerator.h	/^    string getCurPassword();$/;"	p	class:PassGenerator	access:public	signature:()
+getCurPassword	slave_md5cracker/passGenerator.cpp	/^string PassGenerator::getCurPassword(){$/;"	f	class:PassGenerator	signature:()
+getCurPassword	slave_md5cracker/passGenerator.h	/^    string getCurPassword();$/;"	p	class:PassGenerator	access:public	signature:()
+getInstance	master_md5cracker/logManager.h	/^    static LogManager& getInstance(){$/;"	f	class:LogManager	access:public	signature:()
+getMasterIP	slave_md5cracker/slaveMD5Cracker.cpp	/^string SlaveMD5Cracker::getMasterIP(string fileName){$/;"	f	class:SlaveMD5Cracker	signature:(string fileName)
+getMasterIP	slave_md5cracker/slaveMD5Cracker.h	/^    string getMasterIP(string fileName=string("masterIP.txt"));$/;"	p	class:SlaveMD5Cracker	access:private	signature:(string fileName=string(У))
+getMax	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getMax(int len){$/;"	f	class:PassGenerator	signature:(int len)
+getMax	master_md5cracker/passGenerator.h	/^    len_t getMax(int len);$/;"	p	class:PassGenerator	access:public	signature:(int len)
+getMax	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getMax(int len){$/;"	f	class:PassGenerator	signature:(int len)
+getMax	slave_md5cracker/passGenerator.h	/^    len_t getMax(int len);$/;"	p	class:PassGenerator	access:public	signature:(int len)
+getMyIP	slave_md5cracker/slaveMD5Cracker.cpp	/^string SlaveMD5Cracker::getMyIP(){$/;"	f	class:SlaveMD5Cracker	signature:()
+getMyIP	slave_md5cracker/slaveMD5Cracker.h	/^    string getMyIP();$/;"	p	class:SlaveMD5Cracker	access:private	signature:()
+getNumOfCores	slave_md5cracker/cpuCracker.cpp	/^int CpuCracker::getNumOfCores(){$/;"	f	class:CpuCracker	signature:()
+getNumOfCores	slave_md5cracker/cpuCracker.h	/^    int getNumOfCores();$/;"	p	class:CpuCracker	access:private	signature:()
+getPath	library/.vim/plugin/NERD_tree.vim	/^function! s:getPath(ln)$/;"	f
+getStartPosition	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getStartPosition(){$/;"	f	class:PassGenerator	signature:()
+getStartPosition	master_md5cracker/passGenerator.h	/^    len_t getStartPosition();$/;"	p	class:PassGenerator	access:public	signature:()
+getStartPosition	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::getStartPosition(){$/;"	f	class:PassGenerator	signature:()
+getStartPosition	slave_md5cracker/passGenerator.h	/^    len_t getStartPosition();$/;"	p	class:PassGenerator	access:public	signature:()
+getTimeSpent	master_md5cracker/masterMD5Cracker.h	/^    double getTimeSpent(){return timeSpent;}$/;"	f	class:MasterMD5Cracker	access:public	signature:()
+getTreeWinNum	library/.vim/plugin/NERD_tree.vim	/^function! s:getTreeWinNum()$/;"	f
+gpuCracker	slave_md5cracker/slaveMD5Cracker.h	/^    GpuCracker gpuCracker;$/;"	m	class:SlaveMD5Cracker	access:private
+handleMiddleMouse	library/.vim/plugin/NERD_tree.vim	/^function! s:handleMiddleMouse()$/;"	f
+headers	master_md5cracker/Makefile	/^headers = ..\/configure.h masterMD5Cracker.h logManager.h slaveProxy.h md5.h passGenerator.h $/;"	m
+headers	slave_md5cracker/Makefile	/^headers = ..\/configure.h slaveMD5Cracker.h masterProxy.h md5.h passGenerator.h cpuCracker.h gpuCracker.h rwBuffer.h $/;"	m
+inc	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::inc(){$/;"	f	class:PassGenerator	signature:()
+inc	master_md5cracker/passGenerator.h	/^    len_t inc();$/;"	p	class:PassGenerator	access:private	signature:()
+inc	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::inc(){$/;"	f	class:PassGenerator	signature:()
+inc	slave_md5cracker/passGenerator.h	/^    len_t inc();$/;"	p	class:PassGenerator	access:private	signature:()
+indentLevelFor	library/.vim/plugin/NERD_tree.vim	/^function! s:indentLevelFor(line)$/;"	f
+init	master_md5cracker/md5.cpp	/^void MD5::init() {$/;"	f	class:MD5	signature:()
+init	master_md5cracker/md5.h	/^	void init();$/;"	p	class:MD5	access:private	signature:()
+init	master_md5cracker/passGenerator.cpp	/^void PassGenerator::init(){$/;"	f	class:PassGenerator	signature:()
+init	master_md5cracker/passGenerator.h	/^    void init();$/;"	p	class:PassGenerator	access:private	signature:()
+init	slave_md5cracker/cpuCracker.cpp	/^bool CpuCracker::init(SlaveMD5Cracker* sc){$/;"	f	class:CpuCracker	signature:(SlaveMD5Cracker* sc)
+init	slave_md5cracker/cpuCracker.h	/^    bool init(SlaveMD5Cracker* sc);$/;"	p	class:CpuCracker	access:public	signature:(SlaveMD5Cracker* sc)
+init	slave_md5cracker/gpuCracker.cpp	/^bool GpuCracker::init(SlaveMD5Cracker* sc){$/;"	f	class:GpuCracker	signature:(SlaveMD5Cracker* sc)
+init	slave_md5cracker/gpuCracker.h	/^    bool init(SlaveMD5Cracker* sc);$/;"	p	class:GpuCracker	access:public	signature:(SlaveMD5Cracker* sc)
+init	slave_md5cracker/md5.cpp	/^void MD5::init() {$/;"	f	class:MD5	signature:()
+init	slave_md5cracker/md5.h	/^	void init();$/;"	p	class:MD5	access:private	signature:()
+init	slave_md5cracker/passGenerator.cpp	/^void PassGenerator::init(){$/;"	f	class:PassGenerator	signature:()
+init	slave_md5cracker/passGenerator.h	/^    void init();$/;"	p	class:PassGenerator	access:private	signature:()
+init	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::init(){$/;"	f	class:RWBuffer	signature:()
+init	slave_md5cracker/rwBuffer.h	/^    void init();$/;"	p	class:RWBuffer	access:public	signature:()
+initNerdTree	library/.vim/plugin/NERD_tree.vim	/^function! s:initNerdTree(name)$/;"	f
+initNerdTreeInPlace	library/.vim/plugin/NERD_tree.vim	/^function! s:initNerdTreeInPlace(dir)$/;"	f
+initNerdTreeMirror	library/.vim/plugin/NERD_tree.vim	/^function! s:initNerdTreeMirror()$/;"	f
+initUserCmd	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker:: initUserCmd(){$/;"	f	class:MasterMD5Cracker	signature:()
+initUserCmd	master_md5cracker/masterMD5Cracker.h	/^    void initUserCmd();$/;"	p	class:MasterMD5Cracker	access:private	signature:()
+initVariable	library/.vim/plugin/NERD_tree.vim	/^function! s:initVariable(var, value)$/;"	f
+injectPG	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::injectPG(PassGenerator& pg){$/;"	f	class:RWBuffer	signature:(PassGenerator& pg)
+injectPG	slave_md5cracker/rwBuffer.h	/^    void injectPG(PassGenerator& pg);$/;"	p	class:RWBuffer	access:public	signature:(PassGenerator& pg)
+intVal	master_md5cracker/slaveProxy.h	/^    int intVal;$/;"	m	struct:Cmd	access:public
+intVal	slave_md5cracker/masterProxy.h	/^    int intVal;$/;"	m	struct:Cmd	access:public
+isCracking	master_md5cracker/masterMD5Cracker.h	/^    bool isCracking;$/;"	m	class:MasterMD5Cracker	access:private
+isCracking	slave_md5cracker/slaveMD5Cracker.h	/^    bool isCracking ;$/;"	m	class:SlaveMD5Cracker	access:private
+isExistSlave	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::isExistSlave(string& key){$/;"	f	class:MasterMD5Cracker	signature:(string& key)
+isExistSlave	master_md5cracker/masterMD5Cracker.h	/^    bool isExistSlave(string& key);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& key)
+isExisting	master_md5cracker/masterMD5Cracker.h	/^    bool isExisting;$/;"	m	class:MasterMD5Cracker	access:private
+isExisting	master_md5cracker/slaveProxy.h	/^    bool isExisting;$/;"	m	class:SlaveProxy	access:private
+isFullConnected	master_md5cracker/slaveProxy.h	/^    bool isFullConnected;$/;"	m	class:SlaveProxy	access:private
+isGPUsupported	slave_md5cracker/gpuCracker.cpp	/^bool GpuCracker::isGPUsupported(){$/;"	f	class:GpuCracker	signature:()
+isGPUsupported	slave_md5cracker/gpuCracker.h	/^    bool isGPUsupported();$/;"	p	class:GpuCracker	access:private	signature:()
+isLogFileOpen	master_md5cracker/logManager.h	/^    bool isLogFileOpen;$/;"	m	class:LogManager	access:private
+isTreeOpen	library/.vim/plugin/NERD_tree.vim	/^function! s:isTreeOpen()$/;"	f
+isWindowUsable	library/.vim/plugin/NERD_tree.vim	/^function! s:isWindowUsable(winnumber)$/;"	f
+issueCmd	master_md5cracker/slaveProxy.cpp	/^void SlaveProxy::issueCmd(Cmd& cmd){$/;"	f	class:SlaveProxy	signature:(Cmd& cmd)
+issueCmd	master_md5cracker/slaveProxy.h	/^    void issueCmd(Cmd& cmd);$/;"	p	class:SlaveProxy	access:public	signature:(Cmd& cmd)
+issueCmdAll	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::issueCmdAll(Cmd& cmd){$/;"	f	class:MasterMD5Cracker	signature:(Cmd& cmd)
+issueCmdAll	master_md5cracker/masterMD5Cracker.h	/^    void issueCmdAll(Cmd& cmd);$/;"	p	class:MasterMD5Cracker	access:private	signature:(Cmd& cmd)
+issueCmdRoundRobin	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::issueCmdRoundRobin(deque<Cmd>& cmds){$/;"	f	class:MasterMD5Cracker	signature:(deque<Cmd>& cmds)
+issueCmdRoundRobin	master_md5cracker/masterMD5Cracker.h	/^    void issueCmdRoundRobin(deque<Cmd>& cmds);$/;"	p	class:MasterMD5Cracker	access:private	signature:(deque<Cmd>& cmds)
+jumpToChild	library/.vim/plugin/NERD_tree.vim	/^function! s:jumpToChild(direction)$/;"	f
+jumpToFirstChild	library/.vim/plugin/NERD_tree.vim	/^function! s:jumpToFirstChild()$/;"	f
+jumpToLastChild	library/.vim/plugin/NERD_tree.vim	/^function! s:jumpToLastChild()$/;"	f
+jumpToParent	library/.vim/plugin/NERD_tree.vim	/^function! s:jumpToParent()$/;"	f
+jumpToRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:jumpToRoot()$/;"	f
+jumpToSibling	library/.vim/plugin/NERD_tree.vim	/^function! s:jumpToSibling(forward)$/;"	f
+key	master_md5cracker/slaveProxy.h	/^    string key;$/;"	m	class:SlaveProxy	access:private
+len_t	master_md5cracker/passGenerator.h	/^typedef long long len_t;$/;"	t
+len_t	slave_md5cracker/passGenerator.h	/^typedef long long len_t;$/;"	t
+listeningSocket	master_md5cracker/masterMD5Cracker.h	/^    int listeningSocket;$/;"	m	class:MasterMD5Cracker	access:private
+listeningSocket	slave_md5cracker/slaveMD5Cracker.h	/^    int listeningSocket;$/;"	m	class:SlaveMD5Cracker	access:private
+listeningThread	master_md5cracker/masterMD5Cracker.h	/^    pthread_t listeningThread;$/;"	m	class:MasterMD5Cracker	access:private
+listeningThreadFunc	master_md5cracker/masterMD5Cracker.cpp	/^void* MasterMD5Cracker::listeningThreadFunc(void* arg){$/;"	f	class:MasterMD5Cracker	signature:(void* arg)
+listeningThreadFunc	master_md5cracker/masterMD5Cracker.h	/^    static void* listeningThreadFunc(void* arg);$/;"	p	class:MasterMD5Cracker	access:private	signature:(void* arg)
+loaded_nerd_tree	library/.vim/plugin/NERD_tree.vim	/^let loaded_nerd_tree = 1$/;"	v
+loaded_taglist	library/.vim/plugin/taglist.vim	/^            let loaded_taglist = 'no'$/;"	v
+loaded_taglist	library/.vim/plugin/taglist.vim	/^        let loaded_taglist = 'no'$/;"	v
+loaded_taglist	library/.vim/plugin/taglist.vim	/^    let loaded_taglist = 'fast_load_done'$/;"	v
+loaded_taglist	library/.vim/plugin/taglist.vim	/^let loaded_taglist = 'available'$/;"	v
+logFile	master_md5cracker/logManager.h	/^    ofstream logFile;$/;"	m	class:LogManager	access:private
+longVal	master_md5cracker/slaveProxy.h	/^    len_t longVal;$/;"	m	struct:Cmd	access:public
+longVal	slave_md5cracker/masterProxy.h	/^    len_t longVal;$/;"	m	struct:Cmd	access:public
+main	master_md5cracker/main.cpp	/^int main(int argc, char* argv[]){$/;"	f	signature:(int argc, char* argv[])
+main	slave_md5cracker/main.cpp	/^int main(){$/;"	f	signature:()
+master	master_md5cracker/slaveProxy.h	/^    MasterMD5Cracker* master;$/;"	m	class:SlaveProxy	access:private
+masterIP	slave_md5cracker/slaveMD5Cracker.h	/^    string masterIP;$/;"	m	class:SlaveMD5Cracker	access:private
+masterProxy	slave_md5cracker/slaveMD5Cracker.h	/^    MasterProxy masterProxy;$/;"	m	class:SlaveMD5Cracker	access:private
+masterReceiverFunc	slave_md5cracker/slaveMD5Cracker.cpp	/^bool SlaveMD5Cracker::masterReceiverFunc(int listenPort){$/;"	f	class:SlaveMD5Cracker	signature:(int listenPort)
+masterReceiverFunc	slave_md5cracker/slaveMD5Cracker.h	/^    bool masterReceiverFunc(int listenPort);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(int listenPort)
+masterSenderFunc	slave_md5cracker/slaveMD5Cracker.cpp	/^void* SlaveMD5Cracker::masterSenderFunc(void* arg){$/;"	f	class:SlaveMD5Cracker	signature:(void* arg)
+masterSenderFunc	slave_md5cracker/slaveMD5Cracker.h	/^    static void* masterSenderFunc(void* arg); $/;"	p	class:SlaveMD5Cracker	access:private	signature:(void* arg)
+md5	master_md5cracker/masterMD5Cracker.h	/^    string md5;$/;"	m	class:MasterMD5Cracker	access:private
+md5Records	master_md5cracker/masterMD5Cracker.h	/^    unordered_map<string, string> md5Records;$/;"	m	class:MasterMD5Cracker	access:private
+mutex	slave_md5cracker/rwBuffer.h	/^    pthread_mutex_t mutex;$/;"	m	class:RWBuffer	access:private
+mutex_pgs	slave_md5cracker/rwBuffer.h	/^    pthread_mutex_t mutex_pgs;$/;"	m	class:RWBuffer	access:private
+myIP	slave_md5cracker/slaveMD5Cracker.h	/^    string myIP;$/;"	m	class:SlaveMD5Cracker	access:private
+myListenPort	slave_md5cracker/slaveMD5Cracker.h	/^    int myListenPort;$/;"	m	class:SlaveMD5Cracker	access:private
+name	master_md5cracker/slaveProxy.h	/^    string name;$/;"	m	struct:Cmd	access:public
+name	slave_md5cracker/masterProxy.h	/^    string name;$/;"	m	struct:Cmd	access:public
+nextBufferName	library/.vim/plugin/NERD_tree.vim	/^function! s:nextBufferName()$/;"	f
+nextChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(char c, bool& carry){$/;"	f	class:PassGenerator	signature:(char c, bool& carry)
+nextChar	master_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(int pos, bool& carry){$/;"	f	class:PassGenerator	signature:(int pos, bool& carry)
+nextChar	master_md5cracker/passGenerator.h	/^    char nextChar(char c, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(char c, bool& carry)
+nextChar	master_md5cracker/passGenerator.h	/^    char nextChar(int pos, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(int pos, bool& carry)
+nextChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(char c, bool& carry){$/;"	f	class:PassGenerator	signature:(char c, bool& carry)
+nextChar	slave_md5cracker/passGenerator.cpp	/^char PassGenerator::nextChar(int pos, bool& carry){$/;"	f	class:PassGenerator	signature:(int pos, bool& carry)
+nextChar	slave_md5cracker/passGenerator.h	/^    char nextChar(char c, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(char c, bool& carry)
+nextChar	slave_md5cracker/passGenerator.h	/^    char nextChar(int pos, bool& carry);$/;"	p	class:PassGenerator	access:private	signature:(int pos, bool& carry)
+numOfSlaves	master_md5cracker/masterMD5Cracker.h	/^    int numOfSlaves(){return slaveProxies.size();}$/;"	f	class:MasterMD5Cracker	access:private	signature:()
+objects	master_md5cracker/Makefile	/^objects = main.o masterMD5Cracker.o logManager.o slaveProxy.o md5.o passGenerator.o$/;"	m
+objects	slave_md5cracker/Makefile	/^objects = main.o slaveMD5Cracker.o  masterProxy.o md5.o passGenerator.o cpuCracker.o gpuCracker.o rwBuffer.o$/;"	m
+omni#common#debug#End	library/.vim/autoload/omni/common/debug.vim	/^function! omni#common#debug#End()$/;"	f
+omni#common#debug#Start	library/.vim/autoload/omni/common/debug.vim	/^function! omni#common#debug#Start()$/;"	f
+omni#common#debug#Trace	library/.vim/autoload/omni/common/debug.vim	/^function! omni#common#debug#Trace(szFuncName, ...)$/;"	f
+omni#common#utils#CompareNumber	library/.vim/autoload/omni/common/utils.vim	/^function! omni#common#utils#CompareNumber(i1, i2)$/;"	f
+omni#common#utils#GetWordUnderCursor	library/.vim/autoload/omni/common/utils.vim	/^function! omni#common#utils#GetWordUnderCursor()$/;"	f
+omni#common#utils#TagList	library/.vim/autoload/omni/common/utils.vim	/^function! omni#common#utils#TagList(szTagQuery)$/;"	f
+omni#common#utils#TagListNoThrow	library/.vim/autoload/omni/common/utils.vim	/^function! omni#common#utils#TagListNoThrow(szTagQuery)$/;"	f
+omni#cpp#complete#Init	library/.vim/autoload/omni/cpp/complete.vim	/^function! omni#cpp#complete#Init()$/;"	f
+omni#cpp#complete#Main	library/.vim/autoload/omni/cpp/complete.vim	/^function! omni#cpp#complete#Main(findstart, base)$/;"	f
+omni#cpp#includes#Display	library/.vim/autoload/omni/cpp/includes.vim	/^function! omni#cpp#includes#Display()$/;"	f
+omni#cpp#includes#GetList	library/.vim/autoload/omni/cpp/includes.vim	/^function! omni#cpp#includes#GetList(...)$/;"	f
+omni#cpp#items#Get	library/.vim/autoload/omni/cpp/items.vim	/^function! omni#cpp#items#Get(tokens, ...)$/;"	f
+omni#cpp#items#ResolveItemsTypeInfo	library/.vim/autoload/omni/cpp/items.vim	/^function! omni#cpp#items#ResolveItemsTypeInfo(contextStack, items)$/;"	f
+omni#cpp#maycomplete#Arrow	library/.vim/autoload/omni/cpp/maycomplete.vim	/^function! omni#cpp#maycomplete#Arrow()$/;"	f
+omni#cpp#maycomplete#Complete	library/.vim/autoload/omni/cpp/maycomplete.vim	/^function! omni#cpp#maycomplete#Complete()$/;"	f
+omni#cpp#maycomplete#Dot	library/.vim/autoload/omni/cpp/maycomplete.vim	/^function! omni#cpp#maycomplete#Dot()$/;"	f
+omni#cpp#maycomplete#Scope	library/.vim/autoload/omni/cpp/maycomplete.vim	/^function! omni#cpp#maycomplete#Scope()$/;"	f
+omni#cpp#namespaces#GetContexts	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! omni#cpp#namespaces#GetContexts()$/;"	f
+omni#cpp#namespaces#GetListFromCurrentBuffer	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! omni#cpp#namespaces#GetListFromCurrentBuffer(...)$/;"	f
+omni#cpp#namespaces#GetMapFromBuffer	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! omni#cpp#namespaces#GetMapFromBuffer(szFilePath, ...)$/;"	f
+omni#cpp#namespaces#GetMapFromCurrentBuffer	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! omni#cpp#namespaces#GetMapFromCurrentBuffer()$/;"	f
+omni#cpp#namespaces#GetUsingNamespaces	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! omni#cpp#namespaces#GetUsingNamespaces()$/;"	f
+omni#cpp#namespaces#ResolveAlias	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! omni#cpp#namespaces#ResolveAlias(mapNamespaceAlias, szNamespace)$/;"	f
+omni#cpp#namespaces#ResolveAll	library/.vim/autoload/omni/cpp/namespaces.vim	/^function! omni#cpp#namespaces#ResolveAll(namespacesUsed)$/;"	f
+omni#cpp#settings#Init	library/.vim/autoload/omni/cpp/settings.vim	/^function! omni#cpp#settings#Init()$/;"	f
+omni#cpp#tokenizer#Tokenize	library/.vim/autoload/omni/cpp/tokenizer.vim	/^function! omni#cpp#tokenizer#Tokenize(szCode)$/;"	f
+omni#cpp#utils#BuildParenthesisGroups	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#BuildParenthesisGroups(tokens)$/;"	f
+omni#cpp#utils#CreateTypeInfo	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#CreateTypeInfo(param)$/;"	f
+omni#cpp#utils#ExtractCmdFromTagItem	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#ExtractCmdFromTagItem(tagItem)$/;"	f
+omni#cpp#utils#ExtractScope	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#ExtractScope(tagItem)$/;"	f
+omni#cpp#utils#ExtractTypeInfoFromTag	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#ExtractTypeInfoFromTag(tagItem)$/;"	f
+omni#cpp#utils#ExtractTypeInfoFromTokens	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#ExtractTypeInfoFromTokens(tokens)$/;"	f
+omni#cpp#utils#GetCastType	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetCastType(tokens)$/;"	f
+omni#cpp#utils#GetClassInheritanceList	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetClassInheritanceList(namespaces, typeInfo)$/;"	f
+omni#cpp#utils#GetCode	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetCode(posStart, posEnd)$/;"	f
+omni#cpp#utils#GetCodeFromLine	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetCodeFromLine(szSingleLine)$/;"	f
+omni#cpp#utils#GetPreviewWindowStringFromTagItem	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetPreviewWindowStringFromTagItem(tagItem)$/;"	f
+omni#cpp#utils#GetResolvedTagItem	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetResolvedTagItem(namespaces, typeInfo)$/;"	f
+omni#cpp#utils#GetResolvedTags	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetResolvedTags(namespaces, typeInfo)$/;"	f
+omni#cpp#utils#GetTypeInfoString	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#GetTypeInfoString(typeInfo)$/;"	f
+omni#cpp#utils#IsCursorInCommentOrString	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#IsCursorInCommentOrString()$/;"	f
+omni#cpp#utils#IsTypeInfoValid	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#IsTypeInfoValid(typeInfo)$/;"	f
+omni#cpp#utils#ResolveFilePath	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#ResolveFilePath(szFile)$/;"	f
+omni#cpp#utils#SimplifyParenthesis	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#SimplifyParenthesis(tokens)$/;"	f
+omni#cpp#utils#SimplifyScope	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#SimplifyScope(szScope)$/;"	f
+omni#cpp#utils#TokenizeCurrentInstruction	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#TokenizeCurrentInstruction(...)$/;"	f
+omni#cpp#utils#TokenizeCurrentInstructionUntilWord	library/.vim/autoload/omni/cpp/utils.vim	/^function! omni#cpp#utils#TokenizeCurrentInstructionUntilWord()$/;"	f
+omni#cpp#utils#expIgnoreComments	library/.vim/autoload/omni/cpp/utils.vim	/^let omni#cpp#utils#expIgnoreComments = 'getline(".") =~ g:omni#cpp#utils#reIgnoreComment'$/;"	v
+omni#cpp#utils#reIgnoreComment	library/.vim/autoload/omni/cpp/utils.vim	/^let omni#cpp#utils#reIgnoreComment = escape('\\\/\\\/\\|\\\/\\*\\|\\*\\\/', '*\/\\')$/;"	v
+omni#cpp#utils#szEscapedCharacters	library/.vim/autoload/omni/cpp/utils.vim	/^let omni#cpp#utils#szEscapedCharacters = ' %#'$/;"	v
+openBookmark	library/.vim/plugin/NERD_tree.vim	/^function! s:openBookmark(name)$/;"	f
+openEntrySplit	library/.vim/plugin/NERD_tree.vim	/^function! s:openEntrySplit(vertical, forceKeepWindowOpen)$/;"	f
+openExplorer	library/.vim/plugin/NERD_tree.vim	/^function! s:openExplorer()$/;"	f
+openInNewTab	library/.vim/plugin/NERD_tree.vim	/^function! s:openInNewTab(stayCurrentTab)$/;"	f
+openNodeRecursively	library/.vim/plugin/NERD_tree.vim	/^function! s:openNodeRecursively()$/;"	f
+operator ++	master_md5cracker/passGenerator.cpp	/^len_t PassGenerator::operator++(int){$/;"	f	class:PassGenerator	signature:(int)
+operator ++	master_md5cracker/passGenerator.h	/^    len_t operator++(int);$/;"	p	class:PassGenerator	access:public	signature:(int)
+operator ++	slave_md5cracker/passGenerator.cpp	/^len_t PassGenerator::operator++(int){$/;"	f	class:PassGenerator	signature:(int)
+operator ++	slave_md5cracker/passGenerator.h	/^    len_t operator++(int);$/;"	p	class:PassGenerator	access:public	signature:(int)
+operator <<	master_md5cracker/logManager.h	/^    LogManager& operator<<(const T& t){$/;"	f	class:LogManager	access:public	signature:(const T& t)
+operator =	master_md5cracker/logManager.h	/^    LogManager& operator=(const LogManager& logMgr){return *this ;}$/;"	f	class:LogManager	access:private	signature:(const LogManager& logMgr)
+operator =	master_md5cracker/md5.h	/^	MD5& operator=(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+operator =	slave_md5cracker/md5.h	/^	MD5& operator=(const MD5&);$/;"	p	class:MD5	access:private	signature:(const MD5&)
+pass	master_md5cracker/masterMD5Cracker.h	/^    string pass;$/;"	m	class:MasterMD5Cracker	access:private
+pgs	slave_md5cracker/rwBuffer.h	/^    deque< PassGenerator> pgs;$/;"	m	class:RWBuffer	access:private
+previewNode	library/.vim/plugin/NERD_tree.vim	/^function! s:previewNode(openNewWin)$/;"	f
+produce	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::produce( vector<string>& passwords){$/;"	f	class:RWBuffer	signature:( vector<string>& passwords)
+produce	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::produce(string& newPass){$/;"	f	class:RWBuffer	signature:(string& newPass)
+produce	slave_md5cracker/rwBuffer.h	/^    void produce( vector<string>& passwords);$/;"	p	class:RWBuffer	access:public	signature:( vector<string>& passwords)
+produce	slave_md5cracker/rwBuffer.h	/^    void produce(string& newPass);$/;"	p	class:RWBuffer	access:public	signature:(string& newPass)
+promptToDelBuffer	library/.vim/nerdtree_plugin/fs_menu.vim	/^function! s:promptToDelBuffer(bufnum, msg)$/;"	f
+promptToDelBuffer	library/.vim/plugin/NERD_tree.vim	/^function! s:promptToDelBuffer(bufnum, msg)$/;"	f
+putCursorInTreeWin	library/.vim/plugin/NERD_tree.vim	/^function! s:putCursorInTreeWin()$/;"	f
+putCursorOnBookmarkTable	library/.vim/plugin/NERD_tree.vim	/^function! s:putCursorOnBookmarkTable()$/;"	f
+refreshCurrent	library/.vim/plugin/NERD_tree.vim	/^function! s:refreshCurrent()$/;"	f
+refreshRoot	library/.vim/plugin/NERD_tree.vim	/^function! s:refreshRoot()$/;"	f
+registerSlave	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::registerSlave(string& key,SlaveProxy& proxy){$/;"	f	class:MasterMD5Cracker	signature:(string& key,SlaveProxy& proxy)
+registerSlave	master_md5cracker/masterMD5Cracker.h	/^    void registerSlave(string& key,SlaveProxy& proxy);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& key,SlaveProxy& proxy)
+renderBookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:renderBookmarks()$/;"	f
+renderView	library/.vim/plugin/NERD_tree.vim	/^function! s:renderView()$/;"	f
+renderViewSavingPosition	library/.vim/plugin/NERD_tree.vim	/^function! s:renderViewSavingPosition()$/;"	f
+reportFoundPass	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::reportFoundPass(string pass){$/;"	f	class:MasterMD5Cracker	signature:(string pass)
+reportFoundPass	master_md5cracker/masterMD5Cracker.h	/^    void reportFoundPass(string pass);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string pass)
+reportResult	slave_md5cracker/slaveMD5Cracker.cpp	/^void SlaveMD5Cracker::reportResult(string pass ,string md5){$/;"	f	class:SlaveMD5Cracker	signature:(string pass ,string md5)
+reportResult	slave_md5cracker/slaveMD5Cracker.h	/^    void reportResult(string pass ,string md5);$/;"	p	class:SlaveMD5Cracker	access:private	signature:(string pass ,string md5)
+restoreScreenState	library/.vim/plugin/NERD_tree.vim	/^function! s:restoreScreenState()$/;"	f
+revealBookmark	library/.vim/plugin/NERD_tree.vim	/^function! s:revealBookmark(name)$/;"	f
+run	master_md5cracker/slaveProxy.cpp	/^bool SlaveProxy::run(){$/;"	f	class:SlaveProxy	signature:()
+run	master_md5cracker/slaveProxy.h	/^    bool run();$/;"	p	class:SlaveProxy	access:public	signature:()
+run	slave_md5cracker/rwBuffer.cpp	/^void RWBuffer::run(){$/;"	f	class:RWBuffer	signature:()
+run	slave_md5cracker/rwBuffer.h	/^    void run();$/;"	p	class:RWBuffer	access:public	signature:()
+run	slave_md5cracker/slaveMD5Cracker.cpp	/^void SlaveMD5Cracker::run(){$/;"	f	class:SlaveMD5Cracker	signature:()
+run	slave_md5cracker/slaveMD5Cracker.h	/^    void run();$/;"	p	class:SlaveMD5Cracker	access:public	signature:()
+runDistribute	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::runDistribute(){$/;"	f	class:MasterMD5Cracker	signature:()
+runDistribute	master_md5cracker/masterMD5Cracker.h	/^    void runDistribute();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+runLocal	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::runLocal(){$/;"	f	class:MasterMD5Cracker	signature:()
+runLocal	master_md5cracker/masterMD5Cracker.h	/^    void runLocal();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+rwBuf	slave_md5cracker/slaveMD5Cracker.h	/^    RWBuffer rwBuf;$/;"	m	class:SlaveMD5Cracker	access:private
+s:Bookmark	library/.vim/plugin/NERD_tree.vim	/^let s:Bookmark = {}$/;"	v
+s:CACHE_DEBUG_TRACE	library/.vim/autoload/omni/common/debug.vim	/^let s:CACHE_DEBUG_TRACE = []$/;"	v
+s:CACHE_OVERLOADED_FUNCTIONS	library/.vim/autoload/omni/cpp/complete.vim	/^let s:CACHE_OVERLOADED_FUNCTIONS = {}$/;"	v
+s:CACHE_TAG_ENV	library/.vim/autoload/omni/cpp/complete.vim	/^let s:CACHE_TAG_ENV = ''$/;"	v
+s:CACHE_TAG_FILES	library/.vim/autoload/omni/cpp/complete.vim	/^let s:CACHE_TAG_FILES = {}$/;"	v
+s:CACHE_TAG_POPUP_ITEMS	library/.vim/autoload/omni/cpp/complete.vim	/^let s:CACHE_TAG_POPUP_ITEMS = {}$/;"	v
+s:KeyMap	library/.vim/plugin/NERD_tree.vim	/^let s:KeyMap = {}$/;"	v
+s:MenuController	library/.vim/plugin/NERD_tree.vim	/^let s:MenuController = {}$/;"	v
+s:MenuItem	library/.vim/plugin/NERD_tree.vim	/^let s:MenuItem = {}$/;"	v
+s:NERDTreeBufName	library/.vim/plugin/NERD_tree.vim	/^let s:NERDTreeBufName = 'NERD_tree_'$/;"	v
+s:NERDTreeSortStarIndex	library/.vim/plugin/NERD_tree.vim	/^let s:NERDTreeSortStarIndex = index(g:NERDTreeSortOrder, '*')$/;"	v
+s:NERD_tree_version	library/.vim/plugin/NERD_tree.vim	/^let s:NERD_tree_version = '4.2.0'$/;"	v
+s:OmniCpp_ShowAccess	library/.vim/autoload/omni/cpp/complete.vim	/^let s:OmniCpp_ShowAccess = g:OmniCpp_ShowAccess$/;"	v
+s:OmniCpp_ShowPrototypeInAbbr	library/.vim/autoload/omni/cpp/complete.vim	/^let s:OmniCpp_ShowPrototypeInAbbr = g:OmniCpp_ShowPrototypeInAbbr$/;"	v
+s:OmniCpp_ShowScopeInAbbr	library/.vim/autoload/omni/cpp/complete.vim	/^let s:OmniCpp_ShowScopeInAbbr = g:OmniCpp_ShowScopeInAbbr$/;"	v
+s:Path	library/.vim/plugin/NERD_tree.vim	/^let s:Path = {}$/;"	v
+s:Tlist_Skip_Refresh	library/.vim/plugin/taglist.vim	/^let s:Tlist_Skip_Refresh = 0$/;"	v
+s:TreeDirNode	library/.vim/plugin/NERD_tree.vim	/^let s:TreeDirNode = copy(s:TreeFileNode)$/;"	v
+s:TreeFileNode	library/.vim/plugin/NERD_tree.vim	/^let s:TreeFileNode = {}$/;"	v
+s:bMayComplete	library/.vim/autoload/omni/cpp/complete.vim	/^let s:bMayComplete = 0$/;"	v
+s:cpo_save	library/.vim/plugin/taglist.vim	/^    let s:cpo_save = &cpo$/;"	v
+s:cppKeyword	library/.vim/autoload/omni/cpp/tokenizer.vim	/^let s:cppKeyword = ['asm', 'auto', 'bool', 'break', 'case', 'catch', 'char', 'class', 'const', 'const_cast', 'continue', 'default', 'delete', 'do', 'double', 'dynamic_cast', 'else', 'enum', 'explicit', 'export', 'extern', 'false', 'float', 'for', 'friend', 'goto', 'if', 'inline', 'int', 'long', 'mutable', 'namespace', 'new', 'operator', 'private', 'protected', 'public', 'register', 'reinterpret_cast', 'return', 'short', 'signed', 'sizeof', 'static', 'static_cast', 'struct', 'switch', 'template', 'this', 'throw', 'true', 'try', 'typedef', 'typeid', 'typename', 'union', 'unsigned', 'using', 'virtual', 'void', 'volatile', 'wchar_t', 'while', 'and', 'and_eq', 'bitand', 'bitor', 'compl', 'not', 'not_eq', 'or', 'or_eq', 'xor', 'xor_eq']$/;"	v
+s:cppOperatorPunctuator	library/.vim/autoload/omni/cpp/tokenizer.vim	/^let s:cppOperatorPunctuator = ['->*', '->', '--', '-=', '-', '!=', '!', '##', '#', '%:%:', '%=', '%>', '%:', '%', '&&', '&=', '&', '(', ')', '*=', '*', ',', '...', '.*', '.', '\/=', '\/', '::', ':>', ':', ';', '?', '[', ']', '^=', '^', '{', '||', '|=', '|', '}', '~', '++', '+=', '+', '<<=', '<%', '<:', '<<', '<=', '<', '==', '=', '>>=', '>>', '>=', '>']$/;"	v
+s:escape_chars	library/.vim/plugin/NERD_tree.vim	/^    let s:escape_chars =  " \\\\`\\|\\"#%&,?()\\*^<>[]"$/;"	v
+s:escape_chars	library/.vim/plugin/NERD_tree.vim	/^    let s:escape_chars =  " `\\|\\"#%&,?()\\*^<>"$/;"	v
+s:hasPreviewWindow	library/.vim/autoload/omni/cpp/complete.vim	/^let s:hasPreviewWindow = match(&completeopt, 'preview')>=0$/;"	v
+s:hasPreviewWindowOld	library/.vim/autoload/omni/cpp/complete.vim	/^let s:hasPreviewWindowOld = s:hasPreviewWindow$/;"	v
+s:menu_char_prefix	library/.vim/plugin/taglist.vim	/^let s:menu_char_prefix =$/;"	v
+s:next_buffer_number	library/.vim/plugin/NERD_tree.vim	/^let s:next_buffer_number = 1$/;"	v
+s:old_cpo	library/.vim/plugin/NERD_tree.vim	/^let s:old_cpo = &cpo$/;"	v
+s:popupItemResultList	library/.vim/autoload/omni/cpp/complete.vim	/^let s:popupItemResultList = []$/;"	v
+s:reCComment	library/.vim/autoload/omni/cpp/tokenizer.vim	/^let s:reCComment = '\\\/\\*\\|\\*\\\/'$/;"	v
+s:reComment	library/.vim/autoload/omni/cpp/tokenizer.vim	/^let s:reComment = s:reCComment.'\\|'.s:reCppComment$/;"	v
+s:reCppComment	library/.vim/autoload/omni/cpp/tokenizer.vim	/^let s:reCppComment = '\\\/\\\/'$/;"	v
+s:reCppKeyword	library/.vim/autoload/omni/cpp/tokenizer.vim	/^let s:reCppKeyword = '\\C\\<'.join(s:cppKeyword, '\\>\\|\\<').'\\>'$/;"	v
+s:reCppOperatorOrPunctuator	library/.vim/autoload/omni/cpp/tokenizer.vim	/^let s:reCppOperatorOrPunctuator = escape(join(s:cppOperatorPunctuator, '\\|'), '*.\/^~[]')$/;"	v
+s:reIncludeFilePart	library/.vim/autoload/omni/cpp/includes.vim	/^let s:reIncludeFilePart = '\\(<\\|"\\)\\(\\f\\|\\s\\)\\+\\(>\\|"\\)'$/;"	v
+s:rePreprocIncludeFile	library/.vim/autoload/omni/cpp/includes.vim	/^let s:rePreprocIncludeFile = s:rePreprocIncludePart . s:reIncludeFilePart$/;"	v
+s:rePreprocIncludePart	library/.vim/autoload/omni/cpp/includes.vim	/^let s:rePreprocIncludePart = '\\C#\\s*include\\s*'$/;"	v
+s:running_windows	library/.vim/plugin/NERD_tree.vim	/^let s:running_windows = has("win16") || has("win32") || has("win64")$/;"	v
+s:szCurrentWorkingDir	library/.vim/autoload/omni/cpp/complete.vim	/^let s:szCurrentWorkingDir = getcwd()$/;"	v
+s:tlist_app_name	library/.vim/plugin/taglist.vim	/^let s:tlist_app_name = "none"$/;"	v
+s:tlist_brief_help	library/.vim/plugin/taglist.vim	/^let s:tlist_brief_help = 1$/;"	v
+s:tlist_cur_file_idx	library/.vim/plugin/taglist.vim	/^let s:tlist_cur_file_idx = -1$/;"	v
+s:tlist_debug	library/.vim/plugin/taglist.vim	/^let s:tlist_debug = 0$/;"	v
+s:tlist_debug_file	library/.vim/plugin/taglist.vim	/^let s:tlist_debug_file = ''$/;"	v
+s:tlist_def_ant_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_ant_settings = 'ant;p:projects;t:targets'$/;"	v
+s:tlist_def_asm_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_asm_settings = 'asm;d:define;l:label;m:macro;t:type'$/;"	v
+s:tlist_def_aspperl_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_aspperl_settings =$/;"	v
+s:tlist_def_aspvbs_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_aspvbs_settings =$/;"	v
+s:tlist_def_awk_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_awk_settings = 'awk;f:function'$/;"	v
+s:tlist_def_basic_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_basic_settings =$/;"	v
+s:tlist_def_beta_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_beta_settings = 'beta;f:fragment;s:slot;v:pattern'$/;"	v
+s:tlist_def_c_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_c_settings = 'c;d:macro;g:enum;s:struct;u:union;t:typedef;' .$/;"	v
+s:tlist_def_cobol_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_cobol_settings = 'cobol;d:data;f:file;g:group;p:paragraph;' .$/;"	v
+s:tlist_def_cpp_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_cpp_settings = 'c++;n:namespace;v:variable;d:macro;t:typedef;' .$/;"	v
+s:tlist_def_cs_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_cs_settings = 'c#;d:macro;t:typedef;n:namespace;c:class;' .$/;"	v
+s:tlist_def_csh_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_csh_settings = 'sh;f:function'$/;"	v
+s:tlist_def_d_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_d_settings = 'c++;n:namespace;v:variable;t:typedef;' .$/;"	v
+s:tlist_def_dosbatch_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_dosbatch_settings = 'dosbatch;l:labels;v:variables'$/;"	v
+s:tlist_def_eiffel_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_eiffel_settings = 'eiffel;c:class;f:feature'$/;"	v
+s:tlist_def_erlang_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_erlang_settings = 'erlang;d:macro;r:record;m:module;f:function'$/;"	v
+s:tlist_def_expect_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_expect_settings = 'tcl;c:class;f:method;p:procedure'$/;"	v
+s:tlist_def_flex_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_flex_settings = 'flex;v:global;c:classes;p:properties;'.$/;"	v
+s:tlist_def_fortran_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_fortran_settings = 'fortran;p:program;b:block data;' .$/;"	v
+s:tlist_def_go_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_go_settings = 'go;f:function;p:package;t:struct'$/;"	v
+s:tlist_def_html_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_html_settings = 'html;a:anchor;f:function'$/;"	v
+s:tlist_def_java_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_java_settings = 'java;p:package;c:class;i:interface;' .$/;"	v
+s:tlist_def_javascript_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_javascript_settings =$/;"	v
+s:tlist_def_lisp_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_lisp_settings = 'lisp;f:function'$/;"	v
+s:tlist_def_lua_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_lua_settings = 'lua;f:function'$/;"	v
+s:tlist_def_make_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_make_settings = 'make;m:macro'$/;"	v
+s:tlist_def_matlab_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_matlab_settings = 'matlab;f:function'$/;"	v
+s:tlist_def_ocamal_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_ocamal_settings = 'ocamal;M:module;v:global;t:type;'.$/;"	v
+s:tlist_def_pascal_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_pascal_settings = 'pascal;f:function;p:procedure'$/;"	v
+s:tlist_def_perl_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_perl_settings = 'perl;c:constant;l:label;p:package;s:subroutine'$/;"	v
+s:tlist_def_php_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_php_settings =$/;"	v
+s:tlist_def_python_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_python_settings = 'python;c:class;m:member;f:function'$/;"	v
+s:tlist_def_rexx_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_rexx_settings = 'rexx;s:subroutine'$/;"	v
+s:tlist_def_ruby_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_ruby_settings = 'ruby;c:class;f:method;F:function;' .$/;"	v
+s:tlist_def_scheme_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_scheme_settings = 'scheme;s:set;f:function'$/;"	v
+s:tlist_def_sh_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_sh_settings = 'sh;f:function'$/;"	v
+s:tlist_def_slang_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_slang_settings = 'slang;n:namespace;f:function'$/;"	v
+s:tlist_def_sml_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_sml_settings = 'sml;e:exception;c:functor;s:signature;' .$/;"	v
+s:tlist_def_sql_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_sql_settings = 'sql;f:functions;' .$/;"	v
+s:tlist_def_tcl_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_tcl_settings = 'tcl;c:class;f:method;m:method;p:procedure'$/;"	v
+s:tlist_def_tex_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_tex_settings = 'tex;c:chapters;s:sections;u:subsections;'.$/;"	v
+s:tlist_def_vera_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_vera_settings = 'vera;c:class;d:macro;e:enumerator;' .$/;"	v
+s:tlist_def_verilog_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_verilog_settings = 'verilog;m:module;c:constant;P:parameter;' .$/;"	v
+s:tlist_def_vhdl_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_vhdl_settings = 'vhdl;c:constant;t:type;T:subtype;r:record;e:entity;f:function;p:procedure;P:package'$/;"	v
+s:tlist_def_vim_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_vim_settings =$/;"	v
+s:tlist_def_yacc_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_yacc_settings = 'yacc;l:label'$/;"	v
+s:tlist_def_zsh_settings	library/.vim/plugin/taglist.vim	/^let s:tlist_def_zsh_settings = 'sh;f:function'$/;"	v
+s:tlist_file_count	library/.vim/plugin/taglist.vim	/^let s:tlist_file_count = 0$/;"	v
+s:tlist_file_lnum_idx_cache	library/.vim/plugin/taglist.vim	/^let s:tlist_file_lnum_idx_cache = -1$/;"	v
+s:tlist_file_name_idx_cache	library/.vim/plugin/taglist.vim	/^let s:tlist_file_name_idx_cache = -1$/;"	v
+s:tlist_file_names	library/.vim/plugin/taglist.vim	/^let s:tlist_file_names=''$/;"	v
+s:tlist_ftype_count	library/.vim/plugin/taglist.vim	/^let s:tlist_ftype_count = 0$/;"	v
+s:tlist_menu_empty	library/.vim/plugin/taglist.vim	/^let s:tlist_menu_empty = 1$/;"	v
+s:tlist_msg	library/.vim/plugin/taglist.vim	/^    let s:tlist_msg = ''$/;"	v
+s:tlist_removed_flist	library/.vim/plugin/taglist.vim	/^let s:tlist_removed_flist = ""$/;"	v
+s:tlist_sid	library/.vim/plugin/taglist.vim	/^    let s:tlist_sid = substitute(maparg('<SID>xx'), '<SNR>\\(\\d\\+_\\)xx$',$/;"	v
+s:tlist_win_maximized	library/.vim/plugin/taglist.vim	/^let s:tlist_win_maximized = 0$/;"	v
+s:tlist_winsize_chgd	library/.vim/plugin/taglist.vim	/^let s:tlist_winsize_chgd = -1$/;"	v
+s:tree_markup_reg	library/.vim/plugin/NERD_tree.vim	/^let s:tree_markup_reg = '^[ `|]*[\\-+~в–ѕв–ё ]\\+'$/;"	v
+s:tree_up_dir_line	library/.vim/plugin/NERD_tree.vim	/^let s:tree_up_dir_line = '.. (up a dir)'$/;"	v
+s:tree_up_dir_line	library/.vim/syntax/nerdtree.vim	/^let s:tree_up_dir_line = '.. (up a dir)'$/;"	v
+s:tree_wid	library/.vim/plugin/NERD_tree.vim	/^let s:tree_wid = 2$/;"	v
+saveScreenState	library/.vim/plugin/NERD_tree.vim	/^function! s:saveScreenState()$/;"	f
+sema_empty	slave_md5cracker/rwBuffer.h	/^    sem_t sema_empty;$/;"	m	class:RWBuffer	access:private
+sema_full	slave_md5cracker/rwBuffer.h	/^    sem_t sema_full;$/;"	m	class:RWBuffer	access:private
+sendViaXMLRPC	master_md5cracker/slaveProxy.cpp	/^bool SlaveProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){$/;"	f	class:SlaveProxy	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+sendViaXMLRPC	master_md5cracker/slaveProxy.h	/^    static bool sendViaXMLRPC(int socket, string name, string strVal, len_t longVal, int intVal);$/;"	p	class:SlaveProxy	access:private	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+sendViaXMLRPC	slave_md5cracker/masterProxy.cpp	/^bool MasterProxy::sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal){$/;"	f	class:MasterProxy	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+sendViaXMLRPC	slave_md5cracker/masterProxy.h	/^    static bool sendViaXMLRPC(int socket, string name,  string strVal, len_t longVal, int intVal);$/;"	p	class:MasterProxy	access:public	signature:(int socket, string name, string strVal, len_t longVal, int intVal)
+setCommonBufOptions	library/.vim/plugin/NERD_tree.vim	/^function! s:setCommonBufOptions()$/;"	f
+setupStatusline	library/.vim/plugin/NERD_tree.vim	/^function! s:setupStatusline()$/;"	f
+showMenu	library/.vim/plugin/NERD_tree.vim	/^function! s:showMenu()$/;"	f
+slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:Feedback	access:private
+slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:HandShake	access:private
+slave	master_md5cracker/slaveProxy.h	/^    SlaveProxy* slave;$/;"	m	class:ReturnRet	access:private
+slaveAddr	master_md5cracker/slaveProxy.h	/^    string slaveAddr;$/;"	m	class:SlaveProxy	access:private
+slaveCracker	slave_md5cracker/cpuCracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:CpuCracker	access:private
+slaveCracker	slave_md5cracker/gpuCracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:GpuCracker	access:private
+slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:QuitMethod	access:private
+slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:ReceiveChunkMethod	access:private
+slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StartMethod	access:private
+slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StatusMethod	access:private
+slaveCracker	slave_md5cracker/slaveMD5Cracker.h	/^    SlaveMD5Cracker* slaveCracker;$/;"	m	class:StopMethod	access:private
+slavePort	master_md5cracker/slaveProxy.h	/^    int slavePort;$/;"	m	class:SlaveProxy	access:private
+slaveProxies	master_md5cracker/masterMD5Cracker.h	/^    unordered_map<string, SlaveProxy> slaveProxies;$/;"	m	class:MasterMD5Cracker	access:private
+slaveReceiverFunc	master_md5cracker/slaveProxy.cpp	/^void* SlaveProxy::slaveReceiverFunc(void* arg){$/;"	f	class:SlaveProxy	signature:(void* arg)
+slaveReceiverFunc	master_md5cracker/slaveProxy.h	/^    static void* slaveReceiverFunc(void* arg);$/;"	p	class:SlaveProxy	access:private	signature:(void* arg)
+slaveSenderFunc	master_md5cracker/slaveProxy.cpp	/^void* SlaveProxy::slaveSenderFunc(void* arg){$/;"	f	class:SlaveProxy	signature:(void* arg)
+slaveSenderFunc	master_md5cracker/slaveProxy.h	/^    static void* slaveSenderFunc(void* arg);$/;"	p	class:SlaveProxy	access:private	signature:(void* arg)
+slaves_mutex	master_md5cracker/masterMD5Cracker.h	/^    pthread_mutex_t slaves_mutex;$/;"	m	class:MasterMD5Cracker	access:private
+socket2Master	master_md5cracker/slaveProxy.h	/^    int socket2Master; \/\/receive cmd from slave$/;"	m	class:SlaveProxy	access:private
+socket2Slave	master_md5cracker/slaveProxy.h	/^    int socket2Slave; \/\/send cmd to slave$/;"	m	class:SlaveProxy	access:private
+start	master_md5cracker/masterMD5Cracker.h	/^    struct timeval start, end;$/;"	m	class:MasterMD5Cracker	typeref:struct:MasterMD5Cracker::timeval	access:private
+start	master_md5cracker/passGenerator.h	/^    len_t start;$/;"	m	class:PassGenerator	access:private
+start	slave_md5cracker/passGenerator.h	/^    len_t start;$/;"	m	class:PassGenerator	access:private
+startDistributedCracking	master_md5cracker/masterMD5Cracker.cpp	/^bool MasterMD5Cracker::startDistributedCracking(string md5){$/;"	f	class:MasterMD5Cracker	signature:(string md5)
+startDistributedCracking	master_md5cracker/masterMD5Cracker.h	/^    bool startDistributedCracking(string md5);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string md5)
+strArr	master_md5cracker/passGenerator.h	/^    vector<char> strArr;$/;"	m	class:PassGenerator	access:private
+strArr	slave_md5cracker/passGenerator.h	/^    vector<char> strArr;$/;"	m	class:PassGenerator	access:private
+strVal	master_md5cracker/slaveProxy.h	/^    string strVal;$/;"	m	struct:Cmd	access:public
+strVal	slave_md5cracker/masterProxy.h	/^    string strVal;$/;"	m	struct:Cmd	access:public
+stripMarkupFromLine	library/.vim/plugin/NERD_tree.vim	/^function! s:stripMarkupFromLine(line, removeLeadingSpaces)$/;"	f
+tabpagevar	library/.vim/plugin/NERD_tree.vim	/^function! s:tabpagevar(tabnr, var)$/;"	f
+targetMd5	slave_md5cracker/slaveMD5Cracker.h	/^    string targetMd5;$/;"	m	class:SlaveMD5Cracker	access:private
+terminate	master_md5cracker/slaveProxy.cpp	/^void SlaveProxy::terminate(){$/;"	f	class:SlaveProxy	signature:()
+terminate	master_md5cracker/slaveProxy.h	/^    void terminate();$/;"	p	class:SlaveProxy	access:public	signature:()
+terminate	slave_md5cracker/cpuCracker.cpp	/^bool CpuCracker::terminate(){$/;"	f	class:CpuCracker	signature:()
+terminate	slave_md5cracker/cpuCracker.h	/^    bool terminate();$/;"	p	class:CpuCracker	access:public	signature:()
+terminate	slave_md5cracker/gpuCracker.cpp	/^bool GpuCracker::terminate(){$/;"	f	class:GpuCracker	signature:()
+terminate	slave_md5cracker/gpuCracker.h	/^    bool terminate();$/;"	p	class:GpuCracker	access:public	signature:()
+testPassGenerator	master_md5cracker/main.cpp	/^void testPassGenerator(){$/;"	f	signature:()
+thread	slave_md5cracker/gpuCracker.h	/^    pthread_t thread;$/;"	m	class:GpuCracker	access:private
+threadMasterReceiver	master_md5cracker/slaveProxy.h	/^    pthread_t threadMasterReceiver;$/;"	m	class:SlaveProxy	access:private
+threadMasterSender	master_md5cracker/slaveProxy.h	/^    pthread_t threadMasterSender;$/;"	m	class:SlaveProxy	access:private
+timeSpent	master_md5cracker/masterMD5Cracker.h	/^    double timeSpent;$/;"	m	class:MasterMD5Cracker	access:private
+tlist_pyrex_settings	library/.vim/plugin/taglist.vim	/^let tlist_pyrex_settings='python;c:classe;m:memder;f:function'$/;"	v
+toMasterSocket	slave_md5cracker/slaveMD5Cracker.h	/^    int toMasterSocket;$/;"	m	class:SlaveMD5Cracker	access:private
+toggle	library/.vim/plugin/NERD_tree.vim	/^function! s:toggle(dir)$/;"	f
+toggleIgnoreFilter	library/.vim/plugin/NERD_tree.vim	/^function! s:toggleIgnoreFilter()$/;"	f
+toggleShowBookmarks	library/.vim/plugin/NERD_tree.vim	/^function! s:toggleShowBookmarks()$/;"	f
+toggleShowFiles	library/.vim/plugin/NERD_tree.vim	/^function! s:toggleShowFiles()$/;"	f
+toggleShowHidden	library/.vim/plugin/NERD_tree.vim	/^function! s:toggleShowHidden()$/;"	f
+toggleZoom	library/.vim/plugin/NERD_tree.vim	/^function! s:toggleZoom()$/;"	f
+transform	master_md5cracker/md5.cpp	/^void MD5::transform(const byte block[64]) {$/;"	f	class:MD5	signature:(const byte block[64])
+transform	master_md5cracker/md5.h	/^	void transform(const byte block[64]);$/;"	p	class:MD5	access:private	signature:(const byte block[64])
+transform	slave_md5cracker/md5.cpp	/^void MD5::transform(const byte block[64]) {$/;"	f	class:MD5	signature:(const byte block[64])
+transform	slave_md5cracker/md5.h	/^	void transform(const byte block[64]);$/;"	p	class:MD5	access:private	signature:(const byte block[64])
+treeExistsForBuf	library/.vim/plugin/NERD_tree.vim	/^function! s:treeExistsForBuf()$/;"	f
+treeExistsForTab	library/.vim/plugin/NERD_tree.vim	/^function! s:treeExistsForTab()$/;"	f
+ulong	master_md5cracker/md5.h	/^typedef unsigned long ulong;$/;"	t
+ulong	slave_md5cracker/md5.h	/^typedef unsigned long ulong;$/;"	t
+unique	library/.vim/plugin/NERD_tree.vim	/^function! s:unique(list)$/;"	f
+unregisterSlave	master_md5cracker/masterMD5Cracker.cpp	/^void MasterMD5Cracker::unregisterSlave(string& key){$/;"	f	class:MasterMD5Cracker	signature:(string& key)
+unregisterSlave	master_md5cracker/masterMD5Cracker.h	/^    void unregisterSlave(string& key);$/;"	p	class:MasterMD5Cracker	access:private	signature:(string& key)
+upDir	library/.vim/plugin/NERD_tree.vim	/^function! s:upDir(keepState)$/;"	f
+update	master_md5cracker/md5.cpp	/^void MD5::update(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+update	master_md5cracker/md5.h	/^    void update(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+update	master_md5cracker/passGenerator.cpp	/^void PassGenerator::update(){$/;"	f	class:PassGenerator	signature:()
+update	master_md5cracker/passGenerator.h	/^    void update();$/;"	p	class:PassGenerator	access:private	signature:()
+update	slave_md5cracker/md5.cpp	/^void MD5::update(const byte *input, size_t length) {$/;"	f	class:MD5	signature:(const byte *input, size_t length)
+update	slave_md5cracker/md5.h	/^    void update(const byte *input, size_t length);$/;"	p	class:MD5	access:private	signature:(const byte *input, size_t length)
+update	slave_md5cracker/passGenerator.cpp	/^void PassGenerator::update(){$/;"	f	class:PassGenerator	signature:()
+update	slave_md5cracker/passGenerator.h	/^    void update();$/;"	p	class:PassGenerator	access:private	signature:()
+workThreadFunc	slave_md5cracker/cpuCracker.cpp	/^void* CpuCracker::workThreadFunc(void* arg){$/;"	f	class:CpuCracker	signature:(void* arg)
+workThreadFunc	slave_md5cracker/cpuCracker.h	/^    static void* workThreadFunc(void* arg);$/;"	p	class:CpuCracker	access:private	signature:(void* arg)
+workThreadFunc	slave_md5cracker/gpuCracker.cpp	/^void* GpuCracker::workThreadFunc(void* arg){$/;"	f	class:GpuCracker	signature:(void* arg)
+workThreadFunc	slave_md5cracker/gpuCracker.h	/^    static void* workThreadFunc(void* arg);$/;"	p	class:GpuCracker	access:private	signature:(void* arg)
+workThreads	slave_md5cracker/cpuCracker.h	/^    vector<pthread_t> workThreads;$/;"	m	class:CpuCracker	access:private
+xmlrpclibs	master_md5cracker/Makefile	/^xmlrpclibs = -L\/usr\/local\/lib -lxmlrpc_client++ -lxmlrpc_client -lxmlrpc_server_pstream++ -lxmlrpc_server++ -lxmlrpc_server  -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_packetsocket $/;"	m
+xmlrpclibs	slave_md5cracker/Makefile	/^xmlrpclibs = -L\/usr\/local\/lib -lxmlrpc_client++ -lxmlrpc_client -lxmlrpc_server_pstream++ -lxmlrpc_server++ -lxmlrpc_server  -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_packetsocket #-lwwwxml -lxmltok -lxmlparse -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils -lmd5 #-ldl $/;"	m
+xmlwwwlibs	master_md5cracker/Makefile	/^xmlwwwlibs = -lwwwxml -lxmltok -lxmlparse -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils -L\/usr\/lib -lmd5 $/;"	m
+xmlwwwlibs	slave_md5cracker/Makefile	/^xmlwwwlibs = -lwwwxml -lxmltok -lxmlparse -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils -L\/usr\/lib -lmd5 $/;"	m
+~LogManager	master_md5cracker/logManager.h	/^    ~LogManager(){}$/;"	f	class:LogManager	access:private	signature:()
+~MasterMD5Cracker	master_md5cracker/masterMD5Cracker.cpp	/^MasterMD5Cracker::~MasterMD5Cracker(){$/;"	f	class:MasterMD5Cracker	signature:()
+~MasterMD5Cracker	master_md5cracker/masterMD5Cracker.h	/^    virtual ~MasterMD5Cracker();$/;"	p	class:MasterMD5Cracker	access:public	signature:()
+~RWBuffer	slave_md5cracker/rwBuffer.cpp	/^RWBuffer::~RWBuffer(){$/;"	f	class:RWBuffer	signature:()
+~RWBuffer	slave_md5cracker/rwBuffer.h	/^    ~RWBuffer();$/;"	p	class:RWBuffer	access:public	signature:()

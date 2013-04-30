@@ -77,9 +77,18 @@ set tags=./tags;/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('cscope')
       set cscopetag cscopeverbose
-      command -nargs=0 Cscope cs add ./cscope.out 
+      command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Autocompletion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocp
+filetype plugin on
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =>Nerdtree 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
