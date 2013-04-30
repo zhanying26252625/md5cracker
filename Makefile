@@ -11,7 +11,7 @@ slave:
 		$(MAKE) -C $(SLAVE_DIR) -f ./Makefile
 
 tags:
-	ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+		ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 
 cscope.out: cscope.files
 		cscope -Rbkq -i cscope.files
