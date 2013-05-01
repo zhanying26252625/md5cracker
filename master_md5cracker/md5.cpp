@@ -3,6 +3,7 @@
 using namespace std;
 
 //The implementation is based on and derived from 
+//Be care of the architecture that you are using 32 or 64
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////       Ron Rivest's MD5Implementation       ///////////////////// 
@@ -59,6 +60,8 @@ using namespace std;
 /* ROTATE_LEFT rotates x left n bits.
 */
 #define ROTATE_LEFT(x, n) (((x) << (n)) | ((x) >> (32-(n))))
+
+//#define ROTATE_LEFT(x, n) (((x) << (n)) | ((x) >> (64-(n))))
 
 /* FF, GG, HH, and II transformations for rounds 1, 2, 3, and 4.
 Rotation is separate from addition to prevent recomputation.
@@ -166,17 +169,17 @@ context.
 */
 void MD5::update(const byte *input, size_t length) {
 
-	ulong i, index, partLen;
+	uInt i, index, partLen;
 
 	_finished = false;
 
 	/* Compute number of bytes mod 64 */
-	index = (ulong)((_count[0] >> 3) & 0x3f);
+	index = (uInt)((_count[0] >> 3) & 0x3f);
 
 	/* update number of bits */
-	if((_count[0] += ((ulong)length << 3)) < ((ulong)length << 3))
+	if((_count[0] += ((uInt)length << 3)) < ((uInt)length << 3))
 		_count[1]++;
-	_count[1] += ((ulong)length >> 29);
+	_count[1] += ((uInt)length >> 29);
 
 	partLen = 64 - index;
 
@@ -204,9 +207,9 @@ the message _digest and zeroizing the context.
 void MD5::final() {
 
 	byte bits[8];
-	ulong oldState[4];
-	ulong oldCount[2];
-	ulong index, padLen;
+	uInt oldState[4];
+	uInt oldCount[2];
+	uInt index, padLen;
 
 	/* Save current state and count. */
 	memcpy(oldState, _state, 16);
@@ -216,7 +219,7 @@ void MD5::final() {
 	encode(_count, bits, 8);
 
 	/* Pad out to 56 mod 64. */
-	index = (ulong)((_count[0] >> 3) & 0x3f);
+	index = (uInt)((_count[0] >> 3) & 0x3f);
 	padLen = (index < 56) ? (56 - index) : (120 - index);
 	update(PADDING, padLen);
 
@@ -234,7 +237,7 @@ void MD5::final() {
 /* MD5 basic transformation. Transforms _state based on block. */
 void MD5::transform(const byte block[64]) {
 
-	ulong a = _state[0], b = _state[1], c = _state[2], d = _state[3], x[16];
+	uInt a = _state[0], b = _state[1], c = _state[2], d = _state[3], x[16];
 
 	decode(block, x, 64);
 
@@ -316,10 +319,10 @@ void MD5::transform(const byte block[64]) {
 	_state[3] += d;
 }
 
-/* Encodes input (ulong) into output (byte). Assumes length is
+/* Encodes input (uInt) into output (byte). Assumes length is
 a multiple of 4.
 */
-void MD5::encode(const ulong *input, byte *output, size_t length) {
+void MD5::encode(const uInt *input, byte *output, size_t length) {
 
 	for(size_t i=0, j=0; j<length; i++, j+=4) {
 		output[j]= (byte)(input[i] & 0xff);
@@ -329,14 +332,14 @@ void MD5::encode(const ulong *input, byte *output, size_t length) {
 	}
 }
 
-/* Decodes input (byte) into output (ulong). Assumes length is
+/* Decodes input (byte) into output (uInt). Assumes length is
 a multiple of 4.
 */
-void MD5::decode(const byte *input, ulong *output, size_t length) {
+void MD5::decode(const byte *input, uInt *output, size_t length) {
 
 	for(size_t i=0, j=0; j<length; i++, j+=4) {	
-		output[i] = ((ulong)input[j]) | (((ulong)input[j+1]) << 8) |
-			(((ulong)input[j+2]) << 16) | (((ulong)input[j+3]) << 24);
+		output[i] = ((uInt)input[j]) | (((uInt)input[j+1]) << 8) |
+			(((uInt)input[j+2]) << 16) | (((uInt)input[j+3]) << 24);
 	}
 }
 
