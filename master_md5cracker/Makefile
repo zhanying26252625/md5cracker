@@ -25,7 +25,8 @@ target: master_md5cracker
 master_md5cracker: $(objects) 
 	$(CC) $(CFLAGS) -o $@ $^ -Wl,-Bstatic $(xmlrpclibs) -Wl,-Bdynamic -lpthread -lstdc++ $(xmlwwwlibs)  
 
-
+# $^ means all
+# $< means first one
 
 #Be care of the suffix
 %.o: %.cpp $(headers)
