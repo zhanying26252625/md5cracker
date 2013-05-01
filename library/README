@@ -37,6 +37,16 @@ ctags
 cscope
 
 -----------------------------------------------------------------------------
+
 Be care of x86 and x64
 int and long are different 
+
 -----------------------------------------------------------------------------
+Test on
+giraffe.cs.rutgers.edu yz280 
+totoru.cs.rutgers.edu yz280
+-----------------------------------------------------------------------------
+
+
+
+>>>>>>> long to int! consistent across x64 and x86 for md5 hashing!
