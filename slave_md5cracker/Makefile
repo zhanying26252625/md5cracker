@@ -10,7 +10,7 @@ CC = g++
 
 # sometimes -g would not work for showing symbols in gdb, we use -gstabs+ instead
 # maybe it's something related to debug info format
-CFLAGS = -std=c++11 -Wall -g  
+CFLAGS = -std=c++0x -Wall -g  
 
 headers = ../configure.h slaveMD5Cracker.h masterProxy.h md5.h passGenerator.h cpuCracker.h gpuCracker.h rwBuffer.h 
 

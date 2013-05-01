@@ -54,7 +54,8 @@ bool MasterMD5Cracker::createListeningThread(){
     server_addr.sin_addr.s_addr = INADDR_ANY; 
     bzero(&(server_addr.sin_zero),8); 
 
-    if(bind(listeningSocket, (struct sockaddr *)&server_addr, sizeof(struct sockaddr))== -1) {
+    //std::bind is something else
+    if( ::bind(listeningSocket, (struct sockaddr *)&server_addr, sizeof(struct sockaddr))== -1) {
         logMgr << "[ERROR]Unable to bind" <<endl;
         return false;
     }
