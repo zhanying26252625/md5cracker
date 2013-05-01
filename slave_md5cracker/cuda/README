@@ -1,0 +1,68 @@
+Requirements & building
+=======================
+
+Make sure you have the CUDA SDK installed and compiled in ~/NVIDIA_CUDA_SDK.
+This code uses the cutil library from the SDK.
+
+Then do:
+
+	make
+
+Quick Start
+===========
+
+Want to see how fast your system is? Do:
+
+	make benchmark
+
+and wait a few seconds to minutes.
+
+Usage
+=====
+
+Usage #1:
+
+	cat wordlist.txt | ./cuda_md5
+
+will compare the CPU vs. GPU code by loading the list of words from stdin,
+computing the MD5 hashes on GPU and CPU, and printing out the timing
+results.
+
+Usage #2:
+
+	./cuda_md5 --queryDevice
+
+gives the information about your GPU (taken from deviceQuery SDS example).
+
+Usage #3:
+
+	cat wordlist.txt | ./cuda_md5 --search="WhateverWord"
+
+will match the hash of WhateverWord to hashes of words loaded from the
+dictionary. Both the computation of dictionary-word hashes and their
+comparison on with the target is done on the GPU.
+
+Usage #4:
+
+	cat wordlist.txt | ./cuda_md5 --search="WhateverWord" --benchmark
+	or
+	cat wordlist.txt | ./cuda_md5 --benchmark
+
+will go through all possible threads-per-block values to find the optimal
+number, and print the results on the screen. To convert the output to a
+tab-separated format suitable for plotting, pipe the output of this command
+to something like:
+
+	| sed -r 's/ *[^ ]+=/\t/g' > bench.dat
+
+
+Benchmarks and Visualization
+============================
+
+Look at SuperMongo macro file macros.sm in bench/ subdirectory. Unless
+you're an astronomer using SuperMongo, it's doubtfull these will be of much
+use to you but may be a good starting point for e.g., using gnuplot to make
+similar plots.
+
+Some plots, derived from benchmarks of my machines, are already there in
+bench/figs and bench/data directories.
