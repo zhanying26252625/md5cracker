@@ -64,7 +64,7 @@ private:
     bool endGenerator;
 
     //a smart way to define constant
-    enum Size{BatchSize=1024*16,QueueSize=100};
+    enum Size{BatchSize=1024*8,QueueSize=200};
 };
 
 #endif

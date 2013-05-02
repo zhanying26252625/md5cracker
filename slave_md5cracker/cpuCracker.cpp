@@ -1,4 +1,5 @@
 #include "cpuCracker.h"
+#include "gpuCracker.h"
 #include "slaveMD5Cracker.h"
 #include "md5.h"
 #include <stdlib.h>
@@ -68,10 +69,17 @@ void* CpuCracker::workThreadFunc(void* arg){
                 string ret = md5Engine.calMD5FromString(pass);
 
                 //test only
+                /*
                 if(!pass.compare(string("girl")))
                     cout<<"consume-----------GrilGirlGrilGrilGril" <<endl;
+                */
 
                 if(!ret.compare(md5)){
+
+                    cout<<endl<<"**********************************"<<endl;
+                    cout<<endl<<"***********Found by GPU***********"<<endl;
+                    cout<<endl<<"**********************************"<<endl;
+
                     //cout <<"----------Found the password ["<<pass<<"]----------"<<endl;
                     slaveCracker->reportResult(pass,md5);
                     //exit(1); 
@@ -97,11 +105,11 @@ bool CpuCracker::terminate(){
     for(unsigned int i =0 ;i< workThreads.size();i++){
         void* ret;
         pthread_join(workThreads[i],&ret);
+
+        cout <<"CPU thread[" <<i <<"] terminated!" <<endl;
     }
 
     workThreads.clear();
-
-    cout << "CPU threads terminated!" <<endl;
 
     return true;
 }

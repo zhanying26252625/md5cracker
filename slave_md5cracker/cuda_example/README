@@ -1,0 +1,2 @@
+This is a the example of how to use CUDA
+Usage:cat wordlist|./cuda_md5cracker

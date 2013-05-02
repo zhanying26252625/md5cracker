@@ -24,8 +24,10 @@ SlaveMD5Cracker::SlaveMD5Cracker(){
 }
 
 //Two threads with two sockets for concurrent duplex communication
-void SlaveMD5Cracker::run(){
-   
+void SlaveMD5Cracker::run(bool gpuOn){
+  
+    this->gpuOn = gpuOn;
+
     masterIP = getMasterIP();
 
     //Not used, just list all IPs that I have
@@ -273,11 +275,11 @@ void StartMethod::execute(const xmlrpc_c::paramList& paramList,xmlrpc_c::value* 
     //refresh buffer,since it may be dirty becaues of previous cracking
     slaveCracker->rwBuf.init();
 
-    //spawn cpu working threads
-    slaveCracker->cpuCracker.init(slaveCracker);
-
     //spawn gpu working threads
     slaveCracker->gpuCracker.init(slaveCracker);
+    
+    //spawn cpu working threads
+    slaveCracker->cpuCracker.init(slaveCracker);
 
     //We have a dedicated thread producing passwords
     slaveCracker->rwBuf.run();
