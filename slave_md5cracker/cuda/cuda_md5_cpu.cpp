@@ -1,121 +1,13 @@
-//
-// CPU implementation of MD5 (virtually the same C code as the GPU version,
-// but kept in a separate file so that G++ can do inline-optimize it as best
-// as it can.
-//
+// CPU implementation of MD5 
 
 typedef unsigned int uint;
 
-
+#include <string>
 #include <string.h>
 #include <stdio.h>
 #include <iostream>
 
-//
-// MD5 magic numbers. These will be loaded into on-device "constant" memory
-//
-static const uint k[64] =
-{
-	0xd76aa478, 	0xe8c7b756,	0x242070db,	0xc1bdceee,
-	0xf57c0faf,	0x4787c62a, 	0xa8304613,	0xfd469501,
-	0x698098d8,	0x8b44f7af,	0xffff5bb1,	0x895cd7be,
-	0x6b901122, 	0xfd987193, 	0xa679438e,	0x49b40821,
-
-	0xf61e2562,	0xc040b340, 	0x265e5a51, 	0xe9b6c7aa,
-	0xd62f105d,	0x2441453,	0xd8a1e681,	0xe7d3fbc8,
-	0x21e1cde6,	0xc33707d6, 	0xf4d50d87, 	0x455a14ed,
-	0xa9e3e905,	0xfcefa3f8, 	0x676f02d9, 	0x8d2a4c8a,
-
-	0xfffa3942,	0x8771f681, 	0x6d9d6122, 	0xfde5380c,
-	0xa4beea44, 	0x4bdecfa9, 	0xf6bb4b60, 	0xbebfbc70,
-	0x289b7ec6, 	0xeaa127fa, 	0xd4ef3085,	0x4881d05,
-	0xd9d4d039, 	0xe6db99e5, 	0x1fa27cf8, 	0xc4ac5665,
-
-	0xf4292244, 	0x432aff97, 	0xab9423a7, 	0xfc93a039,
-	0x655b59c3, 	0x8f0ccc92, 	0xffeff47d, 	0x85845dd1,
-	0x6fa87e4f, 	0xfe2ce6e0, 	0xa3014314, 	0x4e0811a1,
-	0xf7537e82, 	0xbd3af235, 	0x2ad7d2bb, 	0xeb86d391,
-};
-
-static const uint rconst[16] =
-{
-	7, 12, 17, 22,   5,  9, 14, 20,   4, 11, 16, 23,   6, 10, 15, 21
-};
-
-//
-// MD5 routines (straight from Wikipedia's MD5 pseudocode description)
-//
-
-inline uint leftrotate (uint x, uint c)
-{
-	return (x << c) | (x >> (32-c));
-}
-
-inline uint r(const uint i)
-{
-	return rconst[(i / 16) * 4 + i % 4];
-}
-
-inline void step(uint i, uint &f, uint &g, uint &a, uint &b, uint &c, uint &d, uint *w)
-{
-	uint temp = d;
-	d = c;
-	c = b;
-	b = b + leftrotate((a + f + k[i] + w[g]), r(i));
-	a = temp;
-}
-
-void md5_cpu(uint w[16], uint &a, uint &b, uint &c, uint &d)
-{
-	const uint a0 = 0x67452301;
-	const uint b0 = 0xEFCDAB89;
-	const uint c0 = 0x98BADCFE;
-	const uint d0 = 0x10325476;
-
-	//Initialize hash value for this chunk:
-	a = a0;
-	b = b0;
-	c = c0;
-	d = d0;
-
-	uint f, g, i = 0;
-	for(; i != 16; i++)
-	{
-		f = (b & c) | ((~b) & d);
-		g = i;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	for(; i != 32; i++)
-	{
-		f = (d & b) | ((~d) & c);
-		g = (5*i + 1) % 16;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	for(; i != 48; i++)
-	{
-		f = b ^ c ^ d;
-		g = (3*i + 5) % 16;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	for(; i != 64; i++)
-	{
-		f = c ^ (b | (~d));
-		g = (7*i) % 16;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	a += a0;
-	b += b0;
-	c += c0;
-	d += d0;
-}
-
-//
-// Utils
-//
+using namespace std;
 
 // prepare a 56-byte (maximum) wide md5 message by appending the 64-bit length
 // we assume c0 is zero-padded
@@ -128,10 +20,54 @@ void md5_prep(char *c0)
 	((uint*)c0)[14] = len * 8;	// message length in bits
 }
 
-void print_md5(uint *hash, bool crlf)
+union md5hash
 {
-	for(int i = 0; i != 16; i++) { printf("%02x", (uint)(((unsigned char *)hash)[i])); }
-	if(crlf) printf("\n");
+	uint ui[4];
+	char ch[16];
+};
+
+string md5hash2string(md5hash& md5){
+    
+    uint* hash = (uint*)md5.ui;
+
+    string retStr;
+    for(int i = 0; i != 16; i++) { 
+        char buf[128] = {0};
+        sprintf(buf, "%02x", (uint)(((unsigned char *)hash)[i])); 
+        retStr += string(buf);
+    }
+
+    return retStr;
+}
+
+int convert(char c){
+    if( c>='0' && c<='9')
+        return c-'0';
+    else if(c>='a'&&c<='f')
+        return c-'a'+10;
+    else
+        return 0;
+}
+
+void string2md5hash(string& str, md5hash& hash){
+
+    const char* buf = str.c_str();
+
+    for(int i=0,j=0;i<32;i+=2,j++){
+        char f = convert( buf[i] );
+        char s = convert(buf[i+1] );
+        hash.ch[j] = f*16+s;
+    }
+}
+
+
+void print_md5(uint* hash){
+
+    for(int i = 0; i != 16; i++) { 
+        printf( "%02x", (uint)(((unsigned char *)hash)[i])); 
+    }
+
+    printf("\n");
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -306,7 +242,4 @@ void md5_cpu_v2(const uint *in, uint &a, uint &b, uint &c, uint &d)
 
 }
 
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
 

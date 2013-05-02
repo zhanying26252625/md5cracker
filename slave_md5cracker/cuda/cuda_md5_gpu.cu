@@ -1,19 +1,12 @@
-// CUDA MD5 hash calculation implementation (A: mjuric@ias.edu).
-//
-// A very useful link: http://people.eku.edu/styere/Encrypt/JS-MD5.html
-//
-
 #define RSA_KERNEL md5_v2
 
 #include <stdio.h>
-//#include "cutil.h"
 
 #include <helper_cuda.h>
 #include <helper_cuda_drvapi.h>
 #include <helper_functions.h>
 #include <helper_string.h>
 #include <helper_timer.h>
-
 
 typedef unsigned int uint;
 
@@ -56,25 +49,12 @@ static const uint rconst_cpu[16] =
 	7, 12, 17, 22,   5,  9, 14, 20,   4, 11, 16, 23,   6, 10, 15, 21
 };
 
+//used by caller
 void init_constants(uint *target_cpu)
 {
 	cudaMemcpyToSymbol(k, k_cpu, sizeof(k));
 	cudaMemcpyToSymbol(rconst, rconst_cpu, sizeof(rconst));
 	if(target_cpu) { cudaMemcpyToSymbol(target, target_cpu, 4*4); };
-}
-
-//
-// MD5 routines (straight from Wikipedia's MD5 pseudocode description)
-//
-
-__device__ inline uint leftrotate (uint x, uint c)
-{
-	return (x << c) | (x >> (32-c));
-}
-
-__device__ inline uint r(const uint i)
-{
-	return rconst[(i / 16) * 4 + i % 4];
 }
 
 // Accessor for w[16] array. Naively, this would just be w[i]; however, this
@@ -83,10 +63,7 @@ __device__ inline uint r(const uint i)
 // same bank (as the words are 16 uints long). The packing below causes the
 // same indices in different threads of a warp to map to different banks. In
 // testing this gave a ~40% speedup.
-//
-// PS: An alternative solution would be to make the w array 17 uints long
-// (thus wasting a little shared memory)
-//
+
 __device__ inline uint &getw(uint *w, const int i)
 {
 	return w[(i+threadIdx.x) % 16];
@@ -97,68 +74,6 @@ __device__ inline uint getw(const uint *w, const int i)	// const- version
 	return w[(i+threadIdx.x) % 16];
 }
 
-
-__device__ inline uint getk(const int i)
-{
-	return k[i];	// Note: this is as fast as possible (measured)
-}
-
-__device__ void step(const uint i, const uint f, const uint g, uint &a, uint &b, uint &c, uint &d, const uint *w)
-{
-	uint temp = d;
-	d = c;
-	c = b;
-	b = b + leftrotate((a + f + getk(i) + getw(w, g)), r(i));
-	a = temp;
-}
-
-__device__ void inline md5(const uint *w, uint &a, uint &b, uint &c, uint &d)
-{
-	const uint a0 = 0x67452301;
-	const uint b0 = 0xEFCDAB89;
-	const uint c0 = 0x98BADCFE;
-	const uint d0 = 0x10325476;
-
-	//Initialize hash value for this chunk:
-	a = a0;
-	b = b0;
-	c = c0;
-	d = d0;
-
-	uint f, g, i = 0;
-	for(; i != 16; i++)
-	{
-		f = (b & c) | ((~b) & d);
-		g = i;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	for(; i != 32; i++)
-	{
-		f = (d & b) | ((~d) & c);
-		g = (5*i + 1) % 16;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	for(; i != 48; i++)
-	{
-		f = b ^ c ^ d;
-		g = (3*i + 5) % 16;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	for(; i != 64; i++)
-	{
-		f = c ^ (b | (~d));
-		g = (7*i) % 16;
-		step(i, f, g, a, b, c, d, w);
-	}
-
-	a += a0;
-	b += b0;
-	c += c0;
-	d += d0;
-}
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////       Ron Rivest's MD5 C Implementation       //////////////////
@@ -332,36 +247,6 @@ void inline __device__ md5_v2(const uint *in, uint &a, uint &b, uint &c, uint &d
 
 }
 
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
-
-// The kernel (this is the entrypoint of GPU code)
-// Loads the 64-byte word to be hashed from global to shared memory
-// and calls the calculation routine
-__global__ void md5_calc(uint *gwords, uint *hash, int realthreads)
-{
-	int linidx = (gridDim.x*blockIdx.y + blockIdx.x)*blockDim.x + threadIdx.x; // assuming blockDim.y = 1 and threadIdx.y = 0, always
-	if(linidx >= realthreads) { return; } // this check slows down the code by ~0.4% (measured)
-
-	// load the dictionary word for this thread
-	uint *word = &memory[0] + threadIdx.x*16;
-	for(int i=0; i != 16; i++)
-	{
-		getw(word, i) = gwords[(linidx)*16+i];
-	}
-
-	// compute MD5 hash
-	uint a, b, c, d;
-
-	RSA_KERNEL(word, a, b, c, d);
-
-	// return the hash
-	hash[(linidx)*4+0] = a;
-	hash[(linidx)*4+1] = b;
-	hash[(linidx)*4+2] = c;
-	hash[(linidx)*4+3] = d;
-}
 
 // The kernel (this is the entrypoint of GPU code)
 // Loads the 64-byte word to be hashed from global to shared memory,
@@ -369,11 +254,13 @@ __global__ void md5_calc(uint *gwords, uint *hash, int realthreads)
 __global__ void md5_search(uint *gwords, uint *succ, int realthreads)
 {
 	int linidx = (gridDim.x*blockIdx.y + blockIdx.x)*blockDim.x + threadIdx.x; // assuming blockDim.y = 1 and threadIdx.y = 0, always
-	if(linidx >= realthreads) { return; } // this check slows down the code by ~0.4% (measured)
+
+    if(linidx >= realthreads) { return; } // this check slows down the code by ~0.4% (measured)
 
 	// load the dictionary word for this thread
 	uint *word = &memory[0] + threadIdx.x*16;
-	for(int i=0; i != 16; i++)
+
+    for(int i=0; i != 16; i++)
 	{
 		getw(word, i) = gwords[linidx*16+i];
 	}
@@ -390,44 +277,23 @@ __global__ void md5_search(uint *gwords, uint *succ, int realthreads)
 	}
 }
 
-// A helper to export the kernel call to C++ code not compiled with nvcc
+//export the kernel call to C++ code not compiled with nvcc
 double execute_kernel(int blocks_x, int blocks_y, int threads_per_block, int shared_mem_required, int realthreads, uint *gpuWords, uint *gpuHashes, bool search)
 {
 	dim3 grid;
-	grid.x = blocks_x; grid.y = blocks_y;
 
-/*
-	unsigned int hTimer;
-	CUT_SAFE_CALL( cutCreateTimer(&hTimer) );
-	CUDA_SAFE_CALL( cudaThreadSynchronize() );
-	CUT_SAFE_CALL( cutResetTimer(hTimer) );
-	CUT_SAFE_CALL( cutStartTimer(hTimer) );
-*/
+    grid.x = blocks_x; grid.y = blocks_y;
 
 	struct timeval start,end;
  
     gettimeofday(&start,NULL);
 
-	if(search)
-	{
-		md5_search<<<grid, threads_per_block, shared_mem_required>>>(gpuWords, gpuHashes, realthreads);
-	}
-	else
-	{
-		md5_calc<<<grid, threads_per_block, shared_mem_required>>>(gpuWords, gpuHashes, realthreads);
-	}
+    //Launch the GPU code
+	md5_search<<<grid, threads_per_block, shared_mem_required>>>(gpuWords, gpuHashes, realthreads);
 
-/*
-	CUT_CHECK_ERROR("md5_calc() execution failed\n");
-	CUDA_SAFE_CALL( cudaThreadSynchronize() );
-	CUT_SAFE_CALL( cutStopTimer(hTimer) );
-	double gpuTime = cutGetTimerValue(hTimer);
-	CUT_SAFE_CALL( cutDeleteTimer( hTimer) );
-*/
 	gettimeofday(&end,NULL);
  
     double gpuTime = end.tv_sec - start.tv_sec + (end.tv_usec - start.tv_usec)/1000000.0;
-
 
 	return gpuTime;
 }
