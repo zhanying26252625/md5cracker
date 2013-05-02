@@ -67,11 +67,14 @@ private:
 
     GpuCracker gpuCracker;
 
+    bool gpuOn;
+
 public:
 
     SlaveMD5Cracker();
 
-    void run();
+    //use gpu or not
+    void run(bool gpuOn);
 
     //Cmd handler
     friend class StartMethod;

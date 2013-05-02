@@ -23,14 +23,14 @@ xmlwwwlibs = -lwwwxml -lxmltok -lxmlparse -lwwwinit -lwwwapp -lwwwhtml -lwwwteln
 target: master_md5cracker
 
 master_md5cracker: $(objects) 
-	$(CC) $(CFLAGS) -o $@ $^ -Wl,-Bstatic $(xmlrpclibs) -Wl,-Bdynamic -lpthread -lstdc++ $(xmlwwwlibs) ; rm *.o 
+	$(CC) $(CFLAGS) -o $@ $^ -Wl,-Bstatic $(xmlrpclibs) -Wl,-Bdynamic -lpthread -lstdc++ $(xmlwwwlibs)  
 
 # $^ means all
 # $< means first one
 
 #Be care of the suffix
 %.o: %.cpp $(headers)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS) ; printf "\n"
 
 clean:
 	rm -f master_md5cracker *.o log.txt

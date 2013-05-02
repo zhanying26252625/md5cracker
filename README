@@ -1,1 +1,3 @@
 CS552 course project
+make // no gpu (cuda) support
+make gpu // enable gpu (cuda) 

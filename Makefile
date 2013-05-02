@@ -18,6 +18,16 @@ app:
 tags:
 		ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 
+########################
+#enable gpu on machines with cuda support
+
+gpu: master slave_gpu app cscope.out tags
+
+slave_gpu:
+		$(MAKE) -C $(SLAVE_DIR) -f ./Makefile gpu
+
+#######################
+
 cscope.out: cscope.files
 		cscope -Rbkq -i cscope.files
 
