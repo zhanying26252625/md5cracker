@@ -3,14 +3,12 @@
 #include <string.h>
 
 #include <cuda_runtime_api.h>
-//#include "cutil.h"
 
 #include <helper_cuda.h>
 #include <helper_cuda_drvapi.h>
 #include <helper_functions.h>
 #include <helper_string.h>
 #include <helper_timer.h>
-
 
 int deviceQuery() 
 {
