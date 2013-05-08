@@ -77,7 +77,7 @@ void* CpuCracker::workThreadFunc(void* arg){
                 if(!ret.compare(md5)){
 
                     cout<<endl<<"**********************************"<<endl;
-                    cout<<endl<<"***********Found by GPU***********"<<endl;
+                    cout<<endl<<"***********Found by CPU***********"<<endl;
                     cout<<endl<<"**********************************"<<endl;
 
                     //cout <<"----------Found the password ["<<pass<<"]----------"<<endl;
